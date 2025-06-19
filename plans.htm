@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html dir="rtl"><script src="moz-extension://3e243ed7-cfce-4115-b31b-0c4fa3881cea/./content-scripts/passkey_proxy/index.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>البرامج السياحية | AlNour Travel</title><link rel="icon" href="https://sndiansite.com/images/favicons/8634/IBATOURS.png"><meta name="description" content="خبرة واسعة في مجال السياحة والسفر"><meta name="image" property="og:image" content="https://sndiansite.com/images/logos/8634/IBATOURS.png"><link rel="stylesheet" href="plans_files/Cairo.css"><link rel="stylesheet" href="plans_files/NotoSansArabic.css"><link rel="stylesheet" href="plans_files/sndian.css"><style>:root {
+  /* colors */
+  --primary-color: #1095c1;
+  --secondary-color: #596b78;
+  --success-color: #5cb85c;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --secondary-background-color: #f8f9fa;
+  --dark-color: rgb(64, 64, 64);
+  --text-color: #212529;
+  --secondary-text-color: #fff;
+  --border-color: #bbb;
+  --link-color: #008000;
+  --muted-color: #73828c;
+  --background-color: #fff;
+  --hover-brightness: 1.2;
+
+  /* spacing */
+  --base-space: 1rem;
+  --space-largest: calc(var(--base-space) * 5);
+  --space-larger: calc(var(--base-space) * 3);
+  --space-large: calc(var(--base-space) * 1.5);
+  --space-medium: var(--base-space);
+  --space-small: calc(var(--base-space) * 0.5);
+  --space-smaller: calc(var(--base-space) * 0.25);
+  --max-content-width: 1320px;
+
+  /* typography */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --base-font-size: 1rem;
+  --typography-spacing: var(--base-space) * 1.5;
+
+  /* borders */
+  --border-radius: 0.3rem;
+  --reduction: 1;
+  --border-width: 1px;
+
+  /* elevation */
+  --elevation-smaller: 0 .125rem .25rem rgba(0,0,0, .075);
+  --elevation-small: 0 .200rem .5rem rgba(0,0,0, .05);
+  --elevation-medium: 0 .5rem 1rem rgba(0,0,0, .15);
+  --elevation-large: 0 1rem 1.5rem rgba(0,0,0, .175);
+  --elevation-larger:  0 1.25rem 2rem rgba(0,0,0, .25);
+  --transition: 0.2s ease-in-out;
+}
+
+h1 {
+  --font-size: calc(var(--base-font-size) * 2.4);
+}
+h2 {
+  --font-size: calc(var(--base-font-size) * 1.8);
+}
+h3 {
+  --font-size: calc(var(--base-font-size) * 1.5);
+}
+h4 {
+  --font-size: calc(var(--base-font-size) * 1.3);
+}
+h5 {
+  --font-size: calc(var(--base-font-size) * 1.1);
+}
+h6 {
+  --font-size: var(--base-font-size);
+}
+
+@media (max-width: 767px) { 
+  h1 {
+    --font-size: calc(var(--base-font-size) * 2);
+  }
+  h2 {
+    --font-size: calc(var(--base-font-size) * 1.6);
+  }
+  h3 {
+    --font-size: calc(var(--base-font-size) * 1.4);
+  }
+  h4 {
+    --font-size: calc(var(--base-font-size) * 1.2);
+  }
+  h5 {
+    --font-size: calc(var(--base-font-size) * 1.1);
+  }
+  h6 {
+    --font-size: var(--base-font-size);
+  }
+}:root {
+  --primary-color: #00497e;
+  --secondary-color: #b8a964;
+}
+</style><style>:root {
+  
+  
+  
+  --background-color: #ffffff !important;
+  
+  }</style><style>
+      :root { --font-family-titles: "Cairo", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>
+      :root { --font-family-content: "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>[id="1et4e"] .sndian-1dqvs-1et4e{display:flex;justify-content:center;padding:0 var(--space-larger);flex-direction:column;align-items:center;margin-top:-7rem}[id="1et4e"] .sndian-11zny-1et4e{display:flex;position:relative;flex-wrap:wrap;justify-content:center;width:100%;max-width:var(--max-content-width);background-color:var(--primary-color);color:var(--secondary-text-color);padding:var(--space-larger);border-radius:var(--border-radius);z-index:2}[id="1et4e"] .sndian-11zny-1et4e:after{content:"";position:absolute;top:-2rem;right:0;left:0;width:90%;height:100%;margin:auto;background-color:inherit;border-radius:var(--border-radius);opacity:0.7;z-index:-1}[id="1et4e"] .sndian-11zny-1et4e:before{content:"";position:absolute;top:-4rem;right:0;left:0;width:80%;height:100%;margin:auto;background-color:inherit;border-radius:var(--border-radius);opacity:0.5;z-index:-1}[id="1et4e"] .sndian-f26bh-1et4e{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;gap:var(--space-medium);width:100%}[id="1et4e"] .sndian-f26bh-1et4e h3{margin:0}[id="1et4e"] sndian-grid{width:100%}[id="1et4e"] .sndian-f26bh-1et4e h1{text-align:center;margin:0}[id="1et4e"] .sndian-pmx5h-1et4e{display:flex;flex-direction:column;align-items:center;gap:var(--space-medium);height:100%}[id="1et4e"] .sndian-tiz2y-1et4e{display:flex;flex-direction:column;gap:var(--space-medium);text-align:center}[id="1et4e"] .sndian-tiz2y-1et4e h2{font-size:20px}[id="1et4e"] .sndian-tiz2y-1et4e h5,
+[id="1et4e"] .sndian-tiz2y-1et4e p{margin:0}[id="1et4e"] .sndian-au718-1et4e span{font-size:2rem;display:flex}[id="1et4e"] .sndian-1nnh2-1et4e{display:flex;align-items:center;justify-content:center;width:100%;gap:var(--space-large)}[id="1et4e"] h1,
+[id="1et4e"] h2,
+[id="1et4e"] h3,
+[id="1et4e"] h4,
+[id="1et4e"] h5,
+[id="1et4e"] h6,
+[id="1et4e"] p{margin:0}@media (max-width: 767px){[id="1et4e"] .sndian-1dqvs-1et4e{display:flex;padding:0 var(--space-large)}[id="1et4e"] sndian-grid{gap:var(--space-large)}}[id="1et4e"] .sndian-1nucx-1et4e{display:grid;width:100%;align-items:center}[id="1et4e"] .sndian-1niud-1et4e{}[id="1et4e"] .sndian-10l5j-1et4e{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1et4e"] .sndian-au718-1et4e{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[data-grid-id="z2ekiq"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="z2ekiq"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="z2ekiq"]{grid-template-columns:repeat(3,1fr)}}[data-grid-id="z2ekiq"]{gap:var(--space-larger)}[id="ail2k"] .sndian-1c54y-ail2k{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="ail2k"] .sndian-1qu59-ail2k{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="ail2k"] .sndian-1popz-ail2k{display:flex;flex-direction:column;gap:var(--space-medium)}[id="ail2k"] .sndian-1so4s-ail2k{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="ail2k"] .sndian-1so4s-ail2k h3,
+[id="ail2k"] .sndian-1so4s-ail2k p{margin:0}[id="ail2k"] .sndian-1twl0-ail2k{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="ail2k"] .sndian-1twl0-ail2k button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="ail2k"] h1,
+[id="ail2k"] h2,
+[id="ail2k"] h3,
+[id="ail2k"] h4,
+[id="ail2k"] h5,
+[id="ail2k"] h6,
+[id="ail2k"] p{margin:0}@media (max-width: 767px){[id="ail2k"] .sndian-1c54y-ail2k{padding:var(--space-larger) var(--space-large)}}[id="ail2k"] .sndian-10ves-ail2k{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="ail2k"] .sndian-p35fn-ail2k{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="ail2k"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="ail2k"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="ail2k"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="ail2k"] .sndian-10ves-ail2k{max-width:60vw!important}}[id="1hc6s"] .sndian-1pgvy-1hc6s{position:relative;display:flex;padding:var(--space-medium) var(--space-larger);width:100%;z-index:99}[id="1hc6s"] .sndian-jhtc8-1hc6s{display:flex;flex-direction:row;gap:var(--space-medium);align-items:center}[id="1hc6s"] #navbar-verical-Button-topen{font-size:1.6rem;display:flex}[id="1hc6s"] #navbar-verical-Button-topen span{display:flex}[id="1hc6s"] a{text-decoration:none}[id="1hc6s"] .sndian-t1gtv-1hc6s h2{font-size:20px}[id="1hc6s"] .sndian-1l76o-1hc6s{width:100%;display:flex;align-items:center;justify-content:space-between;color:inherit;max-width:var(--max-content-width);margin:auto}[id="1hc6s"] .sndian-rhm43-1hc6s{background-color:transparent;border:1px solid var(--text-color);color:var(--text-color);margin:0;box-shadow:none}[id="1hc6s"] .sndian-1titw-1hc6s{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1hc6s"] .sndian-1thv3-1hc6s{display:flex;gap:var(--space-medium)}[id="1hc6s"] .sndian-6vrsw-1hc6s{display:flex;gap:var(--space-medium);justify-content:center;align-items:center;flex-direction:column}[id="1hc6s"] .sndian-c4yah-1hc6s{text-align:center}[id="1hc6s"] .sndian-pkdkz-1hc6s{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1hc6s"] .sndian-zmj2w-1hc6s{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;right:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}[id="1hc6s"] .sndian-zmj2w-1hc6s h3{font-size:26px}[id="1hc6s"] .sndian-3z8tj-1hc6s[aria-active="true"]{color:var(--primary-color)}[id="1hc6s"] .sndian-120yr-1hc6s{display:none}[id="1hc6s"] .sndian-120yr-1hc6s:checked + label #navbar-verical-Button-tclose{display:flex}[id="1hc6s"] .sndian-120yr-1hc6s:checked + label #navbar-verical-Button-topen{display:none}[id="1hc6s"] #navbar-verical-Button-tclose{display:none}[id="1hc6s"] .sndian-1m28q-1hc6s{position:absolute;left:var(--space-larger);top:var(--space-large)}[id="1hc6s"] .sndian-1m28q-1hc6s .sndian-au718-1hc6s span{font-size:2rem;color:var(--secondary-text-color)}[id="1hc6s"] .sndian-1rq2k-1hc6s{display:flex;gap:var(--space-medium);justify-content:space-between}[id="1hc6s"] .sndian-1u88s-1hc6s h3{color:var(--secondary-text-color)}[id="1hc6s"] .sndian-1rq2k-1hc6s .sndian-au718-1hc6s span{color:var(--secondary-text-color)}[id="1hc6s"] .sndian-1rq2k-1hc6s h3{color:var(--secondary-text-color)}[id="1hc6s"] .sndian-1thv3-1hc6s{position:relative;width:100%;flex-direction:column;display:none}[id="1hc6s"] .sndian-fb6fr-1hc6s{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1hc6s"] .sndian-9z22n-1hc6s{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1hc6s"] [aria-expanded="true"].sndian-zmj2w-1hc6s{top:0%}[id="1hc6s"] [aria-expanded="true"]#navbar-verical-nested-menu-1{display:flex}[id="1hc6s"] [aria-expanded="false"]#navbar-verical-nested-menu-1{display:none}[id="1hc6s"] [aria-expanded="true"]#navbar-verical-nested-menu-2{display:flex}[id="1hc6s"] [aria-expanded="false"]#navbar-verical-nested-menu-2{display:none}[id="1hc6s"] [aria-expanded="false"].sndian-zmj2w-1hc6s{top:-100%}[id="1hc6s"] .sndian-fb6fr-1hc6s h4{font-size:16px}[id="1hc6s"] .sndian-1l76o-1hc6s img{width:120px}[id="1hc6s"] h1,
+[id="1hc6s"] h2,
+[id="1hc6s"] h3,
+[id="1hc6s"] h4,
+[id="1hc6s"] h5,
+[id="1hc6s"] h6,
+[id="1hc6s"] p{margin:0}@media (max-width: 767px){[id="1hc6s"] .sndian-1pgvy-1hc6s{padding:var(--space-medium) var(--space-large)}[id="1hc6s"] .sndian-1thv3-1hc6s{position:relative;height:auto;z-index:1;right:0}[id="1hc6s"] [aria-expanded="true"]#navbar-verical-nested-menu-1{display:flex;right:0}[id="1hc6s"] [aria-expanded="false"]#navbar-verical-nested-menu-1{display:none}[id="1hc6s"] [aria-expanded="true"]#navbar-verical-nested-menu-2{display:flex;right:0}[id="1hc6s"] [aria-expanded="false"]#navbar-verical-nested-menu-2{display:none}[id="1hc6s"] .sndian-1m28q-1hc6s{left:var(--space-large)}[id="1hc6s"] .sndian-1titw-1hc6s{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1hc6s"] .sndian-1jdfu-1hc6s{width:fit-content;height:fit-content}[id="1hc6s"] .sndian-10l5j-1hc6s{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1hc6s"] .sndian-au718-1hc6s{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1hc6s"] .sndian-v8zb6-1hc6s{width:fit-content;height:fit-content;display:inline-block}[id="1hc6s"]{}[id="1hc6s"] .sndian-a2v47-1hc6s{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="1hc6s"] .sndian-3u8p4-1hc6s{width:fit-content;height:fit-content}[id="1hc6s"] .sndian-10ves-1hc6s{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1hc6s"] .sndian-p35fn-1hc6s{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1hc6s"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1hc6s"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1hc6s"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1hc6s"] .sndian-10ves-1hc6s{max-width:60vw!important}}[id="1s3zv"] .sndian-1vxpd-1s3zv{display:flex;justify-content:center;position:relative;align-items:center;background-image:url("https://i.suar.me/9Pzw3/m");background-position:center center;background-size:cover!important;background-repeat:no-repeat}[id="1s3zv"] .sndian-1wqoi-1s3zv{margin-bottom:0;color:inherit}[id="1s3zv"] .sndian-mrc1i-1s3zv{margin-bottom:0;color:inherit}[id="1s3zv"] .sndian-2ynkm-1s3zv{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1s3zv"] .sndian-2ynkm-1s3zv h3{font-size:20px}[id="1s3zv"] .sndian-2ynkm-1s3zv h6{margin:0}[id="1s3zv"] p{margin:0}[id="1s3zv"] .sndian-wsom6-1s3zv{width:100%;display:flex;justify-content:center;padding:var(--space-larger);min-height:40rem}[id="1s3zv"] .sndian-1nk5d-1s3zv{display:flex;flex-direction:column;justify-content:center;gap:var(--space-larger);color:var(--secondary-text-color);max-width:var(--max-content-width);min-height:25rem;margin:7rem 0 12rem}[id="1s3zv"] .sndian-1p0j9-1s3zv{display:flex;flex-direction:row;align-items:flex-start;flex-wrap:wrap;gap:var(--space-large);color:inherit}[id="1s3zv"] .sndian-1s0b3-1s3zv{max-width:30rem;color:inherit;display:flex;flex-direction:column;gap:var(--space-medium)}[id="1s3zv"] .sndian-1s0b3-1s3zv h1{font-size:20px}[id="1s3zv"] .sndian-1s0b3-1s3zv h2{font-size:40px}[id="1s3zv"] .sndian-1s0b3-1s3zv h5{margin:0}[id="1s3zv"] .sndian-1s0b3-1s3zv h1{margin:0}[id="1s3zv"] .sndian-u4wfq-1s3zv{display:flex;flex:1 1 300px;flex-direction:column;gap:var(--space-medium)}[id="1s3zv"] .sndian-1rr5j-1s3zv{flex-wrap:wrap;display:flex;gap:var(--space-medium)}[id="1s3zv"] .sndian-1rr5j-1s3zv button{text-transform:uppercase}[id="1s3zv"] .sndian-11lvq-1s3zv{display:flex;gap:var(--space-medium);padding:0;margin-bottom:0}[id="1s3zv"] .sndian-11lvq-1s3zv a{--base-font-size:1.2rem;font-size:var(--base-font-size)}[id="1s3zv"] .sndian-uu7ic-1s3zv{display:flex;align-items:flex-end}@media (max-width: 767px){[id="1s3zv"] .sndian-wsom6-1s3zv{min-height:auto;padding:var(--space-large)}[id="1s3zv"] .sndian-1nk5d-1s3zv{justify-content:flex-start}}[id="1s3zv"] .navbar-supported{display:flex;position:absolute;left:0;top:0;color:var(--secondary-text-color);padding:var(--space-medium) var(--space-larger);z-index:99;width:100%}[id="1s3zv"] h4{margin:0}[id="1s3zv"] .sndian-v8zb6-1s3zv{text-decoration:none}[id="1s3zv"] .sndian-f3n75-1s3zv{flex:1;display:flex;align-content:center;gap:var(--space-medium);flex-wrap:wrap}[id="1s3zv"] .navbar-supported-list{justify-content:center;flex:1}[id="1s3zv"] .sndian-1fe9s-1s3zv{flex:1}[id="1s3zv"] ul{padding:0!important}[id="1s3zv"] .navbar--show{background-color:var(--secondary-text-color);color:var(--text-color);box-shadow:var(--elevation-small)}[id="1s3zv"] .sndian-j5lbm-1s3zv{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="1s3zv"] .sndian-1bmm4-1s3zv{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;color:inherit;position:relative;width:100%;max-width:var(--max-content-width);margin:auto}[id="1s3zv"] .sndian-1bmm4-1s3zv > .sndian-button{display:none!important}[id="1s3zv"] .sndian-1bmm4-1s3zv img{max-width:120px}[id="1s3zv"] .navbar-supported-menu{display:none!important}[id="1s3zv"] .navbar-supported-menu span{font-size:1.5rem;display:flex}[id="1s3zv"] .navbar-supported-list{display:flex;align-items:center;gap:var(--space-medium)}[id="1s3zv"] .navbar-supported-list{padding-left:0;margin-top:0;margin-bottom:0}[id="1s3zv"] .navbar-supported-list a h6{margin:0;white-space:nowrap}[id="1s3zv"] .sndian-ip35s-1s3zv{padding:var(--space-smaller)}[id="1s3zv"] .navbar-supported-list li{display:flex;list-style:none;margin-bottom:0;padding:var(--space-small)}[id="1s3zv"] .navbar-supported-list li button{margin-bottom:0}[id="1s3zv"] .sndian-1fe9s-1s3zv{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:var(--space-medium)}[id="1s3zv"] .sndian-1fe9s-1s3zv a button{margin-bottom:0}@media (min-width: 992px){[id="1s3zv"] .navbar-supported-list-routes{display:flex!important}}@media (max-width: 991px){[id="1s3zv"] .sndian-1bmm4-1s3zv{flex-direction:row;flex-wrap:wrap;gap:var(--space-medium)}[id="1s3zv"] .navbar-supported-menu{display:flex!important;margin-bottom:0;order:3;align-items:center;padding:var(--space-small) var(--space-medium);background:var(--primary-color);color:var(--secondary-text-color);border-radius:var(--border-radius)}[id="1s3zv"] .navbar-supported-menu > a{display:flex}[id="1s3zv"] .sndian-1bmm4-1s3zv > .sndian-button{display:flex!important}[id="1s3zv"] .navbar-supported-list li{width:100%}[id="1s3zv"] .navbar-supported-list-routes{display:none;order:1;flex-direction:column;flex-wrap:wrap;position:relative;align-items:flex-start;top:unset;left:unset;min-width:100%;margin-top:var(--space-medium);gap:var(--space-small);padding:0}[id="1s3zv"] .sndian-1fe9s-1s3zv{flex:unset}[id="1s3zv"] .sndian-f3n75-1s3zv{flex:unset}[id="1s3zv"] .navbar-supported-list-routes a{--base-font-size:1.1rem;font-size:var(--base-font-size)}}[id="1s3zv"] h1,
+[id="1s3zv"] h2,
+[id="1s3zv"] h3,
+[id="1s3zv"] h4,
+[id="1s3zv"] h5,
+[id="1s3zv"] h6,
+[id="1s3zv"] p{margin:0}@media (max-width: 767px){[id="1s3zv"] .navbar-supported{padding:var(--space-medium) var(--space-large)}}[id="1s3zv"] .sndian-v8zb6-1s3zv{width:fit-content;height:fit-content;display:inline-block}[id="1s3zv"] .sndian-1jdfu-1s3zv{width:fit-content;height:fit-content}[id="1s3zv"] .sndian-10ves-1s3zv{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1s3zv"] .sndian-p35fn-1s3zv{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1s3zv"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1s3zv"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1s3zv"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1s3zv"] .sndian-10ves-1s3zv{max-width:60vw!important}}[id="1s3zv"] .sndian-10l5j-1s3zv{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1s3zv"] .sndian-au718-1s3zv{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1s3zv"]{}[id="1y6zg"] .sndian-15vok-1y6zg{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="1y6zg"] .sndian-o62d5-1y6zg{display:flex;justify-content:center;flex-wrap:wrap;width:100%;max-width:var(--max-content-width)}[id="1y6zg"] .sndian-wxom9-1y6zg{display:flex;flex:1 1 300px;gap:var(--space-large);flex-direction:column;justify-content:center}[id="1y6zg"] .sndian-1g9eh-1y6zg{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1y6zg"] .sndian-1g9eh-1y6zg h2{font-size:20px}[id="1y6zg"] .sndian-m2sit-1y6zg{display:flex;justify-content:center;align-items:stretch;flex-direction:row}[id="1y6zg"] .sndian-1v4dt-1y6zg{display:flex;align-items:center;justify-content:center;width:100%}[id="1y6zg"] .sndian-k3gma-1y6zg{width:4rem;min-width:4rem;height:4rem;min-height:4rem;background-color:var(--primary-color);color:var(--secondary-text-color);border-radius:var(--border-radius);display:flex;align-items:center;justify-content:center;--base-font-size:2rem;font-size:var(--base-font-size)}[id="1y6zg"] .sndian-k3gma-1y6zg span{display:flex}[id="1y6zg"] .sndian-wxom9-1y6zg.sndian-l8n0v-1y6zg{padding:var(--space-larger);background-color:var(--secondary-background-color)}[id="1y6zg"] .sndian-kpslu-1y6zg{display:flex;height:100%;gap:var(--space-large);align-items:center}[id="1y6zg"] .sndian-1s44a-1y6zg{width:100%;height:100%;object-fit:cover;aspect-ratio:2/1.2}[id="1y6zg"] .sndian-1hmhj-1y6zg{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1y6zg"] .sndian-1hmhj-1y6zg h5{margin:0}[id="1y6zg"] .sndian-1hmhj-1y6zg h3{margin:0}[id="1y6zg"] .sndian-1hmhj-1y6zg p{margin:0}[id="1y6zg"] .sndian-1wn3b-1y6zg{height:100%!important}[id="1y6zg"] .sndian-bj45r-1y6zg h3{margin:0}[id="1y6zg"] .sndian-bj45r-1y6zg p{margin:0}[id="1y6zg"] .sndian-bj45r-1y6zg{display:flex;flex-direction:column;gap:var(--space-smaller)}[id="1y6zg"] h1,
+[id="1y6zg"] h2,
+[id="1y6zg"] h3,
+[id="1y6zg"] h4,
+[id="1y6zg"] h5,
+[id="1y6zg"] h6,
+[id="1y6zg"] p{margin:0}@media (max-width: 767px){[id="1y6zg"] .sndian-15vok-1y6zg{padding:var(--space-larger) var(--space-large)}[id="1y6zg"] .sndian-o62d5-1y6zg{flex-direction:column}[id="1y6zg"] .sndian-wxom9-1y6zg.sndian-l8n0v-1y6zg{padding:var(--space-large)}}[id="1y6zg"] .sndian-dn767-1y6zg{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="1y6zg"] .sndian-1wn3b-1y6zg{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="1y6zg"] .sndian-dn767-1y6zg{width:100%!important;max-height:400px;height:auto}}[id="1y6zg"] .sndian-1nucx-1y6zg{display:grid;width:100%;align-items:center}[id="1y6zg"] .sndian-1niud-1y6zg{}[id="1y6zg"] .sndian-1jdfu-1y6zg{width:fit-content;height:fit-content}[id="1y6zg"] .sndian-10l5j-1y6zg{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1y6zg"] .sndian-au718-1y6zg{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 1024px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 0px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(2,1fr)}}[id="1y6zg"]{}@media (min-width: 0px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="jw9u60"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="jw9u60"]{gap:var(--space-large)}@media (min-width: 0px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="ry4oii"]{grid-template-columns:repeat(1,minmax(0,1fr))}}[data-grid-id="ry4oii"]{gap:0}[id="153b1"] .sndian-r3tt9-153b1{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="153b1"] .sndian-1xkq3-153b1{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="153b1"] .sndian-x7vmt-153b1{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="153b1"] #editor .sndian-1tswb-153b1{color:inherit}[id="153b1"] .sndian-1ccet-153b1{border-color:var(--border-color);padding:0}[id="153b1"] h3,
+[id="153b1"] h5,
+[id="153b1"] p{margin:0}[id="153b1"] .sndian-j9of6-153b1{display:flex;flex-direction:column;gap:var(--space-medium)}[id="153b1"] .sndian-au718-153b1 span{font-size:4rem;color:var(--primary-color);display:flex}[id="153b1"] sndian-grid{width:100%}[id="153b1"] .sndian-f3dnr-153b1{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="153b1"] .sndian-f3dnr-153b1 h3{font-size:18px}[id="153b1"] h1,
+[id="153b1"] h2,
+[id="153b1"] h3,
+[id="153b1"] h4,
+[id="153b1"] h5,
+[id="153b1"] h6,
+[id="153b1"] p{margin:0}@media (max-width: 767px){[id="153b1"] .sndian-r3tt9-153b1{padding:var(--space-larger) var(--space-large)}[id="153b1"] sndian-grid{gap:var(--space-large)}}[id="153b1"] .sndian-10l5j-153b1{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="153b1"] .sndian-au718-153b1{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="153b1"] .sndian-1ccet-153b1{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="153b1"] .sndian-1nucx-153b1{display:grid;width:100%;align-items:center}[id="153b1"] .sndian-1niud-153b1{}@media (min-width: 0px){[data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="bow0c"] .sndian-1xm57-bow0c{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="bow0c"] h3{text-align:center}[id="bow0c"] h5,
+[id="bow0c"] p{margin:0}[id="bow0c"] .sndian-16vz2-bow0c{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="bow0c"] .sndian-16vz2-bow0c h3{margin:0}[id="bow0c"] .sndian-tl2dd-bow0c{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="bow0c"] .sndian-1yrja-bow0c{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="bow0c"] .sndian-ugvwx-bow0c{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="bow0c"] .sndian-ugvwx-bow0c h3{font-size:20px}[id="bow0c"] .sndian-ufer7-bow0c > a{width:100%}[id="bow0c"] .sndian-13z9y-bow0c{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="bow0c"] .sndian-1c94j-bow0c{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="bow0c"] .sndian-beurj-bow0c{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="bow0c"] h1,
+[id="bow0c"] h2,
+[id="bow0c"] h3,
+[id="bow0c"] h4,
+[id="bow0c"] h5,
+[id="bow0c"] h6,
+[id="bow0c"] p{margin:0}@media (max-width: 767px){[id="bow0c"] .sndian-1xm57-bow0c{padding:var(--space-larger) var(--space-large)}[id="bow0c"] sndian-grid{gap:var(--space-large)}}[id="bow0c"] .sndian-1nucx-bow0c{display:grid;width:100%;align-items:center}[id="bow0c"] .sndian-1niud-bow0c{}@media (min-width: 0px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="bow0c"] .sndian-dn767-bow0c{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="bow0c"] .sndian-1wn3b-bow0c{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="bow0c"] .sndian-dn767-bow0c{width:100%!important;max-height:400px;height:auto}}[id="bow0c"]{}[id="bow0c"] .sndian-a2v47-bow0c{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="bow0c"] .sndian-3u8p4-bow0c{width:fit-content;height:fit-content}[id="bow0c"] .sndian-10ves-bow0c{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="bow0c"] .sndian-p35fn-bow0c{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="bow0c"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="bow0c"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="bow0c"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="bow0c"] .sndian-10ves-bow0c{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="mahpk3"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="wuwgi"] .sndian-r3tt9-wuwgi{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="wuwgi"] .sndian-1xkq3-wuwgi{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="wuwgi"] .sndian-x7vmt-wuwgi{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="wuwgi"] #editor .sndian-1tswb-wuwgi{color:inherit}[id="wuwgi"] .sndian-1ccet-wuwgi{border-color:var(--border-color);padding:0}[id="wuwgi"] h3,
+  [id="wuwgi"] h5,
+  [id="wuwgi"] p{margin:0}[id="wuwgi"] .sndian-j9of6-wuwgi{display:flex;flex-direction:column;gap:var(--space-medium)}[id="wuwgi"] .sndian-au718-wuwgi span{font-size:4rem;color:var(--primary-color);display:flex}[id="wuwgi"] sndian-grid{width:100%}[id="wuwgi"] .sndian-f3dnr-wuwgi{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="wuwgi"] .sndian-f3dnr-wuwgi h3{font-size:18px}[id="wuwgi"] h1,
+  [id="wuwgi"] h2,
+  [id="wuwgi"] h3,
+  [id="wuwgi"] h4,
+  [id="wuwgi"] h5,
+  [id="wuwgi"] h6,
+  [id="wuwgi"] p{margin:0}@media (max-width: 767px){[id="wuwgi"] .sndian-r3tt9-wuwgi{padding:var(--space-larger) var(--space-large)}[id="wuwgi"] sndian-grid{gap:var(--space-large)}}[id="wuwgi"] .sndian-10l5j-wuwgi{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="wuwgi"] .sndian-au718-wuwgi{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="wuwgi"] .sndian-1ccet-wuwgi{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="wuwgi"] .sndian-1nucx-wuwgi{display:grid;width:100%;align-items:center}[id="wuwgi"] .sndian-1niud-wuwgi{}@media (min-width: 0px){[id="wuwgi"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="wuwgi"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="wuwgi"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="wuwgi"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="k22x5"] .sndian-1xm57-k22x5{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="k22x5"] h3{text-align:center}[id="k22x5"] h5,
+ [id="k22x5"] p{margin:0}[id="k22x5"] .sndian-16vz2-k22x5{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="k22x5"] .sndian-16vz2-k22x5 h3{margin:0}[id="k22x5"] .sndian-tl2dd-k22x5{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="k22x5"] .sndian-1yrja-k22x5{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="k22x5"] .sndian-ugvwx-k22x5{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="k22x5"] .sndian-ugvwx-k22x5 h3{font-size:20px}[id="k22x5"] .sndian-ufer7-k22x5 > a{width:100%}[id="k22x5"] .sndian-13z9y-k22x5{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="k22x5"] .sndian-1c94j-k22x5{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="k22x5"] .sndian-beurj-k22x5{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="k22x5"] h1,
+ [id="k22x5"] h2,
+ [id="k22x5"] h3,
+ [id="k22x5"] h4,
+ [id="k22x5"] h5,
+ [id="k22x5"] h6,
+ [id="k22x5"] p{margin:0}@media (max-width: 767px){[id="k22x5"] .sndian-1xm57-k22x5{padding:var(--space-larger) var(--space-large)}[id="k22x5"] sndian-grid{gap:var(--space-large)}}[id="k22x5"] .sndian-1nucx-k22x5{display:grid;width:100%;align-items:center}[id="k22x5"] .sndian-1niud-k22x5{}@media (min-width: 0px){[id="k22x5"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="k22x5"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="k22x5"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="k22x5"] [data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="k22x5"] .sndian-dn767-k22x5{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="k22x5"] .sndian-1wn3b-k22x5{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="k22x5"] .sndian-dn767-k22x5{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[data-grid-id="90ep48"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="90ep48"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="90ep48"]{grid-template-columns:repeat(3,1fr)}}[id="k22x5"] .sndian-a2v47-k22x5{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="k22x5"] .sndian-3u8p4-k22x5{width:fit-content;height:fit-content}[id="k22x5"] .sndian-10ves-k22x5{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="k22x5"] .sndian-p35fn-k22x5{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="k22x5"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="k22x5"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="k22x5"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="k22x5"] .sndian-10ves-k22x5{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="90ep48"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="90ep48"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="90ep48"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="90ep48"]{gap:var(--space-larger)}[id="mjktm"] .sndian-r3tt9-mjktm{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="mjktm"] .sndian-1xkq3-mjktm{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="mjktm"] .sndian-x7vmt-mjktm{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="mjktm"] #editor .sndian-1tswb-mjktm{color:inherit}[id="mjktm"] .sndian-1ccet-mjktm{border-color:var(--border-color);padding:0}[id="mjktm"] h3,
+   [id="mjktm"] h5,
+   [id="mjktm"] p{margin:0}[id="mjktm"] .sndian-j9of6-mjktm{display:flex;flex-direction:column;gap:var(--space-medium)}[id="mjktm"] .sndian-au718-mjktm span{font-size:4rem;color:var(--primary-color);display:flex}[id="mjktm"] sndian-grid{width:100%}[id="mjktm"] .sndian-f3dnr-mjktm{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="mjktm"] .sndian-f3dnr-mjktm h3{font-size:18px}[id="mjktm"] h1,
+   [id="mjktm"] h2,
+   [id="mjktm"] h3,
+   [id="mjktm"] h4,
+   [id="mjktm"] h5,
+   [id="mjktm"] h6,
+   [id="mjktm"] p{margin:0}@media (max-width: 767px){[id="mjktm"] .sndian-r3tt9-mjktm{padding:var(--space-larger) var(--space-large)}[id="mjktm"] sndian-grid{gap:var(--space-large)}}[id="mjktm"] .sndian-10l5j-mjktm{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="mjktm"] .sndian-au718-mjktm{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="mjktm"] .sndian-1ccet-mjktm{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="mjktm"] .sndian-1nucx-mjktm{display:grid;width:100%;align-items:center}[id="mjktm"] .sndian-1niud-mjktm{}@media (min-width: 0px){[id="mjktm"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="mjktm"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="mjktm"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="mjktm"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="4oq6g"] .sndian-1xm57-4oq6g{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="4oq6g"] h3{text-align:center}[id="4oq6g"] h5,
+  [id="4oq6g"] p{margin:0}[id="4oq6g"] .sndian-16vz2-4oq6g{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="4oq6g"] .sndian-16vz2-4oq6g h3{margin:0}[id="4oq6g"] .sndian-tl2dd-4oq6g{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="4oq6g"] .sndian-1yrja-4oq6g{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="4oq6g"] .sndian-ugvwx-4oq6g{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="4oq6g"] .sndian-ugvwx-4oq6g h3{font-size:20px}[id="4oq6g"] .sndian-ufer7-4oq6g > a{width:100%}[id="4oq6g"] .sndian-13z9y-4oq6g{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="4oq6g"] .sndian-1c94j-4oq6g{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="4oq6g"] .sndian-beurj-4oq6g{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="4oq6g"] h1,
+  [id="4oq6g"] h2,
+  [id="4oq6g"] h3,
+  [id="4oq6g"] h4,
+  [id="4oq6g"] h5,
+  [id="4oq6g"] h6,
+  [id="4oq6g"] p{margin:0}@media (max-width: 767px){[id="4oq6g"] .sndian-1xm57-4oq6g{padding:var(--space-larger) var(--space-large)}[id="4oq6g"] sndian-grid{gap:var(--space-large)}}[id="4oq6g"] .sndian-1nucx-4oq6g{display:grid;width:100%;align-items:center}[id="4oq6g"] .sndian-1niud-4oq6g{}@media (min-width: 0px){[id="4oq6g"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="4oq6g"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="4oq6g"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="4oq6g"] [data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="4oq6g"] .sndian-dn767-4oq6g{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="4oq6g"] .sndian-1wn3b-4oq6g{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="4oq6g"] .sndian-dn767-4oq6g{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[id="4oq6g"] [data-grid-id="90ep48"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="4oq6g"] [data-grid-id="90ep48"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="4oq6g"] [data-grid-id="90ep48"]{grid-template-columns:repeat(3,1fr)}}[id="4oq6g"] [data-grid-id="90ep48"]{gap:var(--space-larger)}@media (min-width: 0px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(3,1fr)}}[id="4oq6g"] .sndian-a2v47-4oq6g{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="4oq6g"] .sndian-3u8p4-4oq6g{width:fit-content;height:fit-content}[id="4oq6g"] .sndian-10ves-4oq6g{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="4oq6g"] .sndian-p35fn-4oq6g{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="4oq6g"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="4oq6g"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="4oq6g"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="4oq6g"] .sndian-10ves-4oq6g{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="v4w8mg"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="v4w8mg"]{gap:var(--space-larger)}[id="15xat"] .sndian-r3tt9-15xat{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="15xat"] .sndian-1xkq3-15xat{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="15xat"] .sndian-x7vmt-15xat{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="15xat"] #editor .sndian-1tswb-15xat{color:inherit}[id="15xat"] .sndian-1ccet-15xat{border-color:var(--border-color);padding:0}[id="15xat"] h3,
+ [id="15xat"] h5,
+ [id="15xat"] p{margin:0}[id="15xat"] .sndian-j9of6-15xat{display:flex;flex-direction:column;gap:var(--space-medium)}[id="15xat"] .sndian-au718-15xat span{font-size:4rem;color:var(--primary-color);display:flex}[id="15xat"] sndian-grid{width:100%}[id="15xat"] .sndian-f3dnr-15xat{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="15xat"] .sndian-f3dnr-15xat h3{font-size:18px}[id="15xat"] h1,
+ [id="15xat"] h2,
+ [id="15xat"] h3,
+ [id="15xat"] h4,
+ [id="15xat"] h5,
+ [id="15xat"] h6,
+ [id="15xat"] p{margin:0}@media (max-width: 767px){[id="15xat"] .sndian-r3tt9-15xat{padding:var(--space-larger) var(--space-large)}[id="15xat"] sndian-grid{gap:var(--space-large)}}[id="15xat"] .sndian-10l5j-15xat{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="15xat"] .sndian-au718-15xat{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="15xat"] .sndian-1ccet-15xat{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="15xat"] .sndian-1nucx-15xat{display:grid;width:100%;align-items:center}[id="15xat"] .sndian-1niud-15xat{}@media (min-width: 0px){[id="15xat"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="15xat"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="15xat"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="15xat"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="16pub"] .sndian-1xm57-16pub{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="16pub"] h3{text-align:center}[id="16pub"] h5,
+   [id="16pub"] p{margin:0}[id="16pub"] .sndian-16vz2-16pub{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="16pub"] .sndian-16vz2-16pub h3{margin:0}[id="16pub"] .sndian-tl2dd-16pub{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="16pub"] .sndian-1yrja-16pub{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="16pub"] .sndian-ugvwx-16pub{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="16pub"] .sndian-ugvwx-16pub h3{font-size:20px}[id="16pub"] .sndian-ufer7-16pub > a{width:100%}[id="16pub"] .sndian-13z9y-16pub{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="16pub"] .sndian-1c94j-16pub{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="16pub"] .sndian-beurj-16pub{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="16pub"] h1,
+   [id="16pub"] h2,
+   [id="16pub"] h3,
+   [id="16pub"] h4,
+   [id="16pub"] h5,
+   [id="16pub"] h6,
+   [id="16pub"] p{margin:0}@media (max-width: 767px){[id="16pub"] .sndian-1xm57-16pub{padding:var(--space-larger) var(--space-large)}[id="16pub"] sndian-grid{gap:var(--space-large)}}[id="16pub"] .sndian-1nucx-16pub{display:grid;width:100%;align-items:center}[id="16pub"] .sndian-1niud-16pub{}@media (min-width: 0px){[id="16pub"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="16pub"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="16pub"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="16pub"] [data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="16pub"] .sndian-dn767-16pub{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="16pub"] .sndian-1wn3b-16pub{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="16pub"] .sndian-dn767-16pub{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[id="16pub"] [data-grid-id="90ep48"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="16pub"] [data-grid-id="90ep48"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="16pub"] [data-grid-id="90ep48"]{grid-template-columns:repeat(3,1fr)}}[id="16pub"] [data-grid-id="90ep48"]{gap:var(--space-larger)}@media (min-width: 0px){[id="16pub"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="16pub"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="16pub"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(3,1fr)}}[id="16pub"] [data-grid-id="v4w8mg"]{gap:var(--space-larger)}@media (min-width: 0px){[data-grid-id="as22k5"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="as22k5"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="as22k5"]{grid-template-columns:repeat(3,1fr)}}[id="16pub"] .sndian-a2v47-16pub{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="16pub"] .sndian-3u8p4-16pub{width:fit-content;height:fit-content}[id="16pub"] .sndian-10ves-16pub{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="16pub"] .sndian-p35fn-16pub{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="16pub"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="16pub"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="16pub"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="16pub"] .sndian-10ves-16pub{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="as22k5"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="as22k5"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="as22k5"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="as22k5"]{gap:var(--space-larger)}[id="16hfw"] .sndian-r3tt9-16hfw{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="16hfw"] .sndian-1xkq3-16hfw{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="16hfw"] .sndian-x7vmt-16hfw{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="16hfw"] #editor .sndian-1tswb-16hfw{color:inherit}[id="16hfw"] .sndian-1ccet-16hfw{border-color:var(--border-color);padding:0}[id="16hfw"] h3,
+  [id="16hfw"] h5,
+  [id="16hfw"] p{margin:0}[id="16hfw"] .sndian-j9of6-16hfw{display:flex;flex-direction:column;gap:var(--space-medium)}[id="16hfw"] .sndian-au718-16hfw span{font-size:4rem;color:var(--primary-color);display:flex}[id="16hfw"] sndian-grid{width:100%}[id="16hfw"] .sndian-f3dnr-16hfw{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="16hfw"] .sndian-f3dnr-16hfw h3{font-size:18px}[id="16hfw"] h1,
+  [id="16hfw"] h2,
+  [id="16hfw"] h3,
+  [id="16hfw"] h4,
+  [id="16hfw"] h5,
+  [id="16hfw"] h6,
+  [id="16hfw"] p{margin:0}@media (max-width: 767px){[id="16hfw"] .sndian-r3tt9-16hfw{padding:var(--space-larger) var(--space-large)}[id="16hfw"] sndian-grid{gap:var(--space-large)}}[id="16hfw"] .sndian-10l5j-16hfw{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="16hfw"] .sndian-au718-16hfw{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="16hfw"] .sndian-1ccet-16hfw{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="16hfw"] .sndian-1nucx-16hfw{display:grid;width:100%;align-items:center}[id="16hfw"] .sndian-1niud-16hfw{}@media (min-width: 0px){[id="16hfw"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="16hfw"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="16hfw"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="16hfw"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="euung"] .sndian-1xm57-euung{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="euung"] h3{text-align:center}[id="euung"] h5,
+    [id="euung"] p{margin:0}[id="euung"] .sndian-16vz2-euung{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="euung"] .sndian-16vz2-euung h3{margin:0}[id="euung"] .sndian-tl2dd-euung{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="euung"] .sndian-1yrja-euung{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="euung"] .sndian-ugvwx-euung{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="euung"] .sndian-ugvwx-euung h3{font-size:20px}[id="euung"] .sndian-ufer7-euung > a{width:100%}[id="euung"] .sndian-13z9y-euung{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="euung"] .sndian-1c94j-euung{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="euung"] .sndian-beurj-euung{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="euung"] h1,
+    [id="euung"] h2,
+    [id="euung"] h3,
+    [id="euung"] h4,
+    [id="euung"] h5,
+    [id="euung"] h6,
+    [id="euung"] p{margin:0}@media (max-width: 767px){[id="euung"] .sndian-1xm57-euung{padding:var(--space-larger) var(--space-large)}[id="euung"] sndian-grid{gap:var(--space-large)}}[id="euung"] .sndian-1nucx-euung{display:grid;width:100%;align-items:center}[id="euung"] .sndian-1niud-euung{}@media (min-width: 0px){[id="euung"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="euung"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="euung"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="euung"] [data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="euung"] .sndian-dn767-euung{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="euung"] .sndian-1wn3b-euung{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="euung"] .sndian-dn767-euung{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[id="euung"] [data-grid-id="90ep48"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="euung"] [data-grid-id="90ep48"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="euung"] [data-grid-id="90ep48"]{grid-template-columns:repeat(3,1fr)}}[id="euung"] [data-grid-id="90ep48"]{gap:var(--space-larger)}@media (min-width: 0px){[id="euung"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="euung"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="euung"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(3,1fr)}}[id="euung"] [data-grid-id="v4w8mg"]{gap:var(--space-larger)}@media (min-width: 0px){[id="euung"] [data-grid-id="as22k5"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="euung"] [data-grid-id="as22k5"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="euung"] [data-grid-id="as22k5"]{grid-template-columns:repeat(3,1fr)}}[id="euung"] [data-grid-id="as22k5"]{gap:var(--space-larger)}@media (min-width: 0px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(3,1fr)}}[id="euung"] .sndian-a2v47-euung{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="euung"] .sndian-3u8p4-euung{width:fit-content;height:fit-content}[id="euung"] .sndian-10ves-euung{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="euung"] .sndian-p35fn-euung{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="euung"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="euung"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="euung"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="euung"] .sndian-10ves-euung{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="vxbsr2"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="vxbsr2"]{gap:var(--space-larger)}[id="7rd49"] .sndian-r3tt9-7rd49{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="7rd49"] .sndian-1xkq3-7rd49{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="7rd49"] .sndian-x7vmt-7rd49{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="7rd49"] #editor .sndian-1tswb-7rd49{color:inherit}[id="7rd49"] .sndian-1ccet-7rd49{border-color:var(--border-color);padding:0}[id="7rd49"] h3,
+  [id="7rd49"] h5,
+  [id="7rd49"] p{margin:0}[id="7rd49"] .sndian-j9of6-7rd49{display:flex;flex-direction:column;gap:var(--space-medium)}[id="7rd49"] .sndian-au718-7rd49 span{font-size:4rem;color:var(--primary-color);display:flex}[id="7rd49"] sndian-grid{width:100%}[id="7rd49"] .sndian-f3dnr-7rd49{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="7rd49"] .sndian-f3dnr-7rd49 h3{font-size:18px}[id="7rd49"] h1,
+  [id="7rd49"] h2,
+  [id="7rd49"] h3,
+  [id="7rd49"] h4,
+  [id="7rd49"] h5,
+  [id="7rd49"] h6,
+  [id="7rd49"] p{margin:0}@media (max-width: 767px){[id="7rd49"] .sndian-r3tt9-7rd49{padding:var(--space-larger) var(--space-large)}[id="7rd49"] sndian-grid{gap:var(--space-large)}}[id="7rd49"] .sndian-10l5j-7rd49{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="7rd49"] .sndian-au718-7rd49{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="7rd49"] .sndian-1ccet-7rd49{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="7rd49"] .sndian-1nucx-7rd49{display:grid;width:100%;align-items:center}[id="7rd49"] .sndian-1niud-7rd49{}@media (min-width: 0px){[id="7rd49"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="7rd49"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="7rd49"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="7rd49"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="avuup"] .sndian-1xm57-avuup{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center;background-color:var(--secondary-background-color)}[id="avuup"] h3{text-align:center}[id="avuup"] h5,
+     [id="avuup"] p{margin:0}[id="avuup"] .sndian-16vz2-avuup{text-align:center;display:flex;flex-direction:column;gap:var(--space-medium)}[id="avuup"] .sndian-16vz2-avuup h3{margin:0}[id="avuup"] .sndian-tl2dd-avuup{display:flex;flex-direction:column;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="avuup"] .sndian-1yrja-avuup{display:flex;flex-direction:column;color:var(--text-color);height:100%;background-color:var(--background-color)}[id="avuup"] .sndian-ugvwx-avuup{background-color:inherit;margin-top:-3.2rem;text-align:center;display:flex;align-items:center;padding:var(--space-medium);justify-content:center}[id="avuup"] .sndian-ugvwx-avuup h3{font-size:20px}[id="avuup"] .sndian-ufer7-avuup > a{width:100%}[id="avuup"] .sndian-13z9y-avuup{aspect-ratio:2/1.5;width:100%;height:100%;object-fit:cover}[id="avuup"] .sndian-1c94j-avuup{padding:var(--space-large);background-color:inherit;display:flex;gap:var(--space-medium);flex-direction:column}[id="avuup"] .sndian-beurj-avuup{display:flex;gap:var(--space-medium);align-items:center;flex-wrap:wrap}[id="avuup"] h1,
+     [id="avuup"] h2,
+     [id="avuup"] h3,
+     [id="avuup"] h4,
+     [id="avuup"] h5,
+     [id="avuup"] h6,
+     [id="avuup"] p{margin:0}@media (max-width: 767px){[id="avuup"] .sndian-1xm57-avuup{padding:var(--space-larger) var(--space-large)}[id="avuup"] sndian-grid{gap:var(--space-large)}}[id="avuup"] .sndian-1nucx-avuup{display:grid;width:100%;align-items:center}[id="avuup"] .sndian-1niud-avuup{}@media (min-width: 0px){[id="avuup"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="avuup"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="avuup"] [data-grid-id="mahpk3"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"] [data-grid-id="mahpk3"]{gap:var(--space-larger)}[id="avuup"] .sndian-dn767-avuup{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="avuup"] .sndian-1wn3b-avuup{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="avuup"] .sndian-dn767-avuup{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[id="avuup"] [data-grid-id="90ep48"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="avuup"] [data-grid-id="90ep48"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="avuup"] [data-grid-id="90ep48"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"] [data-grid-id="90ep48"]{gap:var(--space-larger)}@media (min-width: 0px){[id="avuup"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="avuup"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="avuup"] [data-grid-id="v4w8mg"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"] [data-grid-id="v4w8mg"]{gap:var(--space-larger)}@media (min-width: 0px){[id="avuup"] [data-grid-id="as22k5"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="avuup"] [data-grid-id="as22k5"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="avuup"] [data-grid-id="as22k5"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"] [data-grid-id="as22k5"]{gap:var(--space-larger)}@media (min-width: 0px){[id="avuup"] [data-grid-id="vxbsr2"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="avuup"] [data-grid-id="vxbsr2"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="avuup"] [data-grid-id="vxbsr2"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"] [data-grid-id="vxbsr2"]{gap:var(--space-larger)}@media (min-width: 0px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(3,1fr)}}[id="avuup"]{}[id="avuup"] .sndian-a2v47-avuup{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="avuup"] .sndian-3u8p4-avuup{width:fit-content;height:fit-content}[id="avuup"] .sndian-10ves-avuup{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="avuup"] .sndian-p35fn-avuup{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="avuup"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="avuup"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="avuup"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="avuup"] .sndian-10ves-avuup{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="8ia6ea"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="8ia6ea"]{gap:var(--space-larger)}[id="23n2r"] .sndian-f9irz-23n2r{display:flex;justify-content:center;flex-direction:column;gap:var(--space-larger);align-items:center;padding:var(--space-largest) var(--space-larger)}[id="23n2r"] .sndian-11iuc-23n2r{display:flex;justify-content:center;flex-wrap:wrap;gap:var(--space-larger);width:100%;max-width:var(--max-content-width)}[id="23n2r"] .sndian-pprer-23n2r{width:calc(30% - calc(1rem * 1.5))}[id="23n2r"] .sndian-12fpw-23n2r{width:calc(70% - calc(1rem * 1.5))}[id="23n2r"] .sndian-iupri-23n2r{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;height:100%;justify-content:center}[id="23n2r"] .sndian-pprer-23n2r{display:flex;flex-direction:column;gap:var(--space-large);align-items:center;padding-bottom:var(--space-larger)}[id="23n2r"] .sndian-bsdnz-23n2r{width:3px;flex:1;border-radius:var(--border-radius);background-color:var(--primary-color)}[id="23n2r"] .sndian-1godl-23n2r{display:flex;align-items:center;justify-content:center;width:100%;height:100%}[id="23n2r"] .sndian-1godl-23n2r::part(arrows){bottom:-14px;right:0;top:unset;display:flex;justify-content:center;gap:var(--space-medium);width:fit-content}[id="23n2r"] .sndian-1godl-23n2r::part(next){--icon-content:"←";line-height:unset}[id="23n2r"] .sndian-1godl-23n2r::part(prev){--icon-content:"→";line-height:unset}[id="23n2r"] .sndian-1hqt9-23n2r{min-height:300px;background-image:url("https://i.suar.me/gwqXw");background-repeat:no-repeat;background-position:center;background-color:rgba(36,36,36,0.6);background-blend-mode:overlay;background-size:cover;border-radius:var(--border-radius);padding:var(--space-medium);display:flex;color:var(--secondary-text-color);flex-direction:column;justify-content:flex-end;gap:var(--space-medium)}[id="23n2r"] .sndian-1hqt9-23n2r h4{font-size:20px}[id="23n2r"] .sndian-opmsd-23n2r{display:flex;flex-direction:column;gap:var(--space-medium)}[id="23n2r"] .sndian-1godl-23n2r::part(slider){padding:0;padding-bottom:var(--space-larger)}[id="23n2r"] .sndian-1godl-23n2r::part(dots){position:absolute;bottom:5px;width:calc(100% - 140px);padding-right:140px;gap:0;margin-top:0}[id="23n2r"] .sndian-1godl-23n2r::part(dot){width:unset;flex:1;border-radius:0;height:3px}[id="23n2r"] .sndian-1godl-23n2r::part(arrows-button){width:unset;height:30px;padding:0;display:flex;font-size:3rem;background-color:transparent;color:var(--primary-color);border-radius:0}[id="23n2r"] .sndian-1up9z-23n2r{display:flex;align-items:flex-start;flex-wrap:wrap;width:100%;gap:var(--space-medium)}[id="23n2r"] h1,
+[id="23n2r"] h2,
+[id="23n2r"] h3,
+[id="23n2r"] h4,
+[id="23n2r"] h5,
+[id="23n2r"] h6,
+[id="23n2r"] p{margin:0}@media (max-width: 767px){[id="23n2r"] .sndian-f9irz-23n2r{padding:var(--space-larger) var(--space-large)}[id="23n2r"] .sndian-11iuc-23n2r{flex-direction:column}[id="23n2r"] .sndian-pprer-23n2r{width:100%;padding-bottom:0}[id="23n2r"] .sndian-12fpw-23n2r{width:100%}}[id="23n2r"] .sndian-10ves-23n2r{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="23n2r"] .sndian-p35fn-23n2r{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="23n2r"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="23n2r"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="23n2r"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="23n2r"] .sndian-10ves-23n2r{max-width:60vw!important}}[id="23n2r"] .sndian-3u8p4-23n2r{width:fit-content;height:fit-content}[id="23n2r"] .sndian-hjrnx-23n2r{background-color:var(--primary-color);border-radius:var(--border-radius);min-height:200px;width:100%;color:var(--secondary-text-color);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:40px;font-weight:bold}[id="15kbz"] .sndian-15vok-15kbz{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="15kbz"] .sndian-o62d5-15kbz{display:flex;justify-content:center;flex-wrap:wrap;width:100%;max-width:var(--max-content-width)}[id="15kbz"] .sndian-wxom9-15kbz{display:flex;flex:1 1 300px;gap:var(--space-large);flex-direction:column;justify-content:center}[id="15kbz"] .sndian-1g9eh-15kbz{display:flex;flex-direction:column;gap:var(--space-medium)}[id="15kbz"] .sndian-1g9eh-15kbz h2{font-size:20px}[id="15kbz"] .sndian-m2sit-15kbz{display:flex;justify-content:center;align-items:stretch;flex-direction:row}[id="15kbz"] .sndian-1v4dt-15kbz{display:flex;align-items:center;justify-content:center;width:100%}[id="15kbz"] .sndian-k3gma-15kbz{width:4rem;min-width:4rem;height:4rem;min-height:4rem;background-color:var(--primary-color);color:var(--secondary-text-color);border-radius:var(--border-radius);display:flex;align-items:center;justify-content:center;--base-font-size:2rem;font-size:var(--base-font-size)}[id="15kbz"] .sndian-k3gma-15kbz span{display:flex}[id="15kbz"] .sndian-wxom9-15kbz.sndian-l8n0v-15kbz{padding:var(--space-larger);background-color:var(--secondary-background-color)}[id="15kbz"] .sndian-kpslu-15kbz{display:flex;height:100%;gap:var(--space-large);align-items:center}[id="15kbz"] .sndian-1s44a-15kbz{width:100%;height:100%;object-fit:cover;aspect-ratio:2/1.2}[id="15kbz"] .sndian-1hmhj-15kbz{display:flex;flex-direction:column;gap:var(--space-medium)}[id="15kbz"] .sndian-1hmhj-15kbz h5{margin:0}[id="15kbz"] .sndian-1hmhj-15kbz h3{margin:0}[id="15kbz"] .sndian-1hmhj-15kbz p{margin:0}[id="15kbz"] .sndian-1wn3b-15kbz{height:100%!important}[id="15kbz"] .sndian-bj45r-15kbz h3{margin:0}[id="15kbz"] .sndian-bj45r-15kbz p{margin:0}[id="15kbz"] .sndian-bj45r-15kbz{display:flex;flex-direction:column;gap:var(--space-smaller)}[id="15kbz"] h1,
+[id="15kbz"] h2,
+[id="15kbz"] h3,
+[id="15kbz"] h4,
+[id="15kbz"] h5,
+[id="15kbz"] h6,
+[id="15kbz"] p{margin:0}@media (max-width: 767px){[id="15kbz"] .sndian-15vok-15kbz{padding:var(--space-larger) var(--space-large)}[id="15kbz"] .sndian-o62d5-15kbz{flex-direction:column}[id="15kbz"] .sndian-wxom9-15kbz.sndian-l8n0v-15kbz{padding:var(--space-large)}}[id="15kbz"] .sndian-dn767-15kbz{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="15kbz"] .sndian-1wn3b-15kbz{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="15kbz"] .sndian-dn767-15kbz{width:100%!important;max-height:400px;height:auto}}[id="15kbz"] .sndian-1nucx-15kbz{display:grid;width:100%;align-items:center}[id="15kbz"] .sndian-1niud-15kbz{}[id="15kbz"] .sndian-1jdfu-15kbz{width:fit-content;height:fit-content}[id="15kbz"] .sndian-10l5j-15kbz{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="15kbz"] .sndian-au718-15kbz{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[data-grid-id="j58z34"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="j58z34"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 1024px){[data-grid-id="j58z34"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 0px){[data-grid-id="038817"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="038817"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="038817"]{grid-template-columns:repeat(2,1fr)}}[id="15kbz"] .sndian-a2v47-15kbz{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="15kbz"] .sndian-3u8p4-15kbz{width:fit-content;height:fit-content}[id="15kbz"] .sndian-10ves-15kbz{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="15kbz"] .sndian-p35fn-15kbz{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="15kbz"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="15kbz"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="15kbz"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="15kbz"] .sndian-10ves-15kbz{max-width:60vw!important}}@media (min-width: 0px){[data-grid-id="j58z34"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="j58z34"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="j58z34"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="j58z34"]{gap:var(--space-large)}@media (min-width: 0px){[data-grid-id="038817"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="038817"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="038817"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="038817"]{gap:0}[id="rvfbn"] .sndian-r3tt9-rvfbn{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="rvfbn"] .sndian-1xkq3-rvfbn{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="rvfbn"] .sndian-x7vmt-rvfbn{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="rvfbn"] #editor .sndian-1tswb-rvfbn{color:inherit}[id="rvfbn"] .sndian-1ccet-rvfbn{border-color:var(--border-color);padding:0}[id="rvfbn"] h3,
+   [id="rvfbn"] h5,
+   [id="rvfbn"] p{margin:0}[id="rvfbn"] .sndian-j9of6-rvfbn{display:flex;flex-direction:column;gap:var(--space-medium)}[id="rvfbn"] .sndian-au718-rvfbn span{font-size:4rem;color:var(--primary-color);display:flex}[id="rvfbn"] sndian-grid{width:100%}[id="rvfbn"] .sndian-f3dnr-rvfbn{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="rvfbn"] .sndian-f3dnr-rvfbn h3{font-size:18px}[id="rvfbn"] h1,
+   [id="rvfbn"] h2,
+   [id="rvfbn"] h3,
+   [id="rvfbn"] h4,
+   [id="rvfbn"] h5,
+   [id="rvfbn"] h6,
+   [id="rvfbn"] p{margin:0}@media (max-width: 767px){[id="rvfbn"] .sndian-r3tt9-rvfbn{padding:var(--space-larger) var(--space-large)}[id="rvfbn"] sndian-grid{gap:var(--space-large)}}[id="rvfbn"] .sndian-10l5j-rvfbn{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="rvfbn"] .sndian-au718-rvfbn{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="rvfbn"] .sndian-1ccet-rvfbn{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="rvfbn"] .sndian-1nucx-rvfbn{display:grid;width:100%;align-items:center}[id="rvfbn"] .sndian-1niud-rvfbn{}@media (min-width: 0px){[id="rvfbn"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="rvfbn"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="rvfbn"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="rvfbn"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="156yw"] .sndian-1u6ou-156yw{display:flex;justify-content:center;align-items:center;background-image:url("https://i.suar.me/gwqXw/m");background-position:center center;background-size:cover!important;background-repeat:no-repeat;background-color:rgba(36,36,36,0.6);background-blend-mode:overlay;min-height:40rem;padding:var(--space-largest) var(--space-larger)}[id="156yw"] .sndian-1rb21-156yw{border-inline-start:20px solid var(--primary-color);display:flex;flex-direction:column;justify-content:center;color:var(--secondary-text-color);max-width:35rem;padding:var(--space-larger) var(--space-large);position:relative}[id="156yw"] .sndian-8vhgq-156yw{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.3;background-color:var(--secondary-background-color)}[id="156yw"] .sndian-14x4i-156yw{position:relative;z-index:2;color:inherit;display:flex;flex-direction:column;gap:var(--space-medium)}[id="156yw"] .sndian-1xtvk-156yw{display:flex;flex-direction:column;gap:var(--space-medium)}[id="156yw"] .sndian-14x4i-156yw h1,
+[id="156yw"] .sndian-14x4i-156yw span{color:inherit}[id="156yw"] .sndian-lc9l2-156yw{display:flex;flex-direction:row;gap:var(--space-medium);flex-wrap:wrap}[id="156yw"] .sndian-lc9l2-156yw button{text-transform:uppercase}[id="156yw"] h1,
+[id="156yw"] h2,
+[id="156yw"] h3,
+[id="156yw"] h4,
+[id="156yw"] h5,
+[id="156yw"] h6,
+[id="156yw"] p{margin:0}@media (max-width: 767px){[id="156yw"] .sndian-1u6ou-156yw{padding:var(--space-larger) var(--space-large)}}[id="156yw"] .sndian-1jdfu-156yw{width:fit-content;height:fit-content}[id="156yw"] .sndian-10ves-156yw{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="156yw"] .sndian-p35fn-156yw{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="156yw"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="156yw"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="156yw"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="156yw"] .sndian-10ves-156yw{max-width:60vw!important}}[id="1wolz"] .sndian-r3tt9-1wolz{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="1wolz"] .sndian-1xkq3-1wolz{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;text-align:center;width:100%;max-width:var(--max-content-width)}[id="1wolz"] .sndian-x7vmt-1wolz{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center;max-width:800px}[id="1wolz"] #editor .sndian-1tswb-1wolz{color:inherit}[id="1wolz"] .sndian-1ccet-1wolz{border-color:var(--border-color);padding:0}[id="1wolz"] h3,
+  [id="1wolz"] h5,
+  [id="1wolz"] p{margin:0}[id="1wolz"] .sndian-j9of6-1wolz{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1wolz"] .sndian-au718-1wolz span{font-size:4rem;color:var(--primary-color);display:flex}[id="1wolz"] sndian-grid{width:100%}[id="1wolz"] .sndian-f3dnr-1wolz{display:flex;flex-direction:column;gap:var(--space-medium);height:100%;background-color:var(--secondary-background-color);padding:var(--space-large)}[id="1wolz"] .sndian-f3dnr-1wolz h3{font-size:18px}[id="1wolz"] h1,
+  [id="1wolz"] h2,
+  [id="1wolz"] h3,
+  [id="1wolz"] h4,
+  [id="1wolz"] h5,
+  [id="1wolz"] h6,
+  [id="1wolz"] p{margin:0}@media (max-width: 767px){[id="1wolz"] .sndian-r3tt9-1wolz{padding:var(--space-larger) var(--space-large)}[id="1wolz"] sndian-grid{gap:var(--space-large)}}[id="1wolz"] .sndian-10l5j-1wolz{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1wolz"] .sndian-au718-1wolz{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1wolz"] .sndian-1ccet-1wolz{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="1wolz"] .sndian-1nucx-1wolz{display:grid;width:100%;align-items:center}[id="1wolz"] .sndian-1niud-1wolz{}@media (min-width: 0px){[id="1wolz"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="1wolz"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="1wolz"] [data-grid-id="jbnbug"]{grid-template-columns:repeat(4,1fr)}}[id="1wolz"] [data-grid-id="jbnbug"]{gap:var(--space-larger)}[id="f9dga"] .sndian-mbvtl-f9dga{display:flex;justify-content:center;flex-direction:row;background-color:var(--primary-color);color:var(--secondary-text-color);padding:var(--space-largest) var(--space-larger)}[id="f9dga"] ul{margin:0;padding:0}[id="f9dga"] .sndian-7svy4-f9dga{display:flex;flex-direction:inherit;justify-content:center;gap:var(--space-larger);max-width:var(--max-content-width)}[id="f9dga"] .sndian-h863e-f9dga{display:flex;flex-direction:column;align-items:center;gap:var(--space-large)}[id="f9dga"] .sndian-m9hv5-f9dga{display:flex;justify-content:center;align-items:center;flex-direction:column;width:100%}[id="f9dga"] h3{margin:0}[id="f9dga"] .sndian-g4xak-f9dga{display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;gap:var(--space-medium);width:100%}[id="f9dga"] .sndian-g4xak-f9dga a svg{--base-font-size:1.5rem;font-size:var(--base-font-size)}[id="f9dga"] h1,
+[id="f9dga"] h2,
+[id="f9dga"] h3,
+[id="f9dga"] h4,
+[id="f9dga"] h5,
+[id="f9dga"] h6,
+[id="f9dga"] p{margin:0}@media (max-width: 767px){[id="f9dga"] .sndian-mbvtl-f9dga{padding:var(--space-larger) var(--space-large)}[id="f9dga"] .sndian-7svy4-f9dga{flex-wrap:wrap}}[id="f9dga"] .sndian-10l5j-f9dga{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="f9dga"] .sndian-au718-f9dga{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1udsn"] .sndian-og3da-1udsn{display:flex;justify-content:center;padding:var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="1udsn"] .sndian-v8zb6-1udsn{text-decoration:none}[id="1udsn"] .sndian-1ybrh-1udsn{display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;color:inherit;gap:var(--space-medium);max-width:var(--max-content-width)}[id="1udsn"] .sndian-s1zs2-1udsn{align-items:center;gap:var(--space-medium)}[id="1udsn"] .sndian-1ybrh-1udsn .sndian-1ccet-1udsn{margin:var(--space-medium) 0 var(--space-medium) 0;width:100%;border-bottom-color:var(--border-color)}[id="1udsn"] .sndian-s1zs2-1udsn{display:flex;gap:var(--space-smallest)}[id="1udsn"] .sndian-1ghx6-1udsn{display:flex;align-items:center;justify-content:center;gap:var(--space-medium);margin:0;flex-wrap:wrap;padding:0;color:inherit}[id="1udsn"] .sndian-16dw4-1udsn{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1udsn"] h1,
+[id="1udsn"] h2,
+[id="1udsn"] h3,
+[id="1udsn"] h4,
+[id="1udsn"] h5,
+[id="1udsn"] h6,
+[id="1udsn"] p{margin:0}@media (max-width: 767px){[id="1udsn"] .sndian-og3da-1udsn{padding:var(--space-large)}}[id="1udsn"] .sndian-1ccet-1udsn{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="1udsn"] .sndian-v8zb6-1udsn{width:fit-content;height:fit-content;display:inline-block}[id="1r2ur"] .sndian-1d5wx-1r2ur{display:flex;justify-content:center}[id="1r2ur"] .sndian-c9gwf-1r2ur{display:flex;flex-direction:row-reverse;width:100%;flex-wrap:wrap;justify-content:center}[id="1r2ur"] .sndian-mxuh0-1r2ur{width:100%}[id="1r2ur"] .sndian-1kpt6-1r2ur{max-width:20rem}[id="1r2ur"] .sndian-u8ouo-1r2ur{width:100%}[id="1r2ur"] h3{margin:0}[id="1r2ur"] .sndian-1uk9l-1r2ur img{width:100%;height:100%;object-fit:cover}[id="1r2ur"] .sndian-hin5m-1r2ur{display:flex;text-align:center;flex-direction:column;justify-content:center;align-items:center;gap:var(--space-large)}[id="1r2ur"] .sndian-onfhc-1r2ur{padding:var(--space-larger);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:var(--space-large)}[id="1r2ur"] .sndian-onfhc-1r2ur h3{text-align:center}[id="1r2ur"] .sndian-hfpn6-1r2ur{display:flex;gap:var(--space-medium);flex-wrap:wrap;justify-content:center}[id="1r2ur"] .sndian-1wn3b-1r2ur{height:100%!important}[id="1r2ur"] .sndian-hfpn6-1r2ur button{background-color:transparent;border:1px solid var(--border-color);color:var(--text-color);text-transform:uppercase}[id="1r2ur"] h1,
+[id="1r2ur"] h2,
+[id="1r2ur"] h3,
+[id="1r2ur"] h4,
+[id="1r2ur"] h5,
+[id="1r2ur"] h6,
+[id="1r2ur"] p{margin:0}@media (max-width: 767px){[id="1r2ur"] .sndian-onfhc-1r2ur{padding:var(--space-large)}}[id="1r2ur"] .sndian-1nucx-1r2ur{display:grid;width:100%;align-items:center}[id="1r2ur"] .sndian-10ves-1r2ur{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1r2ur"] .sndian-p35fn-1r2ur{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1r2ur"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1r2ur"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1r2ur"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1r2ur"] .sndian-10ves-1r2ur{max-width:60vw!important}}[id="1r2ur"] .sndian-1niud-1r2ur{}[id="1r2ur"] .sndian-dn767-1r2ur{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="1r2ur"] .sndian-1wn3b-1r2ur{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="1r2ur"] .sndian-dn767-1r2ur{width:100%!important;max-height:400px;height:auto}}@media (min-width: 0px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 0px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="byvnmw"]{grid-template-columns:repeat(1,minmax(0,1fr))}}[data-grid-id="byvnmw"]{gap:0}</style><style id="hb-stylesheet"></style><link rel="stylesheet" type="text/css" href="plans_files/botchat.css" media="all" id="botchat-css"></head><body><div id="1et4e"><section class="sndian-1dqvs-1et4e" data-section-name="features-middle-grid" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    
+</section></div><div id="ail2k"><section class="sndian-1c54y-ail2k" data-section-name="feature-solid" style="background: var(--secondary-background-color); color: var(--secondary-text-color); padding: 49px">
+  <div class="sndian-1qu59-ail2k">
+    <div class="sndian-1so4s-ail2k">
+      <div class="sndian-1popz-ail2k">
+        
+        
+      </div>
+      <div class="sndian-1twl0-ail2k">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="1hc6s"><section class="sndian-1pgvy-1hc6s" data-section-name="navbar-verical" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-1l76o-1hc6s">
+        <div class="navbar-verical-wrapper">
+            <div class="sndian-t1gtv-1hc6s">
+              <a type="link" id="رابط" class="sndian-v8zb6-1hc6s" rel="noopener noreferrer" href="index.html">
+      <span><h2 dir="rtl" style=""><span style="">برامجنا السياحية</span></h2></span>
+    </a>
+            </div> 
+        </div>  
+        <div class="sndian-jhtc8-1hc6s">
+          <div class="sndian-a2v47-1hc6s">
+      <a type="button" id="زر" class="sndian-10ves-1hc6s" rel="noopener noreferrer" href="https://www.AlNour-tours.com/contact">
+      <button class="sndian-p35fn-1hc6s" data-button-type="textual" style="background-color: var(--primary-color); color: var(--secondary-text-color)">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">ابقى على تواصل</span>
+      </button>
+    </a>
+    </div>
+          <div class="navbar-verical-Button" aria-controls="navbar-verical-menu">
+                <a class="sndian-au718-1hc6s" id="navbar-verical-Button-topen">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="bars" data-icon-prefix="fas">
+    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+  </svg></span>
+    </a>
+          </div>
+        </div>
+        <sndian-menu id="navbar-verical-menu" class="sndian-zmj2w-1hc6s" aria-expanded="false" style="background: var(--primary-color); color: var(--secondary-text-color)">
+          
+          <div class="sndian-1titw-1hc6s">
+              <div class="sndian-1m28q-1hc6s" aria-controls="navbar-verical-menu">
+                    <a class="sndian-au718-1hc6s" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 384 512" data-icon-name="xmark" data-icon-prefix="fas">
+    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path>
+  </svg></span>
+    </a>
+              </div>
+              <div class="sndian-pkdkz-1hc6s">
+                  <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="index.html" aria-current="page">
+      <span>
+                        <h3>الرئيسية</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="about.htm" aria-current="page">
+      <span>
+                        <h3>من نحن</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="services.htm" aria-current="page">
+      <span>
+                        <h3>خدماتنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="plans.htm" aria-current="page">
+      <span>
+                        <h3>برامجنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank"  aria-current="page">
+      <span>
+                        <h3>تواصل معنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+              </div>
+          </div>
+        </sndian-menu>
+    </div>
+</section></div><div id="1s3zv"><section class="sndian-1vxpd-1s3zv" data-section-name="hero-content" style="background: url(&quot;https://sndiansite.com/media/34319/8634/d4702709-2a76-4880-8dbf-8ac0857726af/55.png&quot;) center center / cover no-repeat; flex-direction: column; align-items: flex-end">
+  
+  <div class="sndian-wsom6-1s3zv">
+    <div class="sndian-1nk5d-1s3zv">
+      <div class="sndian-1p0j9-1s3zv">
+        <div class="sndian-u4wfq-1s3zv">
+            <div class="sndian-1s0b3-1s3zv">
+              
+              <div><p class="." style=""><br></p><p class="." style=""><br></p><p class="." style=""><br></p><h2 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">استمتع برحلة لاتُنسى مع AlNour !</strong></h2><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><br></p></div><div style="color: var(--secondary-text-color);"><p class="." dir="rtl" style=""><span style="">هل
+ تحلم برحلة مليئة بالمغامرات، الاسترخاء، والاكتشاف؟ نحن هنا لتحقيق حلمك!
+ نقدم لك تجربة سفر استثنائية مصممة خصيصًا لك، سواء كنت تبحث عن إجازة 
+عائلية، رحلة شهر عسل، أو مغامرة فريدة.</span></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">اختر وجهتك، واحزم أمتعتك، ودع الباقي علينا!</strong></p></div>
+            </div>
+        </div>
+        <div class="sndian-u4wfq-1s3zv">
+          <div class="sndian-2ynkm-1s3zv">
+            
+            
+          </div>
+          <div class="sndian-1rr5j-1s3zv">
+            
+          </div>
+        </div>
+      </div>
+      <div class="sndian-uu7ic-1s3zv">
+        <ul class="sndian-11lvq-1s3zv">
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section></div><div id="1y6zg"><section class="sndian-15vok-1y6zg" data-section-name="feature-detailed" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div gap="0" small="1" medium="2" large="1" class="sndian-o62d5-1y6zg" data-grid-id="ry4oii" style="display: grid;">
+        <div class="sndian-wxom9-1y6zg sndian-m2sit-1y6zg">
+            <div class="sndian-1v4dt-1y6zg">
+                
+            </div>
+        </div>
+        <div class="sndian-wxom9-1y6zg sndian-l8n0v-1y6zg" style="background: var( --secondary-background-color); color: var(--text-color); padding: 28px">
+            <div class="sndian-1g9eh-1y6zg">
+                
+                
+                
+            </div>
+            <div gap="var(--space-large)" small="1" medium="1" large="2" class="feature-detailed-extra" style="gap: 35px; display: grid;" data-grid-id="jw9u60">
+                <div class="sndian-kpslu-1y6zg">
+                    <div class="sndian-k3gma-1y6zg" style="background: var(--primary-color); color: var(--secondary-text-color)">
+                        <a class="sndian-au718-1y6zg" id="أيقونة">
+      <span class="" style="color: var(--secondary-background-color);"><svg class="svg-inline" viewBox="0 0 384 512" data-icon-name="percent" data-icon-prefix="fas">
+    <path d="M374.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-320 320c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l320-320zM128 128A64 64 0 1 0 0 128a64 64 0 1 0 128 0zM384 384a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-1y6zg">
+                        <div style="color: var(--text-color);"><h2 style=""><span style="">99+</span></h2></div>
+                        <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">رضا العملاء</strong></h2></div>
+                    </div>
+                </div>
+                <div class="sndian-kpslu-1y6zg">
+                    <div class="sndian-k3gma-1y6zg" style="background: var(--primary-color); color: var(--secondary-text-color); margin: 0px; padding: 0px; border-width: 50px; border-color: var(--primary-color)">
+                        <a class="sndian-au718-1y6zg" id="أيقونة">
+      <span class="" style="color: var(--secondary-background-color);"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="circle-check" data-icon-prefix="fas">
+    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-1y6zg">
+                        <div style="color: var(--text-color);"><h2 style=""><span style="">1,000+</span></h2></div>
+                        <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">مستفيد</strong></h2></div>
+                    </div>
+                </div><div class="sndian-kpslu-1y6zg">
+                    <div class="sndian-k3gma-1y6zg" style="background: var(--primary-color); color: var(--secondary-text-color); margin: 0px; padding: 0px; border-width: 50px; border-color: var(--primary-color)">
+                        <a class="sndian-au718-1y6zg" id="أيقونة">
+      <span class="" style="color: var(--secondary-background-color);"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="bolt" data-icon-prefix="fas">
+    <path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-1y6zg">
+                        <div style="color: var(--text-color);"><h2 style=""><span style="">2,000+</span></h2></div>
+                        <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">خطة مُنفذة</strong></h2></div>
+                    </div>
+                </div><div class="sndian-kpslu-1y6zg">
+                    <div class="sndian-k3gma-1y6zg" style="background: var(--primary-color); color: var(--secondary-text-color); margin: 0px; padding: 0px; border-width: 50px; border-color: var(--primary-color)">
+                        <a class="sndian-au718-1y6zg" id="أيقونة">
+      <span class="" style="color: var(--secondary-background-color);"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="arrow-right-arrow-left" data-icon-prefix="fas">
+    <path d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-1y6zg">
+                        <div style="color: var(--text-color);"><h2 style=""><span style="">500+</span></h2></div>
+                        <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">وجهة سياحية</strong></h2></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></div><div id="153b1"><section class="sndian-r3tt9-153b1" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-153b1">
+            <div class="sndian-x7vmt-153b1">
+                
+                <div class="sndian-j9of6-153b1">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="bow0c"><section class="sndian-1xm57-bow0c" data-section-name="projects-card" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-tl2dd-bow0c">
+        <div class="sndian-16vz2-bow0c">
+            <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><span style="">رحلات أوروبا</span></h2></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-bow0c" data-grid-id="mahpk3" style="display: grid;">
+          <div class="sndian-1yrja-bow0c" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D8%A7%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A7iba%20tours.png" alt="image" loading="lazy" style="object-position: 50% 42.7024%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>اسبانيا</span></h3></div>
+                    </div>
+                    <div style="color:var(--text-color)"><p class="." dir="rtl"><span>من شواطئ البحر االمتوسط الساحرة الى المعالم التاريخية ستجد في كل مدينة إسبانية سحرًا خاصًا يأسر القلوب.</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(1).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>فرنسا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>السياحة في فرنسا – سحر لا يُقاوم! نقدم لك تجربة سياحية استثنائية</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/italy%20iba%20tours%20(2).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>ايطاليا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>إيطاليا، وجهة الأحلام لعشاق التاريخ، الفن، الطبيعة، والطعام الشهي!</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c" style="align-items: center">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(5).png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>ألمانيا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>وجهتك المثالية للمغامرة ستجد في ألمانيا كل ما يجعل رحلتك تجربة لا تُنسى!</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(60).png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>اليونان</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>مهد الحضارة الغربية وواحدة من أجمل الوجهات السياحية في العالم</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(7).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>هولندا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>وجهة </span><span>الأحلام - هولندا، بلد الطواحين والقنوات المائية والزهور</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(55).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>المجر</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>المجر واحدة من أجمل الوجهات السياحية في أوروبا الشرقية</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(56).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>البرتغال</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl"><span>جوهرة أوروبا الساحرة، بمدنها التاريخية، شواطئها الذهبية، وثقافتها الغنية</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-bow0c" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-bow0c">
+                    <a class="sndian-1wn3b-bow0c" id="Image">
+      <img class="sndian-13z9y-bow0c" src="plans_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(57).png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-bow0c">
+                    <div class="sndian-ugvwx-bow0c">
+                        <div style="color:var(--primary-color)"><h3 dir="rtl"><span>النمسا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">هيا للتجول بشوارع فيينا الفاخرة، الاستمتاع بالمغامرات في جبال الألب</span></p></div>
+                    <div class="sndian-beurj-bow0c">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-bow0c sndian-1nucx-bow0c" style="flex-direction: column">
+      <a href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="sndian-p35fn-bow0c" style="padding: var(--space-medium) var(--space-larger)">
+    <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+  </button>
+</a>
+    </div>
+    </div>
+</section></div><div id="wuwgi"><section class="sndian-r3tt9-wuwgi" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-wuwgi">
+            <div class="sndian-x7vmt-wuwgi">
+                
+                <div class="sndian-j9of6-wuwgi">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="k22x5"><section class="sndian-1xm57-k22x5" data-section-name="projects-card" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-tl2dd-k22x5">
+        <div class="sndian-16vz2-k22x5">
+            <div style="color: var(--secondary-color);"><h2 dir="rtl" style=""><span style="">رحلات الدول العربية</span></h2></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-k22x5" data-grid-id="90ep48" style="display: grid;">
+          <div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_v430qu">
+      <img class="sndian-13z9y-k22x5" src="plans_files/26.png" alt="image" loading="lazy" style="mask-image: none">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">المملكلة العربية السعودية</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style="">زيارة الأماكن الأثرية و استكشاف الصحاري الساحرة،</span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_brhkmi">
+      <img class="sndian-13z9y-k22x5" src="plans_files/27.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">الإمارات</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">من ناطحات السحاب والجزر الساحرة والصحاري الذهبية </span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_kq4him">
+      <img class="sndian-13z9y-k22x5" src="plans_files/28.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">عمان</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">من القلاع الأثرية، الجبال الشاهقة، والشواطئ الخلابة، نقدم لك رحلة استثنائية لاستكشاف أجمل معالم السلطنة</span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_id5ov0">
+      <img class="sndian-13z9y-k22x5" src="plans_files/29.png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">قطر</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">تجربة فاخرة في الدوحة، رحلة ثقافية في كتارا، أو مغامرة صحراوية مثيرة، نحن معك</span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_iz4hha">
+      <img class="sndian-13z9y-k22x5" src="plans_files/31.png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">لبنان</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">لؤلؤة الشرق الأوسط، التاريخ العريق، الطبيعة الخلابة، والمطبخ الشهي</span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-k22x5" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-k22x5">
+                    <a class="sndian-1wn3b-k22x5" id="Image_a92llc">
+      <img class="sndian-13z9y-k22x5" src="plans_files/30_002.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-k22x5">
+                    <div class="sndian-ugvwx-k22x5">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">البحرين</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style="">جوهرة الخليج العربي، جربة سياحية مميزة مع المغامرات الترفيهية </span></p></div>
+                    <div class="sndian-beurj-k22x5">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-k22x5 sndian-1nucx-k22x5" style="flex-direction: column">
+       <a href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="sndian-p35fn-bow0c" style="padding: var(--space-medium) var(--space-larger)">
+    <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+  </button>
+</a>
+    </div>
+    </div>
+</section></div><div id="mjktm"><section class="sndian-r3tt9-mjktm" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-mjktm">
+            <div class="sndian-x7vmt-mjktm">
+                
+                <div class="sndian-j9of6-mjktm">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="4oq6g"><section class="sndian-1xm57-4oq6g" data-section-name="projects-card" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-tl2dd-4oq6g">
+        <div class="sndian-16vz2-4oq6g">
+            <div style="color: var(--primary-color);"><h1 dir="rtl" style=""><span style=""> رحلات آسيا</span></h1></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-4oq6g" data-grid-id="v4w8mg" style="display: grid;">
+          <div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_v430qu_vt4qe1">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/33.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">اليابان</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style="">المعابد القديمة، تجربة الطعام الياباني ، و الاستمتاع بأضواء طوكيو الحديثة</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_brhkmi_uk5m4l">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/34.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">تايلاند</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">مزيجًا رائعًا من الشواطئ الخلابة، - استمتع بجمال تايلاند وغاباتها الاستوائية،</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_kq4him_ps3nuo">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/35.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">ماليزيا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">ناطحات السحاب في كوالالمبور، الاسترخاء على شواطئ لنكاوي، و المغامرة في الغابات الاستوائية</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_id5ov0_h4quil">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/38.png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">طاجكيستان</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">جوهرة آسيا الوسطى، المغامرات الجبلية، الاسترخاء في الوديان الخضراء</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_iz4hha_htxbm6">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/37.png" alt="image" loading="lazy" style="object-position: 45.0139% 100%">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">اوزبكستان</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">قلب طريق الحرير التاريخي، حيث تلتقي العمارة الإسلامية المذهلة، الأسواق التقليدية، والطبيعة الخلابة</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-4oq6g" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-4oq6g">
+                    <a class="sndian-1wn3b-4oq6g" id="Image_a92llc_a2sgud">
+      <img class="sndian-13z9y-4oq6g" src="plans_files/36.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-4oq6g">
+                    <div class="sndian-ugvwx-4oq6g">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">الهند</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">أرض العجائب - الأسواق الملونة والاستمتاع بجمال جبال الهيمالايا. مغامرات وتجارب فريدة!</span></p></div>
+                    <div class="sndian-beurj-4oq6g">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-4oq6g sndian-1nucx-4oq6g" style="flex-direction: column">
+       <a href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="sndian-p35fn-bow0c" style="padding: var(--space-medium) var(--space-larger)">
+    <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+  </button>
+</a>
+    </div>
+    </div>
+</section></div><div id="15xat"><section class="sndian-r3tt9-15xat" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-15xat">
+            <div class="sndian-x7vmt-15xat">
+                
+                <div class="sndian-j9of6-15xat">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="16pub"><section class="sndian-1xm57-16pub" data-section-name="projects-card" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-tl2dd-16pub">
+        <div class="sndian-16vz2-16pub">
+            <div style="color: var(--secondary-color);"><h1 dir="rtl" style=""><span style="">رحلات إفريقيا</span></h1></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-16pub" data-grid-id="as22k5" style="display: grid;">
+          <div class="sndian-1yrja-16pub" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-16pub">
+                    <a class="sndian-1wn3b-16pub" id="Image_v430qu_vt4qe1_cfhov1">
+      <img class="sndian-13z9y-16pub" src="plans_files/39.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-16pub">
+                    <div class="sndian-ugvwx-16pub">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">جنوب افريقيا</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style=""> لعشاق المغامرات، الحياة البرية، والطبيعة الخلابة وحدائق الحيوانات المفتوحة.</span></p></div>
+                    <div class="sndian-beurj-16pub">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-16pub" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-16pub">
+                    <a class="sndian-1wn3b-16pub" id="Image_brhkmi_uk5m4l_6ofq8m">
+      <img class="sndian-13z9y-16pub" src="plans_files/40.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-16pub">
+                    <div class="sndian-ugvwx-16pub">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">كوت ديفوار</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style="">الاسترخاء في شواطئ البسام الكبرى، و تجربة المغامرات في الغابات الاستوائية،</span></p></div>
+                    <div class="sndian-beurj-16pub">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-16pub" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-16pub">
+                    <a class="sndian-1wn3b-16pub" id="Image_kq4him_ps3nuo_1z66iy">
+      <img class="sndian-13z9y-16pub" src="plans_files/41_002.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-16pub">
+                    <div class="sndian-ugvwx-16pub">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">أنجولا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">الاسترخاء على شواطئ لواندا، واستكشاف شلالات كالاندولا، وخوض مغامرات السفاري</span></p></div>
+                    <div class="sndian-beurj-16pub">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-16pub sndian-1nucx-16pub" style="flex-direction: column">
+      <a href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="sndian-p35fn-bow0c" style="padding: var(--space-medium) var(--space-larger)">
+    <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+  </button>
+</a>
+    </div>
+    </div>
+</section></div><div id="16hfw"><section class="sndian-r3tt9-16hfw" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-16hfw">
+            <div class="sndian-x7vmt-16hfw">
+                
+                <div class="sndian-j9of6-16hfw">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="euung"><section class="sndian-1xm57-euung" data-section-name="projects-card" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-tl2dd-euung">
+        <div class="sndian-16vz2-euung">
+            <div style="color: var(--primary-color);"><h2 dir="rtl" style=""><span style="">شهر العسل</span></h2></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-euung" data-grid-id="vxbsr2" style="display: grid;">
+          <div class="sndian-1yrja-euung" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-euung">
+                    <a class="sndian-1wn3b-euung" id="Image_v430qu_vt4qe1_cfhov1_r86kud">
+      <img class="sndian-13z9y-euung" src="plans_files/41.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-euung">
+                    <div class="sndian-ugvwx-euung">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">جزر المالديف</span></h3></div>
+                    </div>
+                    <div style="color: var(--text-color);"><p class="." dir="rtl" style=""><span style="">وجهة رومانسية ساحرة، الخيار الأمثل لقضاء شهر العسل الذي تحلمان به!</span></p></div>
+                    <div class="sndian-beurj-euung">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-euung" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-euung">
+                    <a class="sndian-1wn3b-euung" id="Image_brhkmi_uk5m4l_6ofq8m_sbn1ye">
+      <img class="sndian-13z9y-euung" src="plans_files/43.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-euung">
+                    <div class="sndian-ugvwx-euung">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">تركيا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">شهر عسل لا يُنسى وسط الطبيعة الخلابة، المغامرات الممتعة، </span></p></div>
+                    <div class="sndian-beurj-euung">
+                        
+                    </div>
+                </div>
+          </div>
+          <div class="sndian-1yrja-euung" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-euung">
+                    <a class="sndian-1wn3b-euung" id="Image_kq4him_ps3nuo_1z66iy_xun61v">
+      <img class="sndian-13z9y-euung" src="plans_files/42.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-euung">
+                    <div class="sndian-ugvwx-euung">
+                        <div style="color: var(--primary-color);"><h3 dir="rtl" style=""><span style="">دبي</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">الرومانسية، المغامرة، والترف في تجربة مثالية لشهر العسل. </span></p></div>
+                    <div class="sndian-beurj-euung">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-euung sndian-1nucx-euung" style="flex-direction: column">
+       <a href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="sndian-p35fn-bow0c" style="padding: var(--space-medium) var(--space-larger)">
+    <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+  </button>
+</a>
+    </div>
+    </div>
+</section></div><div id="7rd49"><section class="sndian-r3tt9-7rd49" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-7rd49">
+            <div class="sndian-x7vmt-7rd49">
+                
+                <div class="sndian-j9of6-7rd49">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="avuup"><section class="sndian-1xm57-avuup" data-section-name="projects-card" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-tl2dd-avuup">
+        <div class="sndian-16vz2-avuup">
+            <div style="color: var(--secondary-color);"><h2 dir="rtl" style=""><span style="">رحلات الأمريكتين</span></h2></div>
+        </div>
+        <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-avuup" data-grid-id="8ia6ea" style="display: grid;">
+          
+          
+          <div class="sndian-1yrja-avuup" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-avuup">
+                    <a class="sndian-1wn3b-avuup" id="Image_kq4him_ps3nuo_1z66iy_xun61v_7gmdkb">
+      <img class="sndian-13z9y-avuup" src="plans_files/30.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-avuup">
+                    <div class="sndian-ugvwx-avuup">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">أمريكا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">أمريكا، الوجهة المثالية لعشاق الثلوج، المغامرات الشتوية، والتسوق في أجواء ساحرة</span></p></div>
+                    <div class="sndian-beurj-avuup">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-avuup" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-avuup">
+                    <a class="sndian-1wn3b-avuup" id="Image_kq4him_ps3nuo_1z66iy_xun61v_7gmdkb">
+      <img class="sndian-13z9y-avuup" src="plans_files/31_002.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-avuup">
+                    <div class="sndian-ugvwx-avuup">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">كندا</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">جرب التزلج في جبال روكي، الاستمتاع بظاهرة الشفق القطبي</span></p></div>
+                    <div class="sndian-beurj-avuup">
+                        
+                    </div>
+                </div>
+          </div><div class="sndian-1yrja-avuup" style="background: var( --secondary-background-color); color: var(--text-color)">
+              <div class="sndian-ufer7-avuup">
+                    <a class="sndian-1wn3b-avuup" id="Image_kq4him_ps3nuo_1z66iy_xun61v_7gmdkb">
+      <img class="sndian-13z9y-avuup" src="plans_files/32.png" alt="image" loading="lazy">
+      <div></div>
+    </a>
+                </div>
+                <div class="sndian-1c94j-avuup">
+                    <div class="sndian-ugvwx-avuup">
+                        <div style="color: var(--secondary-color);"><h3 dir="rtl" style=""><span style="">البرازيل</span></h3></div>
+                    </div>
+                    <div><p class="." dir="rtl" style=""><span style="">المكان المثالي للهروب من البرد والاستمتاع بالطبيعة الخلابة النابضة بالحياة</span></p></div>
+                    <div class="sndian-beurj-avuup">
+                        
+                    </div>
+                </div>
+          </div>
+        </div><div class="sndian-a2v47-avuup sndian-1nucx-avuup" style="flex-direction: column">
+      <!-- <a type="button" id="زر" class="sndian-10ves-avuup" rel="noopener noreferrer" href="https://www.AlNour-tours.com/amr"> -->
+      <a type="button" id="زر" class="sndian-10ves-avuup" rel="noopener noreferrer" href="index.html">
+
+      <button class="sndian-p35fn-avuup" style="background-color: var(--secondary-color); color: var(--secondary-text-color); padding: var(--space-medium) var(--space-larger)">
+        <span style="padding-inline-end: 5px;padding-inline-start: 5px;">زر رئيسي</span>
+      </button>
+    </a>
+    </div>
+    </div>
+</section></div><div id="23n2r"><section class="sndian-f9irz-23n2r" data-section-name="gallery-varying-slider" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="gallery-varying-slider-heading">
+    <div style="color: var(--secondary-background-color);"><h1 dir="rtl" style=""><span style="">رحلاتنا الأكثر طلبا</span></h1></div>
+  </div>
+  
+</section></div><div id="15kbz"><section class="sndian-15vok-15kbz" data-section-name="feature-detailed" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div gap="0" small="1" medium="2" large="2" class="sndian-o62d5-15kbz" data-grid-id="038817" style="display: grid;">
+        <div class="sndian-wxom9-15kbz sndian-m2sit-15kbz">
+            <div class="sndian-1v4dt-15kbz">
+                <a class="sndian-1wn3b-15kbz" id="Image">
+      <img class="sndian-1s44a-15kbz" src="plans_files/hajj-rituals-makkah-accorhotels.jpg" alt="صورة القسم" loading="lazy">
+      <div></div>
+    </a>
+            </div>
+        </div>
+        <div class="sndian-wxom9-15kbz sndian-l8n0v-15kbz" style="background: var( --secondary-background-color); color: var(--text-color)">
+            <div class="sndian-1g9eh-15kbz">
+                <div><h5 dir="rtl" style=""><span style="">خدمة راقية وتجربة روحانية لا تُنسى!</span></h5></div>
+                <div><h1 dir="rtl" style=""><span style="">برامج </span><span style="">العمرة</span></h1></div>
+                <div><p class="." dir="rtl" style=""><span style="">نحرص على تقديم أفضل برامج العمرة بأعلى معايير الجودة والراحة، لنضمن لك رحلة روحانية مميزة تتفرغ فيها للعبادة بكل طمأنينة وسهولة.</span></p></div>
+            </div>
+            <div gap="var(--space-large)" small="1" medium="1" large="2" class="feature-detailed-extra" data-grid-id="j58z34" style="display: grid;">
+                <div class="sndian-kpslu-15kbz">
+                    <div class="sndian-k3gma-15kbz">
+                        <a class="sndian-au718-15kbz" id="أيقونة">
+      <span class=""><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="earth-africa" data-icon-prefix="fas">
+    <path d="M177.8 63.2l10 17.4c2.8 4.8 4.2 10.3 4.2 15.9v41.4c0 3.9 1.6 7.7 4.3 10.4c6.2 6.2 16.5 5.7 22-1.2l13.6-17c4.7-5.9 12.9-7.7 19.6-4.3l15.2 7.6c3.4 1.7 7.2 2.6 11 2.6c6.5 0 12.8-2.6 17.4-7.2l3.9-3.9c2.9-2.9 7.3-3.6 11-1.8l29.2 14.6c7.8 3.9 12.6 11.8 12.6 20.5c0 10.5-7.1 19.6-17.3 22.2l-35.4 8.8c-7.4 1.8-15.1 1.5-22.4-.9l-32-10.7c-3.3-1.1-6.7-1.7-10.2-1.7c-7 0-13.8 2.3-19.4 6.5L176 212c-10.1 7.6-16 19.4-16 32v28c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16v48c0 17.7 14.3 32 32 32c10.1 0 19.6-4.7 25.6-12.8l25.6-34.1c8.3-11.1 12.8-24.6 12.8-38.4V318.6c0-3.9 2.6-7.3 6.4-8.2l5.3-1.3c11.9-3 20.3-13.7 20.3-26c0-7.1-2.8-13.9-7.8-18.9l-33.5-33.5c-3.7-3.7-3.7-9.7 0-13.4c5.7-5.7 14.1-7.7 21.8-5.1l14.1 4.7c12.3 4.1 25.7-1.5 31.5-13c3.5-7 11.2-10.8 18.9-9.2l27.4 5.5C432 112.4 351.5 48 256 48c-27.7 0-54 5.4-78.2 15.2zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-15kbz">
+                        <div><h4 style=""><span style="">1500 +</span></h4></div>
+                        <div><p class="." dir="rtl" style=""><span style="">رحلة عمرة</span></p></div>
+                    </div>
+                </div>
+                <div class="sndian-kpslu-15kbz">
+                    <div class="sndian-k3gma-15kbz">
+                        <a class="sndian-au718-15kbz" id="أيقونة">
+      <span class=""><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="earth-africa" data-icon-prefix="fas">
+    <path d="M177.8 63.2l10 17.4c2.8 4.8 4.2 10.3 4.2 15.9v41.4c0 3.9 1.6 7.7 4.3 10.4c6.2 6.2 16.5 5.7 22-1.2l13.6-17c4.7-5.9 12.9-7.7 19.6-4.3l15.2 7.6c3.4 1.7 7.2 2.6 11 2.6c6.5 0 12.8-2.6 17.4-7.2l3.9-3.9c2.9-2.9 7.3-3.6 11-1.8l29.2 14.6c7.8 3.9 12.6 11.8 12.6 20.5c0 10.5-7.1 19.6-17.3 22.2l-35.4 8.8c-7.4 1.8-15.1 1.5-22.4-.9l-32-10.7c-3.3-1.1-6.7-1.7-10.2-1.7c-7 0-13.8 2.3-19.4 6.5L176 212c-10.1 7.6-16 19.4-16 32v28c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16v48c0 17.7 14.3 32 32 32c10.1 0 19.6-4.7 25.6-12.8l25.6-34.1c8.3-11.1 12.8-24.6 12.8-38.4V318.6c0-3.9 2.6-7.3 6.4-8.2l5.3-1.3c11.9-3 20.3-13.7 20.3-26c0-7.1-2.8-13.9-7.8-18.9l-33.5-33.5c-3.7-3.7-3.7-9.7 0-13.4c5.7-5.7 14.1-7.7 21.8-5.1l14.1 4.7c12.3 4.1 25.7-1.5 31.5-13c3.5-7 11.2-10.8 18.9-9.2l27.4 5.5C432 112.4 351.5 48 256 48c-27.7 0-54 5.4-78.2 15.2zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-bj45r-15kbz">
+                        <div><h4 style=""><span style="">35000 +</span></h4></div>
+                        <div><p class="." dir="rtl" style=""><span style="">معتمر</span></p></div>
+                    </div>
+                </div><div class="sndian-a2v47-15kbz sndian-kpslu-15kbz">
+      <!-- <a type="button" id="زر" class="sndian-10ves-15kbz" rel="noopener noreferrer" href="https://www.AlNour-tours.com/plans4">
+      <button class="sndian-p35fn-15kbz">
+        <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+      </button>
+    </a> -->
+    <a type="button" id="زر" class="sndian-10ves-15kbz" rel="noopener noreferrer" href="https://api.whatsapp.com/send/?phone=201555359259&text&type=phone_number&app_absent=0">
+      <button class="sndian-p35fn-15kbz">
+        <span style="padding-inline-end: 5px;padding-inline-start: 5px;">تواصل الان</span>
+      </button>
+    </a>
+    </div>
+            </div>
+        </div>
+    </div>
+</section></div><div id="rvfbn"><section class="sndian-r3tt9-rvfbn" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-rvfbn">
+            <div class="sndian-x7vmt-rvfbn">
+                
+                <div class="sndian-j9of6-rvfbn">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="156yw"><section class="sndian-1u6ou-156yw" data-section-name="hero-overlay" style="background: url(&quot;https://sndiansite.com/media/34319/8634/62983df6-6f17-40d9-a6f6-2bf4cbbee106/4a11a1d8-cd07-4c07-8469-85051c9101ff.jpg&quot;) center center / cover no-repeat; color: var(--secondary-text-color); flex-direction: row; align-items: center; padding: 20px">
+  <div class="sndian-1rb21-156yw" id="container" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <span class="sndian-8vhgq-156yw"></span>
+    <div class="sndian-14x4i-156yw">
+      <div class="sndian-1xtvk-156yw">
+        
+        <div style="color: var(--secondary-text-color);"><ul class="editor__list-ul"><li value="1" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">برامج سياحية متكاملة</strong><span style=""> حجوزات الطيران، الإقامة، والجولات السياحية.</span></li><li value="2" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">أسعار تنافسية وعروض حصرية</strong><span style=""> تناسب ميزانيتك.</span></li><li value="3" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">وجهات ساحرة حول العالم</strong><span style=""> تناسب جميع الأذواق.</span><strong class="editor__text-bold" style="white-space: pre-wrap">دليل سياحي</strong></li><li value="4" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">فريق محترف</strong><span style=""> لضمان تجربة مريحة وممتعة.</span></li><li value="5" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة دعم على مدار الساعة</strong><span style=""> لمساعدتك في أي وقت.</span></li></ul></div>
+      </div>
+      <div class="sndian-lc9l2-156yw">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="1wolz"><section class="sndian-r3tt9-1wolz" data-section-name="contact-middle" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="sndian-1xkq3-1wolz">
+            <div class="sndian-x7vmt-1wolz">
+                
+                <div class="sndian-j9of6-1wolz">
+                  
+                  
+                </div>
+            </div>
+            
+            
+    </div>
+</section></div><div id="f9dga"><section class="sndian-mbvtl-f9dga" data-section-name="cta-social" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-7svy4-f9dga">
+        <div class="sndian-h863e-f9dga">
+            <div class="sndian-m9hv5-f9dga">
+                <div style="color: var(--secondary-background-color);"><h2 dir="rtl" style=""><span style="">تابعنا على وسائل التواصل</span></h2></div>
+            </div>
+            <ul class="sndian-g4xak-f9dga" style="background: var(--primary-color); color: var(--secondary-text-color)">
+                <a class="sndian-au718-f9dga" id="أيقونة" href="https://www.facebook.com/profile.php?id=61575545656535">
+      <span class=""><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="facebook" data-icon-prefix="fab">
+    <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"></path>
+  </svg></span>
+    </a>
+                
+                <a class="sndian-au718-f9dga" id="أيقونة" href="https://www.instagram.com/nour.travel2020/?fbclid=IwY2xjawLAzUVleHRuA2FlbQIxMABicmlkETFFUUdjOUVnclNzSTRTaFh4AR6_d6RDKXpnrtmU7CD0ruXSsykJfpVeZQz4jvLYHPCXpT6272a6Dv_Xjwe7HA_aem_f2YTWudiZZafZDbIpdjv4w">
+      <span class=""><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="instagram" data-icon-prefix="fab">
+    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+  </svg></span>
+    </a>
+                
+                <!-- <a class="sndian-au718-f9dga" id="أيقونة" href="https://www.tiktok.com/@ibatours">
+      <span class=""><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="tiktok" data-icon-prefix="fab">
+    <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
+  </svg></span>
+    </a> -->
+    <a class=class="sndian-au718-f9dga" id="أيقونة" href="https://wa.me/+201555359259" data-animation-role="media">
+      <span class=""><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="whatsapp" data-icon-prefix="fab">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+  </svg></span>
+    </a>
+            </ul>
+        </div>
+    </div>
+</section></div><div id="1udsn"><section class="sndian-og3da-1udsn" data-section-name="footers-minimal" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-1ybrh-1udsn">
+            <div><h4 dir="ltr" style=""><span style="">AlNour</span></h4></div>
+        <ul class="sndian-1ghx6-1udsn">
+            <a type="link" id="رابط" class="sndian-v8zb6-1udsn" rel="noopener noreferrer" href="index.html">
+      <span>
+                <h6>الرئيسية</h6>
+            </span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-1udsn" rel="noopener noreferrer" href="about.htm">
+      <span><h6 dir="rtl" style=""><span style="">من نحن</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-1udsn" rel="noopener noreferrer" href="services.htm">
+      <span><h6 dir="rtl" style=""><span style="">خدماتنا</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-1udsn" rel="noopener noreferrer" href="plans.htm">
+      <span><h6 dir="rtl" style=""><span style="">برامجنا</span></h6></span>
+    </a>
+           <a id="رابط" 
+   class="sndian-v8zb6-1udsn" 
+   href="https://wa.me/201555359259" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   style="text-decoration: none; display: inline-block;">
+   <span>
+       <h6>تواصل معنا</h6>
+   </span>
+</a>
+        </ul>
+        <div class="sndian-1ccet-1udsn"></div>
+       <div class="sndian-s1zs2-1udsn">
+        <div>
+          جميع الحقوق محفوظة  ©
+        </div>
+        <a type="link" id="رابط" class="sndian-v8zb6-1udsn" rel="noopener noreferrer" href="index.html">
+      <span><p class="." dir="rtl" style=""><span style="">صنع بواسطة AlNour</span></p></span>
+    </a>
+      </div>
+    </div>
+</section></div><div id="1r2ur"><section class="sndian-1d5wx-1r2ur" data-section-name="hero-split">
+    <div gap="0" small="1" medium="2" large="2" class="sndian-c9gwf-1r2ur" data-grid-id="byvnmw" style="display: grid;">
+      
+      <div class="sndian-mxuh0-1r2ur sndian-1uk9l-1r2ur">
+         
+      </div>
+    </div>
+</section></div><script>(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1et4e'] [data-animation] h1,[id='1et4e'] [data-animation] h2,[id='1et4e'] [data-animation] h3,[id='1et4e'] [data-animation] h4, [id='1et4e'] [data-animation] h5, [id='1et4e'] [data-animation] h6, [id='1et4e'] [data-animation] p, [id='1et4e'] [data-animation] button, [id='1et4e'] [data-animation] img, [id='1et4e'] [data-animation] svg[data-icon-name], [id='1et4e'] [data-animation] video, [id='1et4e'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='ail2k'] [data-animation] h1,[id='ail2k'] [data-animation] h2,[id='ail2k'] [data-animation] h3,[id='ail2k'] [data-animation] h4, [id='ail2k'] [data-animation] h5, [id='ail2k'] [data-animation] h6, [id='ail2k'] [data-animation] p, [id='ail2k'] [data-animation] button, [id='ail2k'] [data-animation] img, [id='ail2k'] [data-animation] svg[data-icon-name], [id='ail2k'] [data-animation] video, [id='ail2k'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  /* version: 1.7.6 */
+class e extends HTMLElement{constructor(){super(),this.mutationObserver=new MutationObserver((e=>{var t;null===(t=this.onChildrenChanged)||void 0===t||t.call(this,e)}))}connectedCallback(){var e;this.connectObserver(),null===(e=this.onChildrenChanged)||void 0===e||e.call(this)}disconnectedCallback(){this.disconnectObserver()}connectObserver(){this.mutationObserver.observe(this,{childList:!0})}disconnectObserver(){this.mutationObserver.disconnect()}}class t extends HTMLElement{attributeChangedCallback(e,t,i){t!==i&&this.onAttributeChanged(e,t,i)}}t.observedAttributes=[];class i extends e{constructor(){super(),this.controllers=[],this.handleClickOutside=e=>{var t;const i=e.target,n=this.contains(i),s=null===(t=this.controllers)||void 0===t?void 0:t.some((e=>e.contains(i)));n||s||this.collapseMenu()}}connectedCallback(){this.initialize(),this.handleClickOutside=this.handleClickOutside.bind(this)}disconnectedCallback(){this.controllers.length&&this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}onChildrenChanged(){this.initialize()}collapseMenu(){this.ariaExpanded="false",this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}initialize(){var e;if(this.id){if(this.controllers=Array.from(this.ownerDocument.querySelectorAll(`[aria-controls="${this.id}"]`)),!(null===(e=this.controllers)||void 0===e?void 0:e.length))return;this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),null===this.ariaExpanded&&(this.ariaExpanded="false"),this.controllerClickListener=e=>{const t=e.target,i=this.contains(t),n=t.closest(`[aria-controls=${this.id}]`),s="true"===this.ariaExpanded;s?this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0):this.ownerDocument.addEventListener("click",this.handleClickOutside,!0),i&&s&&!n||(this.ariaExpanded=String(!s))},this.controllers.map((e=>{this.controllerClickListener&&e.addEventListener("click",this.controllerClickListener,!0)}))}}}class n extends HTMLElement{}window.customElements.get("sndian-menu")||window.customElements.define("sndian-menu",i),window.customElements.get("sndian-menu-item")||window.customElements.define("sndian-menu-item",n);
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1hc6s'] [data-animation] h1,[id='1hc6s'] [data-animation] h2,[id='1hc6s'] [data-animation] h3,[id='1hc6s'] [data-animation] h4, [id='1hc6s'] [data-animation] h5, [id='1hc6s'] [data-animation] h6, [id='1hc6s'] [data-animation] p, [id='1hc6s'] [data-animation] button, [id='1hc6s'] [data-animation] img, [id='1hc6s'] [data-animation] svg[data-icon-name], [id='1hc6s'] [data-animation] video, [id='1hc6s'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  window.addEventListener("load", function (e) {
+  var menuBTN = document.querySelector(".navbar-supported-menu");
+  var nav = document.querySelector(".navbar-supported");
+  var toggableList = document.querySelector(".navbar-supported-list-routes");
+  menuBTN.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (toggableList.style.display !== "flex") {
+      toggableList.style.display = "flex";
+      nav.classList.add("navbar--show");
+    } else {
+      toggableList.style.display = "none";
+      nav.classList.remove("navbar--show");
+    }
+  });
+});
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1s3zv'] [data-animation] h1,[id='1s3zv'] [data-animation] h2,[id='1s3zv'] [data-animation] h3,[id='1s3zv'] [data-animation] h4, [id='1s3zv'] [data-animation] h5, [id='1s3zv'] [data-animation] h6, [id='1s3zv'] [data-animation] p, [id='1s3zv'] [data-animation] button, [id='1s3zv'] [data-animation] img, [id='1s3zv'] [data-animation] svg[data-icon-name], [id='1s3zv'] [data-animation] video, [id='1s3zv'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1y6zg'] [data-animation] h1,[id='1y6zg'] [data-animation] h2,[id='1y6zg'] [data-animation] h3,[id='1y6zg'] [data-animation] h4, [id='1y6zg'] [data-animation] h5, [id='1y6zg'] [data-animation] h6, [id='1y6zg'] [data-animation] p, [id='1y6zg'] [data-animation] button, [id='1y6zg'] [data-animation] img, [id='1y6zg'] [data-animation] svg[data-icon-name], [id='1y6zg'] [data-animation] video, [id='1y6zg'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='153b1'] [data-animation] h1,[id='153b1'] [data-animation] h2,[id='153b1'] [data-animation] h3,[id='153b1'] [data-animation] h4, [id='153b1'] [data-animation] h5, [id='153b1'] [data-animation] h6, [id='153b1'] [data-animation] p, [id='153b1'] [data-animation] button, [id='153b1'] [data-animation] img, [id='153b1'] [data-animation] svg[data-icon-name], [id='153b1'] [data-animation] video, [id='153b1'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='bow0c'] [data-animation] h1,[id='bow0c'] [data-animation] h2,[id='bow0c'] [data-animation] h3,[id='bow0c'] [data-animation] h4, [id='bow0c'] [data-animation] h5, [id='bow0c'] [data-animation] h6, [id='bow0c'] [data-animation] p, [id='bow0c'] [data-animation] button, [id='bow0c'] [data-animation] img, [id='bow0c'] [data-animation] svg[data-icon-name], [id='bow0c'] [data-animation] video, [id='bow0c'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='wuwgi'] [data-animation] h1,[id='wuwgi'] [data-animation] h2,[id='wuwgi'] [data-animation] h3,[id='wuwgi'] [data-animation] h4, [id='wuwgi'] [data-animation] h5, [id='wuwgi'] [data-animation] h6, [id='wuwgi'] [data-animation] p, [id='wuwgi'] [data-animation] button, [id='wuwgi'] [data-animation] img, [id='wuwgi'] [data-animation] svg[data-icon-name], [id='wuwgi'] [data-animation] video, [id='wuwgi'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='k22x5'] [data-animation] h1,[id='k22x5'] [data-animation] h2,[id='k22x5'] [data-animation] h3,[id='k22x5'] [data-animation] h4, [id='k22x5'] [data-animation] h5, [id='k22x5'] [data-animation] h6, [id='k22x5'] [data-animation] p, [id='k22x5'] [data-animation] button, [id='k22x5'] [data-animation] img, [id='k22x5'] [data-animation] svg[data-icon-name], [id='k22x5'] [data-animation] video, [id='k22x5'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='mjktm'] [data-animation] h1,[id='mjktm'] [data-animation] h2,[id='mjktm'] [data-animation] h3,[id='mjktm'] [data-animation] h4, [id='mjktm'] [data-animation] h5, [id='mjktm'] [data-animation] h6, [id='mjktm'] [data-animation] p, [id='mjktm'] [data-animation] button, [id='mjktm'] [data-animation] img, [id='mjktm'] [data-animation] svg[data-icon-name], [id='mjktm'] [data-animation] video, [id='mjktm'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='4oq6g'] [data-animation] h1,[id='4oq6g'] [data-animation] h2,[id='4oq6g'] [data-animation] h3,[id='4oq6g'] [data-animation] h4, [id='4oq6g'] [data-animation] h5, [id='4oq6g'] [data-animation] h6, [id='4oq6g'] [data-animation] p, [id='4oq6g'] [data-animation] button, [id='4oq6g'] [data-animation] img, [id='4oq6g'] [data-animation] svg[data-icon-name], [id='4oq6g'] [data-animation] video, [id='4oq6g'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='15xat'] [data-animation] h1,[id='15xat'] [data-animation] h2,[id='15xat'] [data-animation] h3,[id='15xat'] [data-animation] h4, [id='15xat'] [data-animation] h5, [id='15xat'] [data-animation] h6, [id='15xat'] [data-animation] p, [id='15xat'] [data-animation] button, [id='15xat'] [data-animation] img, [id='15xat'] [data-animation] svg[data-icon-name], [id='15xat'] [data-animation] video, [id='15xat'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='16pub'] [data-animation] h1,[id='16pub'] [data-animation] h2,[id='16pub'] [data-animation] h3,[id='16pub'] [data-animation] h4, [id='16pub'] [data-animation] h5, [id='16pub'] [data-animation] h6, [id='16pub'] [data-animation] p, [id='16pub'] [data-animation] button, [id='16pub'] [data-animation] img, [id='16pub'] [data-animation] svg[data-icon-name], [id='16pub'] [data-animation] video, [id='16pub'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='16hfw'] [data-animation] h1,[id='16hfw'] [data-animation] h2,[id='16hfw'] [data-animation] h3,[id='16hfw'] [data-animation] h4, [id='16hfw'] [data-animation] h5, [id='16hfw'] [data-animation] h6, [id='16hfw'] [data-animation] p, [id='16hfw'] [data-animation] button, [id='16hfw'] [data-animation] img, [id='16hfw'] [data-animation] svg[data-icon-name], [id='16hfw'] [data-animation] video, [id='16hfw'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='euung'] [data-animation] h1,[id='euung'] [data-animation] h2,[id='euung'] [data-animation] h3,[id='euung'] [data-animation] h4, [id='euung'] [data-animation] h5, [id='euung'] [data-animation] h6, [id='euung'] [data-animation] p, [id='euung'] [data-animation] button, [id='euung'] [data-animation] img, [id='euung'] [data-animation] svg[data-icon-name], [id='euung'] [data-animation] video, [id='euung'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='7rd49'] [data-animation] h1,[id='7rd49'] [data-animation] h2,[id='7rd49'] [data-animation] h3,[id='7rd49'] [data-animation] h4, [id='7rd49'] [data-animation] h5, [id='7rd49'] [data-animation] h6, [id='7rd49'] [data-animation] p, [id='7rd49'] [data-animation] button, [id='7rd49'] [data-animation] img, [id='7rd49'] [data-animation] svg[data-icon-name], [id='7rd49'] [data-animation] video, [id='7rd49'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='avuup'] [data-animation] h1,[id='avuup'] [data-animation] h2,[id='avuup'] [data-animation] h3,[id='avuup'] [data-animation] h4, [id='avuup'] [data-animation] h5, [id='avuup'] [data-animation] h6, [id='avuup'] [data-animation] p, [id='avuup'] [data-animation] button, [id='avuup'] [data-animation] img, [id='avuup'] [data-animation] svg[data-icon-name], [id='avuup'] [data-animation] video, [id='avuup'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='23n2r'] [data-animation] h1,[id='23n2r'] [data-animation] h2,[id='23n2r'] [data-animation] h3,[id='23n2r'] [data-animation] h4, [id='23n2r'] [data-animation] h5, [id='23n2r'] [data-animation] h6, [id='23n2r'] [data-animation] p, [id='23n2r'] [data-animation] button, [id='23n2r'] [data-animation] img, [id='23n2r'] [data-animation] svg[data-icon-name], [id='23n2r'] [data-animation] video, [id='23n2r'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='15kbz'] [data-animation] h1,[id='15kbz'] [data-animation] h2,[id='15kbz'] [data-animation] h3,[id='15kbz'] [data-animation] h4, [id='15kbz'] [data-animation] h5, [id='15kbz'] [data-animation] h6, [id='15kbz'] [data-animation] p, [id='15kbz'] [data-animation] button, [id='15kbz'] [data-animation] img, [id='15kbz'] [data-animation] svg[data-icon-name], [id='15kbz'] [data-animation] video, [id='15kbz'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='rvfbn'] [data-animation] h1,[id='rvfbn'] [data-animation] h2,[id='rvfbn'] [data-animation] h3,[id='rvfbn'] [data-animation] h4, [id='rvfbn'] [data-animation] h5, [id='rvfbn'] [data-animation] h6, [id='rvfbn'] [data-animation] p, [id='rvfbn'] [data-animation] button, [id='rvfbn'] [data-animation] img, [id='rvfbn'] [data-animation] svg[data-icon-name], [id='rvfbn'] [data-animation] video, [id='rvfbn'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='156yw'] [data-animation] h1,[id='156yw'] [data-animation] h2,[id='156yw'] [data-animation] h3,[id='156yw'] [data-animation] h4, [id='156yw'] [data-animation] h5, [id='156yw'] [data-animation] h6, [id='156yw'] [data-animation] p, [id='156yw'] [data-animation] button, [id='156yw'] [data-animation] img, [id='156yw'] [data-animation] svg[data-icon-name], [id='156yw'] [data-animation] video, [id='156yw'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1wolz'] [data-animation] h1,[id='1wolz'] [data-animation] h2,[id='1wolz'] [data-animation] h3,[id='1wolz'] [data-animation] h4, [id='1wolz'] [data-animation] h5, [id='1wolz'] [data-animation] h6, [id='1wolz'] [data-animation] p, [id='1wolz'] [data-animation] button, [id='1wolz'] [data-animation] img, [id='1wolz'] [data-animation] svg[data-icon-name], [id='1wolz'] [data-animation] video, [id='1wolz'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='f9dga'] [data-animation] h1,[id='f9dga'] [data-animation] h2,[id='f9dga'] [data-animation] h3,[id='f9dga'] [data-animation] h4, [id='f9dga'] [data-animation] h5, [id='f9dga'] [data-animation] h6, [id='f9dga'] [data-animation] p, [id='f9dga'] [data-animation] button, [id='f9dga'] [data-animation] img, [id='f9dga'] [data-animation] svg[data-icon-name], [id='f9dga'] [data-animation] video, [id='f9dga'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1udsn'] [data-animation] h1,[id='1udsn'] [data-animation] h2,[id='1udsn'] [data-animation] h3,[id='1udsn'] [data-animation] h4, [id='1udsn'] [data-animation] h5, [id='1udsn'] [data-animation] h6, [id='1udsn'] [data-animation] p, [id='1udsn'] [data-animation] button, [id='1udsn'] [data-animation] img, [id='1udsn'] [data-animation] svg[data-icon-name], [id='1udsn'] [data-animation] video, [id='1udsn'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1r2ur'] [data-animation] h1,[id='1r2ur'] [data-animation] h2,[id='1r2ur'] [data-animation] h3,[id='1r2ur'] [data-animation] h4, [id='1r2ur'] [data-animation] h5, [id='1r2ur'] [data-animation] h6, [id='1r2ur'] [data-animation] p, [id='1r2ur'] [data-animation] button, [id='1r2ur'] [data-animation] img, [id='1r2ur'] [data-animation] svg[data-icon-name], [id='1r2ur'] [data-animation] video, [id='1r2ur'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();</script>
+  <script>
+// Remove Widebot chat functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const chatButton = document.getElementById('kaec-chat-button');
+  if (chatButton) {
+    chatButton.onclick = function(e) {
+      e.preventDefault();
+      window.open('https://wa.me/201555359259', '_blank');
+    };
+  }
+});
+</script>
+
+<div style="position: fixed; bottom: 0px; right: 50px; width: 70px; z-index: 999999;">
+  <img id="kaec-chat-button" 
+       src="https://widebot-webchat.s3.amazonaws.com/shared/widebot.png" 
+       style="position: absolute; bottom: 10px; right: 10px; width: 70px; height: 70px; 
+              cursor: pointer; z-index: 999999999; filter: drop-shadow(gray 0px 0px 1px); 
+              display: block; border-radius: 50%; object-fit: contain;">
+</div>
+ </body></html>

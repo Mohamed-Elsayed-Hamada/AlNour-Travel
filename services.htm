@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html dir="rtl"><script src="moz-extension://3e243ed7-cfce-4115-b31b-0c4fa3881cea/./content-scripts/passkey_proxy/index.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>خدماتنا | AlNour Travel</title><link rel="icon" href="https://sndiansite.com/images/favicons/8634/IBATOURS.png"><meta name="description" content="خبرة واسعة في مجال السياحة والسفر"><meta name="image" property="og:image" content="https://sndiansite.com/images/logos/8634/IBATOURS.png"><link rel="stylesheet" href="services_files/Cairo.css"><link rel="stylesheet" href="services_files/NotoSansArabic.css"><link rel="stylesheet" href="services_files/sndian.css"><style>:root {
+  /* colors */
+  --primary-color: #1095c1;
+  --secondary-color: #596b78;
+  --success-color: #5cb85c;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --secondary-background-color: #f8f9fa;
+  --dark-color: rgb(64, 64, 64);
+  --text-color: #212529;
+  --secondary-text-color: #fff;
+  --border-color: #bbb;
+  --link-color: #008000;
+  --muted-color: #73828c;
+  --background-color: #fff;
+  --hover-brightness: 1.2;
+
+  /* spacing */
+  --base-space: 1rem;
+  --space-largest: calc(var(--base-space) * 5);
+  --space-larger: calc(var(--base-space) * 3);
+  --space-large: calc(var(--base-space) * 1.5);
+  --space-medium: var(--base-space);
+  --space-small: calc(var(--base-space) * 0.5);
+  --space-smaller: calc(var(--base-space) * 0.25);
+  --max-content-width: 1320px;
+
+  /* typography */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --base-font-size: 1rem;
+  --typography-spacing: var(--base-space) * 1.5;
+
+  /* borders */
+  --border-radius: 0.3rem;
+  --reduction: 1;
+  --border-width: 1px;
+
+  /* elevation */
+  --elevation-smaller: 0 .125rem .25rem rgba(0,0,0, .075);
+  --elevation-small: 0 .200rem .5rem rgba(0,0,0, .05);
+  --elevation-medium: 0 .5rem 1rem rgba(0,0,0, .15);
+  --elevation-large: 0 1rem 1.5rem rgba(0,0,0, .175);
+  --elevation-larger:  0 1.25rem 2rem rgba(0,0,0, .25);
+  --transition: 0.2s ease-in-out;
+}
+
+h1 {
+  --font-size: calc(var(--base-font-size) * 2.4);
+}
+h2 {
+  --font-size: calc(var(--base-font-size) * 1.8);
+}
+h3 {
+  --font-size: calc(var(--base-font-size) * 1.5);
+}
+h4 {
+  --font-size: calc(var(--base-font-size) * 1.3);
+}
+h5 {
+  --font-size: calc(var(--base-font-size) * 1.1);
+}
+h6 {
+  --font-size: var(--base-font-size);
+}
+
+@media (max-width: 767px) { 
+  h1 {
+    --font-size: calc(var(--base-font-size) * 2);
+  }
+  h2 {
+    --font-size: calc(var(--base-font-size) * 1.6);
+  }
+  h3 {
+    --font-size: calc(var(--base-font-size) * 1.4);
+  }
+  h4 {
+    --font-size: calc(var(--base-font-size) * 1.2);
+  }
+  h5 {
+    --font-size: calc(var(--base-font-size) * 1.1);
+  }
+  h6 {
+    --font-size: var(--base-font-size);
+  }
+}:root {
+  --primary-color: #00497e;
+  --secondary-color: #b8a964;
+}
+</style><style>:root {
+  
+  
+  
+  --background-color: #ffffff !important;
+  
+  }</style><style>
+      :root { --font-family-titles: "Cairo", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>
+      :root { --font-family-content: "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>[id="1osqo"] .sndian-1pgvy-1osqo{position:relative;display:flex;padding:var(--space-medium) var(--space-larger);width:100%;z-index:99}[id="1osqo"] .sndian-jhtc8-1osqo{display:flex;flex-direction:row;gap:var(--space-medium);align-items:center}[id="1osqo"] #navbar-verical-Button-topen{font-size:1.6rem;display:flex}[id="1osqo"] #navbar-verical-Button-topen span{display:flex}[id="1osqo"] a{text-decoration:none}[id="1osqo"] .sndian-t1gtv-1osqo h2{font-size:20px}[id="1osqo"] .sndian-1l76o-1osqo{width:100%;display:flex;align-items:center;justify-content:space-between;color:inherit;max-width:var(--max-content-width);margin:auto}[id="1osqo"] .sndian-rhm43-1osqo{background-color:transparent;border:1px solid var(--text-color);color:var(--text-color);margin:0;box-shadow:none}[id="1osqo"] .sndian-1titw-1osqo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1osqo"] .sndian-1thv3-1osqo{display:flex;gap:var(--space-medium)}[id="1osqo"] .sndian-6vrsw-1osqo{display:flex;gap:var(--space-medium);justify-content:center;align-items:center;flex-direction:column}[id="1osqo"] .sndian-c4yah-1osqo{text-align:center}[id="1osqo"] .sndian-pkdkz-1osqo{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1osqo"] .sndian-zmj2w-1osqo{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;right:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}[id="1osqo"] .sndian-zmj2w-1osqo h3{font-size:26px}[id="1osqo"] .sndian-3z8tj-1osqo[aria-active="true"]{color:var(--primary-color)}[id="1osqo"] .sndian-120yr-1osqo{display:none}[id="1osqo"] .sndian-120yr-1osqo:checked + label #navbar-verical-Button-tclose{display:flex}[id="1osqo"] .sndian-120yr-1osqo:checked + label #navbar-verical-Button-topen{display:none}[id="1osqo"] #navbar-verical-Button-tclose{display:none}[id="1osqo"] .sndian-1m28q-1osqo{position:absolute;left:var(--space-larger);top:var(--space-large)}[id="1osqo"] .sndian-1m28q-1osqo .sndian-au718-1osqo span{font-size:2rem;color:var(--secondary-text-color)}[id="1osqo"] .sndian-1rq2k-1osqo{display:flex;gap:var(--space-medium);justify-content:space-between}[id="1osqo"] .sndian-1u88s-1osqo h3{color:var(--secondary-text-color)}[id="1osqo"] .sndian-1rq2k-1osqo .sndian-au718-1osqo span{color:var(--secondary-text-color)}[id="1osqo"] .sndian-1rq2k-1osqo h3{color:var(--secondary-text-color)}[id="1osqo"] .sndian-1thv3-1osqo{position:relative;width:100%;flex-direction:column;display:none}[id="1osqo"] .sndian-fb6fr-1osqo{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1osqo"] .sndian-9z22n-1osqo{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1osqo"] [aria-expanded="true"].sndian-zmj2w-1osqo{top:0%}[id="1osqo"] [aria-expanded="true"]#navbar-verical-nested-menu-1{display:flex}[id="1osqo"] [aria-expanded="false"]#navbar-verical-nested-menu-1{display:none}[id="1osqo"] [aria-expanded="true"]#navbar-verical-nested-menu-2{display:flex}[id="1osqo"] [aria-expanded="false"]#navbar-verical-nested-menu-2{display:none}[id="1osqo"] [aria-expanded="false"].sndian-zmj2w-1osqo{top:-100%}[id="1osqo"] .sndian-fb6fr-1osqo h4{font-size:16px}[id="1osqo"] .sndian-1l76o-1osqo img{width:120px}[id="1osqo"] h1,
+[id="1osqo"] h2,
+[id="1osqo"] h3,
+[id="1osqo"] h4,
+[id="1osqo"] h5,
+[id="1osqo"] h6,
+[id="1osqo"] p{margin:0}@media (max-width: 767px){[id="1osqo"] .sndian-1pgvy-1osqo{padding:var(--space-medium) var(--space-large)}[id="1osqo"] .sndian-1thv3-1osqo{position:relative;height:auto;z-index:1;right:0}[id="1osqo"] [aria-expanded="true"]#navbar-verical-nested-menu-1{display:flex;right:0}[id="1osqo"] [aria-expanded="false"]#navbar-verical-nested-menu-1{display:none}[id="1osqo"] [aria-expanded="true"]#navbar-verical-nested-menu-2{display:flex;right:0}[id="1osqo"] [aria-expanded="false"]#navbar-verical-nested-menu-2{display:none}[id="1osqo"] .sndian-1m28q-1osqo{left:var(--space-large)}[id="1osqo"] .sndian-1titw-1osqo{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1osqo"] .sndian-1jdfu-1osqo{width:fit-content;height:fit-content}[id="1osqo"] .sndian-10l5j-1osqo{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1osqo"] .sndian-au718-1osqo{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1osqo"] .sndian-v8zb6-1osqo{width:fit-content;height:fit-content;display:inline-block}[id="1osqo"]{}[id="1osqo"] .sndian-a2v47-1osqo{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="1osqo"] .sndian-3u8p4-1osqo{width:fit-content;height:fit-content}[id="1osqo"] .sndian-10ves-1osqo{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1osqo"] .sndian-p35fn-1osqo{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1osqo"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1osqo"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1osqo"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1osqo"] .sndian-10ves-1osqo{max-width:60vw!important}}[id="16mwn"] .sndian-130hz-16mwn{display:flex;justify-content:center;align-items:center;position:relative;background-color:var(--secondary-color);color:var(--secondary-text-color)}[id="16mwn"] h1{margin:0;text-transform:uppercase}[id="16mwn"] .sndian-183il-16mwn{width:100%;display:flex;justify-content:center;align-items:flex-end;min-height:20rem;padding:var(--space-largest) var(--space-larger)}[id="16mwn"] .sndian-1qtd4-16mwn{display:flex;flex-direction:column;justify-content:flex-end;color:var(--secondary-text-color);text-align:initial;width:100%;margin-top:var(--space-larger);max-width:var(--max-content-width)}[id="16mwn"] .sndian-wq0zj-16mwn{color:inherit;display:flex;flex-direction:column;gap:var(--space-medium)}[id="16mwn"] .sndian-muhc9-16mwn span{text-transform:uppercase}[id="16mwn"] .sndian-lb9h0-16mwn{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="16mwn"] .sndian-lb9h0-16mwn button{background-color:transparent;border:1px solid var(--secondary-text-color);color:var(--secondary-text-color);text-transform:uppercase}@media (max-width: 767px){[id="16mwn"] .sndian-183il-16mwn{padding:var(--space-larger) var(--space-large)}}[id="16mwn"] .navbar-supported{display:flex;position:absolute;left:0;top:0;color:var(--secondary-text-color);padding:var(--space-medium) var(--space-larger);z-index:99;width:100%}[id="16mwn"] h4{margin:0}[id="16mwn"] .sndian-v8zb6-16mwn{text-decoration:none}[id="16mwn"] .sndian-f3n75-16mwn{flex:1;display:flex;align-content:center;gap:var(--space-medium);flex-wrap:wrap}[id="16mwn"] .navbar-supported-list{justify-content:center;flex:1}[id="16mwn"] .sndian-1fe9s-16mwn{flex:1}[id="16mwn"] ul{padding:0!important}[id="16mwn"] .navbar--show{background-color:var(--secondary-text-color);color:var(--text-color);box-shadow:var(--elevation-small)}[id="16mwn"] .sndian-j5lbm-16mwn{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="16mwn"] .sndian-1bmm4-16mwn{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;color:inherit;position:relative;width:100%;max-width:var(--max-content-width);margin:auto}[id="16mwn"] .sndian-1bmm4-16mwn > .sndian-button{display:none!important}[id="16mwn"] .sndian-1bmm4-16mwn img{max-width:120px}[id="16mwn"] .navbar-supported-menu{display:none!important}[id="16mwn"] .navbar-supported-menu span{font-size:1.5rem;display:flex}[id="16mwn"] .navbar-supported-list{display:flex;align-items:center;gap:var(--space-medium)}[id="16mwn"] .navbar-supported-list{padding-left:0;margin-top:0;margin-bottom:0}[id="16mwn"] .navbar-supported-list a h6{margin:0;white-space:nowrap}[id="16mwn"] .sndian-ip35s-16mwn{padding:var(--space-smaller)}[id="16mwn"] .navbar-supported-list li{display:flex;list-style:none;margin-bottom:0;padding:var(--space-small)}[id="16mwn"] .navbar-supported-list li button{margin-bottom:0}[id="16mwn"] .sndian-1fe9s-16mwn{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:var(--space-medium)}[id="16mwn"] .sndian-1fe9s-16mwn a button{margin-bottom:0}@media (min-width: 992px){[id="16mwn"] .navbar-supported-list-routes{display:flex!important}}@media (max-width: 991px){[id="16mwn"] .sndian-1bmm4-16mwn{flex-direction:row;flex-wrap:wrap;gap:var(--space-medium)}[id="16mwn"] .navbar-supported-menu{display:flex!important;margin-bottom:0;order:3;align-items:center;padding:var(--space-small) var(--space-medium);background:var(--primary-color);color:var(--secondary-text-color);border-radius:var(--border-radius)}[id="16mwn"] .navbar-supported-menu > a{display:flex}[id="16mwn"] .sndian-1bmm4-16mwn > .sndian-button{display:flex!important}[id="16mwn"] .navbar-supported-list li{width:100%}[id="16mwn"] .navbar-supported-list-routes{display:none;order:1;flex-direction:column;flex-wrap:wrap;position:relative;align-items:flex-start;top:unset;left:unset;min-width:100%;margin-top:var(--space-medium);gap:var(--space-small);padding:0}[id="16mwn"] .sndian-1fe9s-16mwn{flex:unset}[id="16mwn"] .sndian-f3n75-16mwn{flex:unset}[id="16mwn"] .navbar-supported-list-routes a{--base-font-size:1.1rem;font-size:var(--base-font-size)}}[id="16mwn"] h1,
+[id="16mwn"] h2,
+[id="16mwn"] h3,
+[id="16mwn"] h4,
+[id="16mwn"] h5,
+[id="16mwn"] h6,
+[id="16mwn"] p{margin:0}@media (max-width: 767px){[id="16mwn"] .navbar-supported{padding:var(--space-medium) var(--space-large)}}[id="16mwn"] .sndian-v8zb6-16mwn{width:fit-content;height:fit-content;display:inline-block}[id="16mwn"] .sndian-1jdfu-16mwn{width:fit-content;height:fit-content}[id="16mwn"] .sndian-10l5j-16mwn{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="16mwn"] .sndian-au718-16mwn{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="16mwn"] .sndian-10ves-16mwn{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="16mwn"] .sndian-p35fn-16mwn{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="16mwn"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="16mwn"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="16mwn"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="16mwn"] .sndian-10ves-16mwn{max-width:60vw!important}}[id="12ibk"] .sndian-jsxhc-12ibk{width:100%;display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger);min-height:30rem;background-color:var(--background-color);background-position:center center;background-size:cover;background-repeat:no-repeat}[id="12ibk"] .sndian-1jens-12ibk{display:flex;flex-direction:column;justify-content:inherit;align-items:inherit;gap:var(--space-medium);width:100%}[id="12ibk"] .sndian-5iztz-12ibk{display:flex;flex-direction:column;align-items:inherit;justify-content:inherit;gap:var(--space-medium)}[id="12ibk"] .sndian-1jens-12ibk h1{color:inherit;text-transform:uppercase}[id="12ibk"] .sndian-1xol8-12ibk{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="12ibk"] .sndian-1c2ps-12ibk{display:flex;gap:var(--space-medium);padding:0;flex-wrap:wrap;justify-content:center;margin:0}[id="12ibk"] .sndian-1c2ps-12ibk span{font-size:1.2rem}[id="12ibk"] h1,
+[id="12ibk"] h2,
+[id="12ibk"] h3,
+[id="12ibk"] h4,
+[id="12ibk"] h5,
+[id="12ibk"] h6,
+[id="12ibk"] p{margin:0}@media (max-width: 767px){[id="12ibk"] .sndian-jsxhc-12ibk{padding:var(--space-larger) var(--space-large)}}[id="12ibk"] .sndian-10ves-12ibk{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="12ibk"] .sndian-p35fn-12ibk{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="12ibk"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="12ibk"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="12ibk"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="12ibk"] .sndian-10ves-12ibk{max-width:60vw!important}}[id="12ibk"] .sndian-10l5j-12ibk{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="12ibk"] .sndian-au718-12ibk{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1c0ys"] .sndian-noqw9-1c0ys{display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger)}[id="1c0ys"] .sndian-1xr3a-1c0ys{display:flex;width:100%;flex-direction:column;align-items:center;gap:var(--space-larger);max-width:800px}[id="1c0ys"] sndian-tabs{width:100%;display:flex;gap:var(--space-large);flex-wrap:wrap}[id="1c0ys"] sndian-tab-list{display:flex;gap:var(--space-large);flex-direction:column;overflow-y:auto;padding-bottom:var(--space-small);flex:1 1 200px}[id="1c0ys"] sndian-tab-panels{background-color:var(--secondary-background-color);flex:1 1 500px;padding:var(--space-large)}[id="1c0ys"] .sndian-13v35-1c0ys{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-medium);padding:var(--space-medium);margin:0;border-radius:var(--border-radius)}[id="1c0ys"] .sndian-13v35-1c0ys h3{font-size:20px}[id="1c0ys"] h5{margin:0}[id="1c0ys"] sndian-tab-list::-webkit-scrollbar{width:0.5rem;height:0.5rem;background-color:transparent;cursor:pointer}[id="1c0ys"] .sndian-njon7-1c0ys::-webkit-scrollbar-track{background-color:transparent}[id="1c0ys"] sndian-tab-list::-webkit-scrollbar-thumb{background-color:var(--primary-color);background-clip:content-box;border:0.2rem solid var(--secondary-text-color)}[id="1c0ys"] .sndian-13v35-1c0ys[aria-selected="true"]{background-color:var(--primary-color);color:var(--secondary-text-color)}[id="1c0ys"] .sndian-113ah-1c0ys[aria-selected="false"]{display:none}[id="1c0ys"] .sndian-113ah-1c0ys[aria-selected="true"]{display:flex}[id="1c0ys"] p{margin:0}[id="1c0ys"] .sndian-iihoy-1c0ys{display:flex;flex-direction:column;gap:var(--space-medium)}@media (max-width: 900px){[id="1c0ys"] sndian-tab-list{flex:1 1 100%;padding-inline-end:0;flex-direction:row}[id="1c0ys"] .sndian-13v35-1c0ys h3{white-space:nowrap}[id="1c0ys"] sndian-tab-panels{flex:1 1 100%}}[id="1c0ys"] h1,
+[id="1c0ys"] h2,
+[id="1c0ys"] h3,
+[id="1c0ys"] h4,
+[id="1c0ys"] h5,
+[id="1c0ys"] h6,
+[id="1c0ys"] p{margin:0}@media (max-width: 767px){[id="1c0ys"] .sndian-noqw9-1c0ys{padding:var(--space-larger) var(--space-large)}}[id="1c0ys"] [aria-selected='false'] .sndian-s7w7m-1c0ys{background-color:var(--secondary-background-color);color:var(--primary-color)}[id="1c0ys"] .sndian-1bqw1-1c0ys[aria-selected='false']{display:none}[id="1c0ys"]{}[id="1c0ys"] .sndian-a2v47-1c0ys{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="1c0ys"] .sndian-3u8p4-1c0ys{width:fit-content;height:fit-content}[id="1c0ys"] .sndian-10ves-1c0ys{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1c0ys"] .sndian-p35fn-1c0ys{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1c0ys"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1c0ys"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1c0ys"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1c0ys"] .sndian-10ves-1c0ys{max-width:60vw!important}}[id="pm69k"] .sndian-1c54y-pm69k{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="pm69k"] .sndian-1qu59-pm69k{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="pm69k"] .sndian-1popz-pm69k{display:flex;flex-direction:column;gap:var(--space-medium)}[id="pm69k"] .sndian-1so4s-pm69k{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="pm69k"] .sndian-1so4s-pm69k h3,
+    [id="pm69k"] .sndian-1so4s-pm69k p{margin:0}[id="pm69k"] .sndian-1twl0-pm69k{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="pm69k"] .sndian-1twl0-pm69k button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="pm69k"] h1,
+    [id="pm69k"] h2,
+    [id="pm69k"] h3,
+    [id="pm69k"] h4,
+    [id="pm69k"] h5,
+    [id="pm69k"] h6,
+    [id="pm69k"] p{margin:0}@media (max-width: 767px){[id="pm69k"] .sndian-1c54y-pm69k{padding:var(--space-larger) var(--space-large)}}[id="pm69k"] .sndian-10ves-pm69k{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="pm69k"] .sndian-p35fn-pm69k{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="pm69k"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="pm69k"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="pm69k"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="pm69k"] .sndian-10ves-pm69k{max-width:60vw!important}}[id="1ah78"] .sndian-1c54y-1ah78{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="1ah78"] .sndian-1qu59-1ah78{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="1ah78"] .sndian-1popz-1ah78{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1ah78"] .sndian-1so4s-1ah78{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="1ah78"] .sndian-1so4s-1ah78 h3,
+[id="1ah78"] .sndian-1so4s-1ah78 p{margin:0}[id="1ah78"] .sndian-1twl0-1ah78{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1ah78"] .sndian-1twl0-1ah78 button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="1ah78"] h1,
+[id="1ah78"] h2,
+[id="1ah78"] h3,
+[id="1ah78"] h4,
+[id="1ah78"] h5,
+[id="1ah78"] h6,
+[id="1ah78"] p{margin:0}@media (max-width: 767px){[id="1ah78"] .sndian-1c54y-1ah78{padding:var(--space-larger) var(--space-large)}}[id="1ah78"] .sndian-10ves-1ah78{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1ah78"] .sndian-p35fn-1ah78{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1ah78"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1ah78"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1ah78"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1ah78"] .sndian-10ves-1ah78{max-width:60vw!important}}[id="7zzdn"] .sndian-1c54y-7zzdn{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="7zzdn"] .sndian-1qu59-7zzdn{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="7zzdn"] .sndian-1popz-7zzdn{display:flex;flex-direction:column;gap:var(--space-medium)}[id="7zzdn"] .sndian-1so4s-7zzdn{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="7zzdn"] .sndian-1so4s-7zzdn h3,
+    [id="7zzdn"] .sndian-1so4s-7zzdn p{margin:0}[id="7zzdn"] .sndian-1twl0-7zzdn{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="7zzdn"] .sndian-1twl0-7zzdn button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="7zzdn"] h1,
+    [id="7zzdn"] h2,
+    [id="7zzdn"] h3,
+    [id="7zzdn"] h4,
+    [id="7zzdn"] h5,
+    [id="7zzdn"] h6,
+    [id="7zzdn"] p{margin:0}@media (max-width: 767px){[id="7zzdn"] .sndian-1c54y-7zzdn{padding:var(--space-larger) var(--space-large)}}[id="7zzdn"] .sndian-10ves-7zzdn{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="7zzdn"] .sndian-p35fn-7zzdn{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="7zzdn"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="7zzdn"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="7zzdn"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="7zzdn"] .sndian-10ves-7zzdn{max-width:60vw!important}}[id="17d5w"] .sndian-jsxhc-17d5w{width:100%;display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger);min-height:30rem;background-color:var(--background-color);background-position:center center;background-size:cover;background-repeat:no-repeat}[id="17d5w"] .sndian-1jens-17d5w{display:flex;flex-direction:column;justify-content:inherit;align-items:inherit;gap:var(--space-medium);width:100%}[id="17d5w"] .sndian-5iztz-17d5w{display:flex;flex-direction:column;align-items:inherit;justify-content:inherit;gap:var(--space-medium)}[id="17d5w"] .sndian-1jens-17d5w h1{color:inherit;text-transform:uppercase}[id="17d5w"] .sndian-1xol8-17d5w{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="17d5w"] .sndian-1c2ps-17d5w{display:flex;gap:var(--space-medium);padding:0;flex-wrap:wrap;justify-content:center;margin:0}[id="17d5w"] .sndian-1c2ps-17d5w span{font-size:1.2rem}[id="17d5w"] h1,
+  [id="17d5w"] h2,
+  [id="17d5w"] h3,
+  [id="17d5w"] h4,
+  [id="17d5w"] h5,
+  [id="17d5w"] h6,
+  [id="17d5w"] p{margin:0}@media (max-width: 767px){[id="17d5w"] .sndian-jsxhc-17d5w{padding:var(--space-larger) var(--space-large)}}[id="17d5w"] .sndian-10ves-17d5w{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="17d5w"] .sndian-p35fn-17d5w{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="17d5w"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="17d5w"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="17d5w"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="17d5w"] .sndian-10ves-17d5w{max-width:60vw!important}}[id="17d5w"] .sndian-10l5j-17d5w{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="17d5w"] .sndian-au718-17d5w{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="z5ozk"] .sndian-noqw9-z5ozk{display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger)}[id="z5ozk"] .sndian-1xr3a-z5ozk{display:flex;width:100%;flex-direction:column;align-items:center;gap:var(--space-larger);max-width:800px}[id="z5ozk"] sndian-tabs{width:100%;display:flex;gap:var(--space-large);flex-wrap:wrap}[id="z5ozk"] sndian-tab-list{display:flex;gap:var(--space-large);flex-direction:column;overflow-y:auto;padding-bottom:var(--space-small);flex:1 1 200px}[id="z5ozk"] sndian-tab-panels{background-color:var(--secondary-background-color);flex:1 1 500px;padding:var(--space-large)}[id="z5ozk"] .sndian-13v35-z5ozk{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-medium);padding:var(--space-medium);margin:0;border-radius:var(--border-radius)}[id="z5ozk"] .sndian-13v35-z5ozk h3{font-size:20px}[id="z5ozk"] h5{margin:0}[id="z5ozk"] sndian-tab-list::-webkit-scrollbar{width:0.5rem;height:0.5rem;background-color:transparent;cursor:pointer}[id="z5ozk"] .sndian-njon7-z5ozk::-webkit-scrollbar-track{background-color:transparent}[id="z5ozk"] sndian-tab-list::-webkit-scrollbar-thumb{background-color:var(--primary-color);background-clip:content-box;border:0.2rem solid var(--secondary-text-color)}[id="z5ozk"] .sndian-13v35-z5ozk[aria-selected="true"]{background-color:var(--primary-color);color:var(--secondary-text-color)}[id="z5ozk"] .sndian-113ah-z5ozk[aria-selected="false"]{display:none}[id="z5ozk"] .sndian-113ah-z5ozk[aria-selected="true"]{display:flex}[id="z5ozk"] p{margin:0}[id="z5ozk"] .sndian-iihoy-z5ozk{display:flex;flex-direction:column;gap:var(--space-medium)}@media (max-width: 900px){[id="z5ozk"] sndian-tab-list{flex:1 1 100%;padding-inline-end:0;flex-direction:row}[id="z5ozk"] .sndian-13v35-z5ozk h3{white-space:nowrap}[id="z5ozk"] sndian-tab-panels{flex:1 1 100%}}[id="z5ozk"] h1,
+ [id="z5ozk"] h2,
+ [id="z5ozk"] h3,
+ [id="z5ozk"] h4,
+ [id="z5ozk"] h5,
+ [id="z5ozk"] h6,
+ [id="z5ozk"] p{margin:0}@media (max-width: 767px){[id="z5ozk"] .sndian-noqw9-z5ozk{padding:var(--space-larger) var(--space-large)}}[id="z5ozk"] [aria-selected='false'] .sndian-s7w7m-z5ozk{background-color:var(--secondary-background-color);color:var(--primary-color)}[id="z5ozk"] .sndian-1bqw1-z5ozk[aria-selected='false']{display:none}[id="z5ozk"] .sndian-a2v47-z5ozk{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="z5ozk"] .sndian-3u8p4-z5ozk{width:fit-content;height:fit-content}[id="z5ozk"] .sndian-10ves-z5ozk{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="z5ozk"] .sndian-p35fn-z5ozk{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="z5ozk"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="z5ozk"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="z5ozk"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="z5ozk"] .sndian-10ves-z5ozk{max-width:60vw!important}}[id="1lxwz"] .sndian-1c54y-1lxwz{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="1lxwz"] .sndian-1qu59-1lxwz{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="1lxwz"] .sndian-1popz-1lxwz{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1lxwz"] .sndian-1so4s-1lxwz{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="1lxwz"] .sndian-1so4s-1lxwz h3,
+ [id="1lxwz"] .sndian-1so4s-1lxwz p{margin:0}[id="1lxwz"] .sndian-1twl0-1lxwz{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1lxwz"] .sndian-1twl0-1lxwz button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="1lxwz"] h1,
+ [id="1lxwz"] h2,
+ [id="1lxwz"] h3,
+ [id="1lxwz"] h4,
+ [id="1lxwz"] h5,
+ [id="1lxwz"] h6,
+ [id="1lxwz"] p{margin:0}@media (max-width: 767px){[id="1lxwz"] .sndian-1c54y-1lxwz{padding:var(--space-larger) var(--space-large)}}[id="1lxwz"] .sndian-10ves-1lxwz{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1lxwz"] .sndian-p35fn-1lxwz{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1lxwz"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1lxwz"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1lxwz"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1lxwz"] .sndian-10ves-1lxwz{max-width:60vw!important}}[id="56w81"] .sndian-1c54y-56w81{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="56w81"] .sndian-1qu59-56w81{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="56w81"] .sndian-1popz-56w81{display:flex;flex-direction:column;gap:var(--space-medium)}[id="56w81"] .sndian-1so4s-56w81{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="56w81"] .sndian-1so4s-56w81 h3,
+ [id="56w81"] .sndian-1so4s-56w81 p{margin:0}[id="56w81"] .sndian-1twl0-56w81{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="56w81"] .sndian-1twl0-56w81 button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="56w81"] h1,
+ [id="56w81"] h2,
+ [id="56w81"] h3,
+ [id="56w81"] h4,
+ [id="56w81"] h5,
+ [id="56w81"] h6,
+ [id="56w81"] p{margin:0}@media (max-width: 767px){[id="56w81"] .sndian-1c54y-56w81{padding:var(--space-larger) var(--space-large)}}[id="56w81"] .sndian-10ves-56w81{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="56w81"] .sndian-p35fn-56w81{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="56w81"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="56w81"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="56w81"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="56w81"] .sndian-10ves-56w81{max-width:60vw!important}}[id="agrj9"] .sndian-1c54y-agrj9{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="agrj9"] .sndian-1qu59-agrj9{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="agrj9"] .sndian-1popz-agrj9{display:flex;flex-direction:column;gap:var(--space-medium)}[id="agrj9"] .sndian-1so4s-agrj9{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="agrj9"] .sndian-1so4s-agrj9 h3,
+    [id="agrj9"] .sndian-1so4s-agrj9 p{margin:0}[id="agrj9"] .sndian-1twl0-agrj9{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="agrj9"] .sndian-1twl0-agrj9 button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="agrj9"] h1,
+    [id="agrj9"] h2,
+    [id="agrj9"] h3,
+    [id="agrj9"] h4,
+    [id="agrj9"] h5,
+    [id="agrj9"] h6,
+    [id="agrj9"] p{margin:0}@media (max-width: 767px){[id="agrj9"] .sndian-1c54y-agrj9{padding:var(--space-larger) var(--space-large)}}[id="agrj9"] .sndian-10ves-agrj9{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="agrj9"] .sndian-p35fn-agrj9{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="agrj9"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="agrj9"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="agrj9"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="agrj9"] .sndian-10ves-agrj9{max-width:60vw!important}}[id="ptpae"] .sndian-jsxhc-ptpae{width:100%;display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger);min-height:30rem;background-color:var(--background-color);background-position:center center;background-size:cover;background-repeat:no-repeat}[id="ptpae"] .sndian-1jens-ptpae{display:flex;flex-direction:column;justify-content:inherit;align-items:inherit;gap:var(--space-medium);width:100%}[id="ptpae"] .sndian-5iztz-ptpae{display:flex;flex-direction:column;align-items:inherit;justify-content:inherit;gap:var(--space-medium)}[id="ptpae"] .sndian-1jens-ptpae h1{color:inherit;text-transform:uppercase}[id="ptpae"] .sndian-1xol8-ptpae{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="ptpae"] .sndian-1c2ps-ptpae{display:flex;gap:var(--space-medium);padding:0;flex-wrap:wrap;justify-content:center;margin:0}[id="ptpae"] .sndian-1c2ps-ptpae span{font-size:1.2rem}[id="ptpae"] h1,
+ [id="ptpae"] h2,
+ [id="ptpae"] h3,
+ [id="ptpae"] h4,
+ [id="ptpae"] h5,
+ [id="ptpae"] h6,
+ [id="ptpae"] p{margin:0}@media (max-width: 767px){[id="ptpae"] .sndian-jsxhc-ptpae{padding:var(--space-larger) var(--space-large)}}[id="ptpae"] .sndian-10ves-ptpae{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="ptpae"] .sndian-p35fn-ptpae{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="ptpae"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="ptpae"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="ptpae"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="ptpae"] .sndian-10ves-ptpae{max-width:60vw!important}}[id="ptpae"] .sndian-10l5j-ptpae{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="ptpae"] .sndian-au718-ptpae{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="3s1qm"] .sndian-e0o06-3s1qm{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center}[id="3s1qm"] .sndian-14xiu-3s1qm{display:flex;width:100%;max-width:var(--max-content-width);flex-direction:column;gap:var(--space-larger)}[id="3s1qm"] .sndian-xbmmg-3s1qm{display:flex;flex-wrap:wrap;width:100%;gap:var(--space-larger);justify-content:space-between}[id="3s1qm"] .sndian-xbmmg-3s1qm h4{margin:0}[id="3s1qm"] .sndian-1rexn-3s1qm{display:flex;flex-wrap:wrap;flex-direction:column;gap:var(--space-medium)}[id="3s1qm"] .sndian-1hnsz-3s1qm{display:flex;flex-wrap:wrap;flex-direction:column;gap:var(--space-medium);justify-content:center}[id="3s1qm"] .sndian-1hnsz-3s1qm h3{font-size:24px}[id="3s1qm"] .sndian-hizam-3s1qm h4{font-size:20px}[id="3s1qm"] .sndian-12u0h-3s1qm{display:flex;flex-direction:column;justify-content:center;align-items:center}[id="3s1qm"] .sndian-vmobd-3s1qm{display:flex;flex-direction:column;padding:var(--space-large);justify-content:center;height:100%;align-items:center;text-align:center;border-radius:var(--border-radius);border-width:2px;border-style:solid}[id="3s1qm"] .sndian-2iweq-3s1qm{background-color:var(--primary-color);color:var(--secondary-text-color);border-color:var(--primary-color)}[id="3s1qm"] .sndian-au718-3s1qm span{--base-font-size:2.7rem;font-size:var(--base-font-size);display:flex}[id="3s1qm"] .sndian-jsd7f-3s1qm{display:flex;flex-direction:column;gap:var(--space-medium)}[id="3s1qm"] .sndian-hizam-3s1qm{display:flex;flex-direction:column;gap:var(--space-medium)}[id="3s1qm"] .sndian-vmobd-3s1qm h5{text-align:center;margin:0}[id="3s1qm"] .sndian-vmobd-3s1qm p{text-align:center;margin:0}[id="3s1qm"] h1,
+[id="3s1qm"] h2,
+[id="3s1qm"] h3,
+[id="3s1qm"] h4,
+[id="3s1qm"] h5,
+[id="3s1qm"] h6,
+[id="3s1qm"] p{margin:0}@media (max-width: 767px){[id="3s1qm"] .sndian-e0o06-3s1qm{padding:var(--space-larger) var(--space-large)}[id="3s1qm"] .sndian-vmobd-3s1qm{padding:var(--space-medium)}[id="3s1qm"] sndian-grid{gap:var(--space-large)}[id="3s1qm"] .sndian-1rexn-3s1qm{flex:100%}[id="3s1qm"] .sndian-1hnsz-3s1qm{flex:100%}[id="3s1qm"] .sndian-xbmmg-3s1qm{gap:var(--space-large)}}[id="3s1qm"] .sndian-1nucx-3s1qm{display:grid;width:100%;align-items:center}[id="3s1qm"] .sndian-1niud-3s1qm{}[id="3s1qm"] .sndian-10l5j-3s1qm{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="3s1qm"] .sndian-au718-3s1qm{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 0px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="6xtexh"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="6xtexh"]{gap:var(--space-larger)}[id="zhzqy"] .sndian-1c54y-zhzqy{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="zhzqy"] .sndian-1qu59-zhzqy{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="zhzqy"] .sndian-1popz-zhzqy{display:flex;flex-direction:column;gap:var(--space-medium)}[id="zhzqy"] .sndian-1so4s-zhzqy{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="zhzqy"] .sndian-1so4s-zhzqy h3,
+  [id="zhzqy"] .sndian-1so4s-zhzqy p{margin:0}[id="zhzqy"] .sndian-1twl0-zhzqy{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="zhzqy"] .sndian-1twl0-zhzqy button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="zhzqy"] h1,
+  [id="zhzqy"] h2,
+  [id="zhzqy"] h3,
+  [id="zhzqy"] h4,
+  [id="zhzqy"] h5,
+  [id="zhzqy"] h6,
+  [id="zhzqy"] p{margin:0}@media (max-width: 767px){[id="zhzqy"] .sndian-1c54y-zhzqy{padding:var(--space-larger) var(--space-large)}}[id="zhzqy"] .sndian-10ves-zhzqy{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="zhzqy"] .sndian-p35fn-zhzqy{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="zhzqy"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="zhzqy"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="zhzqy"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="zhzqy"] .sndian-10ves-zhzqy{max-width:60vw!important}}[id="17ot1"] .sndian-1c54y-17ot1{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="17ot1"] .sndian-1qu59-17ot1{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="17ot1"] .sndian-1popz-17ot1{display:flex;flex-direction:column;gap:var(--space-medium)}[id="17ot1"] .sndian-1so4s-17ot1{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="17ot1"] .sndian-1so4s-17ot1 h3,
+ [id="17ot1"] .sndian-1so4s-17ot1 p{margin:0}[id="17ot1"] .sndian-1twl0-17ot1{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="17ot1"] .sndian-1twl0-17ot1 button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="17ot1"] h1,
+ [id="17ot1"] h2,
+ [id="17ot1"] h3,
+ [id="17ot1"] h4,
+ [id="17ot1"] h5,
+ [id="17ot1"] h6,
+ [id="17ot1"] p{margin:0}@media (max-width: 767px){[id="17ot1"] .sndian-1c54y-17ot1{padding:var(--space-larger) var(--space-large)}}[id="17ot1"] .sndian-10ves-17ot1{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="17ot1"] .sndian-p35fn-17ot1{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="17ot1"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="17ot1"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="17ot1"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="17ot1"] .sndian-10ves-17ot1{max-width:60vw!important}}[id="uqw87"] .sndian-1c54y-uqw87{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="uqw87"] .sndian-1qu59-uqw87{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="uqw87"] .sndian-1popz-uqw87{display:flex;flex-direction:column;gap:var(--space-medium)}[id="uqw87"] .sndian-1so4s-uqw87{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="uqw87"] .sndian-1so4s-uqw87 h3,
+    [id="uqw87"] .sndian-1so4s-uqw87 p{margin:0}[id="uqw87"] .sndian-1twl0-uqw87{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="uqw87"] .sndian-1twl0-uqw87 button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="uqw87"] h1,
+    [id="uqw87"] h2,
+    [id="uqw87"] h3,
+    [id="uqw87"] h4,
+    [id="uqw87"] h5,
+    [id="uqw87"] h6,
+    [id="uqw87"] p{margin:0}@media (max-width: 767px){[id="uqw87"] .sndian-1c54y-uqw87{padding:var(--space-larger) var(--space-large)}}[id="uqw87"] .sndian-10ves-uqw87{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="uqw87"] .sndian-p35fn-uqw87{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="uqw87"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="uqw87"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="uqw87"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="uqw87"] .sndian-10ves-uqw87{max-width:60vw!important}}[id="1rv1k"] .sndian-jsxhc-1rv1k{width:100%;display:flex;justify-content:center;align-items:center;padding:var(--space-largest) var(--space-larger);min-height:30rem;background-color:var(--background-color);background-position:center center;background-size:cover;background-repeat:no-repeat}[id="1rv1k"] .sndian-1jens-1rv1k{display:flex;flex-direction:column;justify-content:inherit;align-items:inherit;gap:var(--space-medium);width:100%}[id="1rv1k"] .sndian-5iztz-1rv1k{display:flex;flex-direction:column;align-items:inherit;justify-content:inherit;gap:var(--space-medium)}[id="1rv1k"] .sndian-1jens-1rv1k h1{color:inherit;text-transform:uppercase}[id="1rv1k"] .sndian-1xol8-1rv1k{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1rv1k"] .sndian-1c2ps-1rv1k{display:flex;gap:var(--space-medium);padding:0;flex-wrap:wrap;justify-content:center;margin:0}[id="1rv1k"] .sndian-1c2ps-1rv1k span{font-size:1.2rem}[id="1rv1k"] h1,
+  [id="1rv1k"] h2,
+  [id="1rv1k"] h3,
+  [id="1rv1k"] h4,
+  [id="1rv1k"] h5,
+  [id="1rv1k"] h6,
+  [id="1rv1k"] p{margin:0}@media (max-width: 767px){[id="1rv1k"] .sndian-jsxhc-1rv1k{padding:var(--space-larger) var(--space-large)}}[id="1rv1k"] .sndian-10ves-1rv1k{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1rv1k"] .sndian-p35fn-1rv1k{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1rv1k"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1rv1k"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1rv1k"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1rv1k"] .sndian-10ves-1rv1k{max-width:60vw!important}}[id="1rv1k"] .sndian-10l5j-1rv1k{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1rv1k"] .sndian-au718-1rv1k{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1nfvb"] .sndian-e0o06-1nfvb{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center}[id="1nfvb"] .sndian-14xiu-1nfvb{display:flex;width:100%;max-width:var(--max-content-width);flex-direction:column;gap:var(--space-larger)}[id="1nfvb"] .sndian-xbmmg-1nfvb{display:flex;flex-wrap:wrap;width:100%;gap:var(--space-larger);justify-content:space-between}[id="1nfvb"] .sndian-xbmmg-1nfvb h4{margin:0}[id="1nfvb"] .sndian-1rexn-1nfvb{display:flex;flex-wrap:wrap;flex-direction:column;gap:var(--space-medium)}[id="1nfvb"] .sndian-1hnsz-1nfvb{display:flex;flex-wrap:wrap;flex-direction:column;gap:var(--space-medium);justify-content:center}[id="1nfvb"] .sndian-1hnsz-1nfvb h3{font-size:24px}[id="1nfvb"] .sndian-hizam-1nfvb h4{font-size:20px}[id="1nfvb"] .sndian-12u0h-1nfvb{display:flex;flex-direction:column;justify-content:center;align-items:center}[id="1nfvb"] .sndian-vmobd-1nfvb{display:flex;flex-direction:column;padding:var(--space-large);justify-content:center;height:100%;align-items:center;text-align:center;border-radius:var(--border-radius);border-width:2px;border-style:solid}[id="1nfvb"] .sndian-2iweq-1nfvb{background-color:var(--primary-color);color:var(--secondary-text-color);border-color:var(--primary-color)}[id="1nfvb"] .sndian-au718-1nfvb span{--base-font-size:2.7rem;font-size:var(--base-font-size);display:flex}[id="1nfvb"] .sndian-jsd7f-1nfvb{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1nfvb"] .sndian-hizam-1nfvb{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1nfvb"] .sndian-vmobd-1nfvb h5{text-align:center;margin:0}[id="1nfvb"] .sndian-vmobd-1nfvb p{text-align:center;margin:0}[id="1nfvb"] h1,
+ [id="1nfvb"] h2,
+ [id="1nfvb"] h3,
+ [id="1nfvb"] h4,
+ [id="1nfvb"] h5,
+ [id="1nfvb"] h6,
+ [id="1nfvb"] p{margin:0}@media (max-width: 767px){[id="1nfvb"] .sndian-e0o06-1nfvb{padding:var(--space-larger) var(--space-large)}[id="1nfvb"] .sndian-vmobd-1nfvb{padding:var(--space-medium)}[id="1nfvb"] sndian-grid{gap:var(--space-large)}[id="1nfvb"] .sndian-1rexn-1nfvb{flex:100%}[id="1nfvb"] .sndian-1hnsz-1nfvb{flex:100%}[id="1nfvb"] .sndian-xbmmg-1nfvb{gap:var(--space-large)}}[id="1nfvb"] .sndian-1nucx-1nfvb{display:grid;width:100%;align-items:center}[id="1nfvb"] .sndian-1niud-1nfvb{}[id="1nfvb"] .sndian-10l5j-1nfvb{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1nfvb"] .sndian-au718-1nfvb{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[id="1nfvb"] [data-grid-id="6xtexh"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[id="1nfvb"] [data-grid-id="6xtexh"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[id="1nfvb"] [data-grid-id="6xtexh"]{grid-template-columns:repeat(2,1fr)}}[id="1nfvb"] [data-grid-id="6xtexh"]{gap:var(--space-larger)}@media (min-width: 0px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 0px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="dnwdt6"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="dnwdt6"]{gap:var(--space-larger)}[id="1v12x"] .sndian-1c54y-1v12x{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="1v12x"] .sndian-1qu59-1v12x{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="1v12x"] .sndian-1popz-1v12x{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1v12x"] .sndian-1so4s-1v12x{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="1v12x"] .sndian-1so4s-1v12x h3,
+  [id="1v12x"] .sndian-1so4s-1v12x p{margin:0}[id="1v12x"] .sndian-1twl0-1v12x{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1v12x"] .sndian-1twl0-1v12x button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="1v12x"] h1,
+  [id="1v12x"] h2,
+  [id="1v12x"] h3,
+  [id="1v12x"] h4,
+  [id="1v12x"] h5,
+  [id="1v12x"] h6,
+  [id="1v12x"] p{margin:0}@media (max-width: 767px){[id="1v12x"] .sndian-1c54y-1v12x{padding:var(--space-larger) var(--space-large)}}[id="1v12x"] .sndian-10ves-1v12x{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1v12x"] .sndian-p35fn-1v12x{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1v12x"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1v12x"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1v12x"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1v12x"] .sndian-10ves-1v12x{max-width:60vw!important}}[id="d9syj"] .sndian-1c54y-d9syj{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="d9syj"] .sndian-1qu59-d9syj{width:100%;display:flex;justify-content:center;max-width:var(--max-content-width)}[id="d9syj"] .sndian-1popz-d9syj{display:flex;flex-direction:column;gap:var(--space-medium)}[id="d9syj"] .sndian-1so4s-d9syj{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;gap:var(--space-medium)}[id="d9syj"] .sndian-1so4s-d9syj h3,
+  [id="d9syj"] .sndian-1so4s-d9syj p{margin:0}[id="d9syj"] .sndian-1twl0-d9syj{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="d9syj"] .sndian-1twl0-d9syj button{background-color:var(--secondary-text-color);color:var(--text-color);border:none}[id="d9syj"] h1,
+  [id="d9syj"] h2,
+  [id="d9syj"] h3,
+  [id="d9syj"] h4,
+  [id="d9syj"] h5,
+  [id="d9syj"] h6,
+  [id="d9syj"] p{margin:0}@media (max-width: 767px){[id="d9syj"] .sndian-1c54y-d9syj{padding:var(--space-larger) var(--space-large)}}[id="d9syj"] .sndian-10ves-d9syj{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="d9syj"] .sndian-p35fn-d9syj{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="d9syj"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="d9syj"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="d9syj"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="d9syj"] .sndian-10ves-d9syj{max-width:60vw!important}}[id="47wkh"] .sndian-og3da-47wkh{display:flex;justify-content:center;padding:var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="47wkh"] .sndian-v8zb6-47wkh{text-decoration:none}[id="47wkh"] .sndian-1ybrh-47wkh{display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;color:inherit;gap:var(--space-medium);max-width:var(--max-content-width)}[id="47wkh"] .sndian-s1zs2-47wkh{align-items:center;gap:var(--space-medium)}[id="47wkh"] .sndian-1ybrh-47wkh .sndian-1ccet-47wkh{margin:var(--space-medium) 0 var(--space-medium) 0;width:100%;border-bottom-color:var(--border-color)}[id="47wkh"] .sndian-s1zs2-47wkh{display:flex;gap:var(--space-smallest)}[id="47wkh"] .sndian-1ghx6-47wkh{display:flex;align-items:center;justify-content:center;gap:var(--space-medium);margin:0;flex-wrap:wrap;padding:0;color:inherit}[id="47wkh"] .sndian-16dw4-47wkh{display:flex;flex-direction:column;gap:var(--space-medium)}[id="47wkh"] h1,
+[id="47wkh"] h2,
+[id="47wkh"] h3,
+[id="47wkh"] h4,
+[id="47wkh"] h5,
+[id="47wkh"] h6,
+[id="47wkh"] p{margin:0}@media (max-width: 767px){[id="47wkh"] .sndian-og3da-47wkh{padding:var(--space-large)}}[id="47wkh"] .sndian-1ccet-47wkh{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="47wkh"] .sndian-v8zb6-47wkh{width:fit-content;height:fit-content;display:inline-block}</style><style id="hb-stylesheet"></style><link rel="stylesheet" type="text/css" href="services_files/botchat.css" media="all" id="botchat-css"></head><body><div id="1osqo"><section class="sndian-1pgvy-1osqo" data-section-name="navbar-verical" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-1l76o-1osqo">
+        <div class="navbar-verical-wrapper">
+            <div class="sndian-t1gtv-1osqo">
+              <a type="link" id="رابط" class="sndian-v8zb6-1osqo" rel="noopener noreferrer" href="index.html">
+      <span><h2 dir="rtl" style=""><span style="">خدماتنا</span></h2></span>
+    </a>
+            </div> 
+        </div>  
+        <div class="sndian-jhtc8-1osqo">
+          <div class="sndian-a2v47-1osqo">
+      <a type="button" id="زر" class="sndian-10ves-1osqo" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <button class="sndian-p35fn-1osqo" data-button-type="textual" style="background-color: var(--primary-color); color: var(--secondary-text-color)">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">ابقى على تواصل</span>
+      </button>
+    </a>
+    </div>
+          <div class="navbar-verical-Button" aria-controls="navbar-verical-menu">
+                <a class="sndian-au718-1osqo" id="navbar-verical-Button-topen">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="bars" data-icon-prefix="fas">
+    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+  </svg></span>
+    </a>
+          </div>
+        </div>
+        <sndian-menu id="navbar-verical-menu" class="sndian-zmj2w-1osqo" aria-expanded="false" style="background: var(--primary-color); color: var(--secondary-text-color)">
+          
+          <div class="sndian-1titw-1osqo">
+              <div class="sndian-1m28q-1osqo" aria-controls="navbar-verical-menu">
+                    <a class="sndian-au718-1osqo" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 384 512" data-icon-name="xmark" data-icon-prefix="fas">
+    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path>
+  </svg></span>
+    </a>
+              </div>
+              <div class="sndian-pkdkz-1osqo">
+                   <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="index.html" aria-current="page">
+      <span>
+                        <h3>الرئيسية</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="about.htm" aria-current="page">
+      <span>
+                        <h3>من نحن</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="services.htm" aria-current="page">
+      <span>
+                        <h3>خدماتنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="plans.htm" aria-current="page">
+      <span>
+                        <h3>برامجنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank"  aria-current="page">
+      <span>
+                        <h3>تواصل معنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+              </div>
+          </div>
+        </sndian-menu>
+    </div>
+</section></div><div id="16mwn"><section class="sndian-130hz-16mwn" data-section-name="places-hero-solid" style="background: url(&quot;https://sndiansite.com/media/34319/8634/890642c6-984f-4bb2-be16-cb0966ab1659/56.png&quot;) 51.6216% 80.0578% / cover no-repeat; color: var(--text-color)">
+  
+  <div class="sndian-183il-16mwn">
+    <div class="sndian-1qtd4-16mwn">
+      <div class="sndian-wq0zj-16mwn">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="12ibk"><section class="sndian-jsxhc-12ibk" data-section-name="hero-vertical" style="min-height: 50px; background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-1jens-12ibk">
+      <a class="sndian-au718-12ibk sndian-5iztz-12ibk" id="أيقونة">
+      <span class="sndian-10l5j-12ibk" style="color: var(--primary-color); font-size: 35px"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="map-location-dot" data-icon-prefix="fas">
+    <path d="M408 120c0 54.6-73.1 151.9-105.2 192c-7.7 9.6-22 9.6-29.6 0C241.1 271.9 168 174.6 168 120C168 53.7 221.7 0 288 0s120 53.7 120 120zm8 80.4c3.5-6.9 6.7-13.8 9.6-20.6c.5-1.2 1-2.5 1.5-3.7l116-46.4C558.9 123.4 576 135 576 152V422.8c0 9.8-6 18.6-15.1 22.3L416 503V200.4zM137.6 138.3c2.4 14.1 7.2 28.3 12.8 41.5c2.9 6.8 6.1 13.7 9.6 20.6V451.8L32.9 502.7C17.1 509 0 497.4 0 480.4V209.6c0-9.8 6-18.6 15.1-22.3l122.6-49zM327.8 332c13.9-17.4 35.7-45.7 56.2-77V504.3L192 449.4V255c20.5 31.3 42.3 59.6 56.2 77c20.5 25.6 59.1 25.6 79.6 0zM288 152a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path>
+  </svg></span>
+    </a><div class="sndian-5iztz-12ibk">
+        <div><h3 dir="rtl"><span>برامج سياحية مخصصة</span></h3></div>
+        <div><blockquote class="editor__quote" dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">باقات متكاملة من الخططالسياحية </strong><strong class="editor__text-bold" style="white-space: pre-wrap">لضمان </strong><strong class="editor__text-bold" style="white-space: pre-wrap">تجربة سفر سلسة ومريحة تلبي جميع احتياجاتك، أينما كانت وجهتك.</strong></blockquote></div>
+      </div>
+      <div class="sndian-1xol8-12ibk">
+        
+      </div>
+      <ul class="sndian-1c2ps-12ibk">
+          
+          
+          
+          
+          
+      </ul>
+    </div>
+</section></div><div id="1c0ys"><section class="sndian-noqw9-1c0ys" data-section-name="tab-side" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-1xr3a-1c0ys">
+    
+    <sndian-tabs id="تبويب" class="builder-tabs">
+      <sndian-tab-list>
+        <div class="sndian-13v35-1c0ys" for="tabpanel-1_bevpel_o9rk4r" aria-selected="true" data-original-for="tabpanel-1_bevpel" aria-controls="tabpanel-1_bevpel_o9rk4r">
+          <div><h3 dir="rtl" style=""><span style="">وجهات متنوعة</span></h3></div>
+        </div>
+        <div class="sndian-13v35-1c0ys" for="tabpanel-2_7jehcn_8w34wy" data-original-for="tabpanel-2_7jehcn" aria-selected="false" aria-controls="tabpanel-2_7jehcn_8w34wy">
+          <div><h3 dir="rtl" style=""><span style="">برامج مخصصة</span></h3></div>
+        </div>
+        <div class="sndian-13v35-1c0ys" for="tabpanel-3_2ezcmw_x1psqi" data-original-for="tabpanel-3_2ezcmw" aria-selected="false" aria-controls="tabpanel-3_2ezcmw_x1psqi">
+          <div><h3 dir="rtl" style=""><span style="">دعم فوري</span></h3></div>
+        </div><div class="sndian-13v35-1c0ys" for="tabpanel-3_2ezcmw_ryrp1d" data-original-for="tabpanel-3_2ezcmw" aria-selected="false" aria-controls="tabpanel-3_2ezcmw_ryrp1d">
+          <div><h3 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">برنامج الولاء</strong></h3></div>
+        </div>
+      </sndian-tab-list>
+      <sndian-tab-panels style="background: var( --secondary-background-color); color: var(--text-color);">
+        <div class="sndian-113ah-1c0ys" id="tabpanel-1_bevpel_o9rk4r" data-original-id="tabpanel-1_bevpel" aria-selected="true">
+          <div class="sndian-iihoy-1c0ys">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">مجموعة واسعة من الوجهات السياحية</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نقدمها
+ لك  تتناسب مع جميع الأذواق، سواء كنت تبحث عن المغامرة، الاسترخاء، 
+الثقافة، أو التسوق. اختر رحلتك المثالية من بين أجمل الوجهات حول العالم!</span></p></div><div class="sndian-a2v47-1c0ys" style="flex-direction: column">
+      
+    </div><div class="sndian-a2v47-1c0ys">
+      <div class="sndian-a2v47-1c0ys">
+      
+      
+      
+    </div>
+    </div>
+          </div>
+        </div>
+        <div class="sndian-113ah-1c0ys" id="tabpanel-2_7jehcn_8w34wy" data-original-id="tabpanel-2_7jehcn" aria-selected="false">
+          <div class="sndian-iihoy-1c0ys">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">برامج سياحية مخصصة</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نؤمن بأن كل مسافر لديه تفضيلاته الخاصة وأحلامه الفريدة، لذلك نقدم لك </span><strong class="editor__text-bold" style="white-space: pre-wrap"> خطط </strong><span style="">مصممة خصيصًا لتناسب اهتماماتك وميزانيتك.</span></p><p class="." dir="rtl" style=""><br></p></div>
+          </div>
+        </div>
+        <div class="sndian-113ah-1c0ys" id="tabpanel-3_2ezcmw_x1psqi" data-original-id="tabpanel-3_2ezcmw" aria-selected="false">
+          <div class="sndian-iihoy-1c0ys">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">على مدار الساعة</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">علاقاتنا القوية مع أفضل مزودي الخدمات السياحية حول العالمحل مشكلة طارئة، أو </span><strong class="editor__text-bold" style="white-space: pre-wrap">مساعدة في حجوزاتك</strong><span style="">، يوفر لك فريقنا دعمًا فوريًا على مدار الساعة لضمان تجربة ب متاعب</span></p></div>
+          </div>
+        </div><div class="sndian-113ah-1c0ys" id="tabpanel-3_2ezcmw_ryrp1d" data-original-id="tabpanel-3_2ezcmw" aria-selected="false">
+          <div class="sndian-iihoy-1c0ys">
+            <div style="padding: 30px; color: var(--text-color);"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">مكافآت حصرية لعملائنا المميزين!</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نقدّر ولاء عملائنا، ولذلك أنشأنا </span><strong class="editor__text-bold" style="white-space: pre-wrap">برنامج الولاء</strong><span style=""> الذي يمنحك </span><strong class="editor__text-bold" style="white-space: pre-wrap">مكافآت، خصومات، </strong><span style="">وخدمات حصرية عند استخدامك المستمر لخدماتنا. كلما حجزت أكثر، كلما حصلت على مزايا أكبر!</span></p></div>
+          </div>
+        </div>
+      </sndian-tab-panels>
+    </sndian-tabs>
+  </div>
+</section></div><div id="pm69k"><section class="sndian-1c54y-pm69k" data-section-name="feature-solid" style="background: url(&quot;https://sndiansite.com/media/34319/8634/994eeb64-da20-4384-8713-72859b04878f/65.png&quot;) center center / cover no-repeat; color: var(--text-color)">
+  <div class="sndian-1qu59-pm69k">
+    <div class="sndian-1so4s-pm69k">
+      <div class="sndian-1popz-pm69k">
+        
+        
+      </div>
+      <div class="sndian-1twl0-pm69k">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="1ah78"><section class="sndian-1c54y-1ah78" data-section-name="feature-solid" style="background: var(--secondary-color); color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-1ah78">
+    <div class="sndian-1so4s-1ah78">
+      <div class="sndian-1popz-1ah78">
+        
+        <div style="color: var(--text-color);"><h4 style="" dir="rtl"><strong class="editor__text-bold" style="white-space: pre-wrap">احجز رحلتك الآن ودعنا نأخذك في مغامرة العمر!</strong></h4><h3 style=""><br></h3></div>
+      </div>
+      <div class="sndian-1twl0-1ah78">
+        <a type="button" id="زر" class="sndian-10ves-1ah78" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <button class="sndian-p35fn-1ah78" style="background-color: var( --secondary-background-color); color: var(--text-color)">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">تواصل الان</span>
+      </button>
+    </a>
+      </div>
+    </div>
+  </div>
+</section></div><div id="7zzdn"><section class="sndian-1c54y-7zzdn" data-section-name="feature-solid" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-1qu59-7zzdn">
+    <div class="sndian-1so4s-7zzdn">
+      <div class="sndian-1popz-7zzdn">
+        
+        
+      </div>
+      <div class="sndian-1twl0-7zzdn">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="17d5w"><section class="sndian-jsxhc-17d5w" data-section-name="hero-vertical" style="min-height: 50px; background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-1jens-17d5w">
+      <div class="sndian-5iztz-17d5w" style="background: var( --secondary-background-color); color: var(--text-color)">
+        <a class="sndian-au718-17d5w" id="أيقونة_44y58s">
+      <span class="sndian-10l5j-17d5w" style="color: var(--primary-color); font-size: 35px"><svg class="svg-inline" viewBox="0 0 640 512" data-icon-name="handshake-angle" data-icon-prefix="fas">
+    <path d="M544 248v3.3l69.7-69.7c21.9-21.9 21.9-57.3 0-79.2L535.6 24.4c-21.9-21.9-57.3-21.9-79.2 0L416.3 64.5c-2.7-.3-5.5-.5-8.3-.5H296c-37.1 0-67.6 28-71.6 64H224V248c0 22.1 17.9 40 40 40s40-17.9 40-40V176c0 0 0-.1 0-.1V160l16 0 136 0c0 0 0 0 .1 0H464c44.2 0 80 35.8 80 80v8zM336 192v56c0 39.8-32.2 72-72 72s-72-32.2-72-72V129.4c-35.9 6.2-65.8 32.3-76 68.2L99.5 255.2 26.3 328.4c-21.9 21.9-21.9 57.3 0 79.2l78.1 78.1c21.9 21.9 57.3 21.9 79.2 0l37.7-37.7c.9 0 1.8 .1 2.7 .1H384c26.5 0 48-21.5 48-48c0-5.6-1-11-2.7-16H432c26.5 0 48-21.5 48-48c0-12.8-5-24.4-13.2-33c25.7-5 45.1-27.6 45.2-54.8v-.4c-.1-30.8-25.1-55.8-56-55.8c0 0 0 0 0 0l-120 0z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl" style=""><span style="">خدمات التأشيرات السياحية</span></h3></div>
+        <div><blockquote class="editor__quote" dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">نعلم </strong><strong class="editor__text-bold" style="white-space: pre-wrap">أن </strong><strong class="editor__text-bold" style="white-space: pre-wrap">إجراءات التأشيرات قد تكون معقدة، ولهذا نوفر لك خدمات إستخلاص تأشيرات سريعة وموثوقة لضمان تجربة سفر سلسة وخالية من المتاعب</strong></blockquote></div>
+      </div>
+      <div class="sndian-1xol8-17d5w">
+        
+      </div>
+      <ul class="sndian-1c2ps-17d5w">
+          
+          
+          
+          
+          
+      </ul>
+    </div>
+</section></div><div id="z5ozk"><section class="sndian-noqw9-z5ozk" data-section-name="tab-side" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-1xr3a-z5ozk">
+    
+    <sndian-tabs id="تبويب_sqv2ib" class="builder-tabs">
+      <sndian-tab-list>
+        <div class="sndian-13v35-z5ozk" for="tabpanel-1_bevpel_o9rk4r_28spc6" aria-selected="true" data-original-for="tabpanel-1_bevpel_o9rk4r" aria-controls="tabpanel-1_bevpel_o9rk4r_28spc6">
+          <div><h3 dir="rtl" style=""><span style="">تقديم الطلبات</span></h3></div>
+        </div>
+        <div class="sndian-13v35-z5ozk" for="tabpanel-2_7jehcn_8w34wy_c2h707" data-original-for="tabpanel-2_7jehcn_8w34wy" aria-selected="false" aria-controls="tabpanel-2_7jehcn_8w34wy_c2h707">
+          <div><h3 dir="rtl" style=""><span style="">تجهيز المستندات</span></h3></div>
+        </div>
+        <div class="sndian-13v35-z5ozk" for="tabpanel-3_2ezcmw_x1psqi_dlr2qa" data-original-for="tabpanel-3_2ezcmw_x1psqi" aria-selected="false" aria-controls="tabpanel-3_2ezcmw_x1psqi_dlr2qa">
+          <div><h3 dir="rtl" style=""><span style="">حجز مواعيد السفارات</span></h3></div>
+        </div><div class="sndian-13v35-z5ozk" for="tabpanel-3_2ezcmw_ryrp1d_js7u0h" data-original-for="tabpanel-3_2ezcmw_ryrp1d" aria-selected="false" aria-controls="tabpanel-3_2ezcmw_ryrp1d_js7u0h">
+          <div><h3 dir="rtl" style=""><span style="">فرصتك الثانية</span></h3></div>
+        </div>
+      </sndian-tab-list>
+      <sndian-tab-panels style="background: var( --secondary-background-color); color: var(--text-color);">
+        <div class="sndian-113ah-z5ozk" id="tabpanel-1_bevpel_o9rk4r_28spc6" data-original-id="tabpanel-1_bevpel_o9rk4r" aria-selected="true">
+          <div class="sndian-iihoy-z5ozk">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">خدمات تقديم الطلبات للقنصليات</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نوفر لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة تقديم الطلبات للقنصليات</strong><span style=""> بطريقة احترافية وسريعة، سواء كنت بحاجة إلى </span><strong class="editor__text-bold" style="white-space: pre-wrap">استخراج تأشيرة، حجز رحلة، أو التقديم على خدمات سياحية متنوعة.</strong><span style=""> نحن نضمن لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">إجراءات سلسة وفعالة</strong><span style=""> من البداية وحتى استلام الموافقة!</span></p></div><div class="sndian-a2v47-z5ozk" style="flex-direction: column">
+      
+    </div><div class="sndian-a2v47-z5ozk">
+      <div class="sndian-a2v47-z5ozk">
+      
+      
+      
+    </div>
+    </div>
+          </div>
+        </div>
+        <div class="sndian-113ah-z5ozk" id="tabpanel-2_7jehcn_8w34wy_c2h707" data-original-id="tabpanel-2_7jehcn_8w34wy" aria-selected="false">
+          <div class="sndian-iihoy-z5ozk">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">خدمات تجهيز المستندات</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نوفر لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة تجهيز المستندات</strong><span style=""> بسرعة ودقة لضمان قبول طلباتك دون أي تعقيدات. سواء كنت بحاجة إلى </span><strong class="editor__text-bold" style="white-space: pre-wrap">أوراق التأشيرة، التقديم على السفر، أو التصديق والترجمة،</strong><span style=""> نحن هنا لمساعدتك في كل خطوة!</span></p><p class="." dir="rtl" style=""><br></p><ul class="editor__list-ul"><li value="1" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">إعداد طلبات التأشيرات</strong><span style=""> وفق متطلبات كل سفارة.</span></li><li value="2" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">مراجعة المستندات الرسمية</strong><span style=""> مثل جواز السفر، الصور، والنماذج المطلوبة.</span></li><li value="3" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">ترجمة معتمدة للمستندات</strong><span style=""> إلى اللغات المطلوبة بشكل احترافي.</span></li><li value="4" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">إعداد حجوزات الطيران والفنادق</strong><span style=""> كجزء من متطلبات التأشيرة.</span></li><li value="5" class="editor__listitem"><strong class="editor__text-bold" style="white-space: pre-wrap">مراجعة الأوراق بدقة</strong><span style=""> لضمان اكتمالها قبل التقديم.</span></li></ul><p class="." style=""><br></p><p class="." style=""><br></p></div>
+          </div>
+        </div>
+        <div class="sndian-113ah-z5ozk" id="tabpanel-3_2ezcmw_x1psqi_dlr2qa" data-original-id="tabpanel-3_2ezcmw_x1psqi" aria-selected="false">
+          <div class="sndian-iihoy-z5ozk">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">خدمات حجز مواعيد السفارات والقنصليات</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نوفر لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة حجز مواعيد السفارات والقنصليات</strong><span style=""> بسرعة وكفاءة، مما يساعدك على </span><strong class="editor__text-bold" style="white-space: pre-wrap">تقديم طلبات التأشيرة بسلاسة ودون تعقيدات.</strong></p><p class="." dir="rtl" style=""><br></p><p class="." dir="rtl" style=""><span style="">نحن نضمن لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">مواعيد مؤكدة</strong><span style=""> وفق أقرب توقيت متاح، مع توجيهات كاملة حول الإجراءات والمتطلبات.</span></p></div>
+          </div>
+        </div><div class="sndian-113ah-z5ozk" id="tabpanel-3_2ezcmw_ryrp1d_js7u0h" data-original-id="tabpanel-3_2ezcmw_ryrp1d" aria-selected="false">
+          <div class="sndian-iihoy-z5ozk">
+            <div style="padding: 30px;"><p class="." dir="rtl" style=""><span style="">إذا تم رفض طلب تأشيرتك، لا تقلق! في </span><strong class="editor__text-bold" style="white-space: pre-wrap">AlNour</strong><span style=""> نوفر لك </span><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة تقديم طلبات التظلم</strong><span style=""> لمساعدتك في إعادة النظر في قرار </span><strong class="editor__text-bold" style="white-space: pre-wrap">الرفض</strong><span style=""> وزيادة فرص </span><strong class="editor__text-bold" style="white-space: pre-wrap">قبول </strong><span style="">طلبك. نتابع كل التفاصيل القانونية والإدارية لضمان تقديم استئناف قوي ومقنع.</span></p></div>
+          </div>
+        </div>
+      </sndian-tab-panels>
+    </sndian-tabs>
+  </div>
+</section></div><div id="1lxwz"><section class="sndian-1c54y-1lxwz" data-section-name="feature-solid" style="background: url(&quot;https://sndiansite.com/media/34319/8634/ae55fb6a-b412-4098-837c-320d9f8065fc/31.png&quot;) center center / cover no-repeat; color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-1lxwz">
+    <div class="sndian-1so4s-1lxwz">
+      <div class="sndian-1popz-1lxwz">
+        
+        
+      </div>
+      <div class="sndian-1twl0-1lxwz">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="56w81"><section class="sndian-1c54y-56w81" data-section-name="feature-solid" style="background: var(--secondary-color); color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-56w81">
+    <div class="sndian-1so4s-56w81">
+      <div class="sndian-1popz-56w81">
+        
+        <div style="color: var(--text-color);"><h4 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">اتصل بنا الآن </strong><strong class="editor__text-bold" style="white-space: pre-wrap">للحصول</strong><strong class="editor__text-bold" style="white-space: pre-wrap"> على استشارة مجانية!</strong></h4><h3 dir="rtl" style=""><br></h3></div>
+      </div>
+      <div class="sndian-1twl0-56w81">
+        <a type="button" id="زر_h2hais" class="sndian-10ves-56w81" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <button class="sndian-p35fn-56w81">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">تواصل الان</span>
+      </button>
+    </a>
+      </div>
+    </div>
+  </div>
+</section></div><div id="agrj9"><section class="sndian-1c54y-agrj9" data-section-name="feature-solid" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-1qu59-agrj9">
+    <div class="sndian-1so4s-agrj9">
+      <div class="sndian-1popz-agrj9">
+        
+        
+      </div>
+      <div class="sndian-1twl0-agrj9">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="ptpae"><section class="sndian-jsxhc-ptpae" data-section-name="hero-vertical" style="min-height: 50px; background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-1jens-ptpae">
+      <div class="sndian-5iztz-ptpae" style="background: var( --secondary-background-color); color: var(--text-color)">
+        <a class="sndian-au718-ptpae" id="أيقونة">
+      <span class="sndian-10l5j-ptpae" style="color: var(--primary-color); font-size: 35px"><svg class="svg-inline" viewBox="0 0 640 512" data-icon-name="jet-fighter" data-icon-prefix="fas">
+    <path d="M160 24c0-13.3 10.7-24 24-24H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H280L384 192H500.4c7.7 0 15.3 1.4 22.5 4.1L625 234.4c9 3.4 15 12 15 21.6s-6 18.2-15 21.6L522.9 315.9c-7.2 2.7-14.8 4.1-22.5 4.1H384L280 464h16c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24h8V320H160l-54.6 54.6c-6 6-14.1 9.4-22.6 9.4H64c-17.7 0-32-14.3-32-32V288c-17.7 0-32-14.3-32-32s14.3-32 32-32V160c0-17.7 14.3-32 32-32H82.7c8.5 0 16.6 3.4 22.6 9.4L160 192h32V48h-8c-13.3 0-24-10.7-24-24zM80 240c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H80z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl" style=""><span style="">حجوزات الطيران</span></h3></div>
+        <div><blockquote class="editor__quote" dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">نقدم لك خدمة حجوزات الطيران بأفضل الأسعار، مع خيارات سفر تناسب جميع احتياجاتك</strong><strong class="editor__text-bold" style="white-space: pre-wrap">. </strong><strong class="editor__text-bold" style="white-space: pre-wrap">سواء كنت تبحث عن تذاكر اقتصادية، درجة رجال الأعمال، أو طيران فاخر، نحن نوفر لك أفضل العروض مع مرونة كاملة في المواعيد والخدمات.</strong></blockquote></div>
+      </div>
+      <div class="sndian-1xol8-ptpae">
+        
+      </div>
+      <ul class="sndian-1c2ps-ptpae">
+          
+          
+          
+          
+          
+      </ul>
+    </div>
+</section></div><div id="3s1qm"><section class="sndian-e0o06-3s1qm" data-section-name="feature-blocks" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-14xiu-3s1qm">
+        <div class="sndian-xbmmg-3s1qm">
+            <div class="sndian-1rexn-3s1qm">
+                
+            </div>
+            <div class="sndian-1hnsz-3s1qm">
+                
+            </div>
+        </div>
+      <div gap="var(--space-larger)" small="1" medium="2" large="2" class="sndian-1nucx-3s1qm" data-grid-id="6xtexh" style="display: grid;">
+        <div class="sndian-vmobd-3s1qm sndian-2iweq-3s1qm" id="item-1">
+              <div class="sndian-jsd7f-3s1qm">
+                  <div class="sndian-12u0h-3s1qm">
+                      <a class="sndian-au718-3s1qm" id="أيقونة">
+      <span class=""><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="clock" data-icon-prefix="fas">
+    <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
+  </svg></span>
+    </a>
+                  </div>
+                  <div class="sndian-hizam-3s1qm">
+                    <div><h4 dir="rtl" style=""><span style="">دعم فوري</span></h4></div>
+                    <div><p class="." dir="rtl" style=""><span style="">دعم فوري في حالة تغيير أو إلغاء الرحلات</span></p></div>
+                  </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-3s1qm" id="item-2">
+              <div class="sndian-jsd7f-3s1qm">
+                <div class="sndian-12u0h-3s1qm">
+                  <a class="sndian-au718-3s1qm" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="envelope" data-icon-prefix="fas">
+    <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-3s1qm">
+                  <div><h4 dir="rtl" style=""><span style="">توفير</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">أسعار تنافسية وعروض مميزة على الرحلات</span></p></div>
+                </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-3s1qm" id="item-3">
+              <div class="sndian-jsd7f-3s1qm">  
+                <div class="sndian-12u0h-3s1qm">
+                  <a class="sndian-au718-3s1qm" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="paperclip" data-icon-prefix="fas">
+    <path d="M364.2 83.8c-24.4-24.4-64-24.4-88.4 0l-184 184c-42.1 42.1-42.1 110.3 0 152.4s110.3 42.1 152.4 0l152-152c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-152 152c-64 64-167.6 64-231.6 0s-64-167.6 0-231.6l184-184c46.3-46.3 121.3-46.3 167.6 0s46.3 121.3 0 167.6l-176 176c-28.6 28.6-75 28.6-103.6 0s-28.6-75 0-103.6l144-144c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-144 144c-6.7 6.7-6.7 17.7 0 24.4s17.7 6.7 24.4 0l176-176c24.4-24.4 24.4-64 0-88.4z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-3s1qm">
+                  <div><h4 dir="rtl" style=""><span style="">حجوزات ذهبية</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">حجوزات فورية وتأكيد سريع عبر شبكاتنا العالمية</span></p></div>
+                </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-3s1qm" id="item-4">
+              <div class="sndian-jsd7f-3s1qm">  
+                <div class="sndian-12u0h-3s1qm">
+                  <a class="sndian-au718-3s1qm" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="basket-shopping" data-icon-prefix="fas">
+    <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-3s1qm">
+                  <div><h4 dir="rtl" style=""><span style="">برنامج الولاء</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">إمكانية تجميع النقاط والخصومات لعملائنا الدائمين</span></p></div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</section></div><div id="zhzqy"><section class="sndian-1c54y-zhzqy" data-section-name="feature-solid" style="background: url(&quot;https://sndiansite.com/media/34319/8634/994eeb64-da20-4384-8713-72859b04878f/65.png&quot;) 50.2762% 5.50874% / cover no-repeat; color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-zhzqy">
+    <div class="sndian-1so4s-zhzqy">
+      <div class="sndian-1popz-zhzqy">
+        
+        
+      </div>
+      <div class="sndian-1twl0-zhzqy">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="17ot1"><section class="sndian-1c54y-17ot1" data-section-name="feature-solid" style="background: var(--secondary-color); color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-17ot1">
+    <div class="sndian-1so4s-17ot1">
+      <div class="sndian-1popz-17ot1">
+        
+        <div style="color: var(--text-color);"><h4 dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">سافر براحة واطمئنان – نحن نهتم بجميع تفاصيل رحلتك الجوية!</strong></h4><p class="." dir="rtl" style=""><br></p></div>
+      </div>
+      <div class="sndian-1twl0-17ot1">
+        <a type="button" id="زر_isq010" class="sndian-10ves-17ot1" rel="noopener noreferrer" href="https://wa.me/+201281535696">
+      <button class="sndian-p35fn-17ot1">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">تواصل الان</span>
+      </button>
+    </a>
+      </div>
+    </div>
+  </div>
+</section></div><div id="uqw87"><section class="sndian-1c54y-uqw87" data-section-name="feature-solid" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-1qu59-uqw87">
+    <div class="sndian-1so4s-uqw87">
+      <div class="sndian-1popz-uqw87">
+        
+        
+      </div>
+      <div class="sndian-1twl0-uqw87">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="1rv1k"><section class="sndian-jsxhc-1rv1k" data-section-name="hero-vertical" style="min-height: 50px; background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-1jens-1rv1k">
+      <div class="sndian-5iztz-1rv1k">
+        <a class="sndian-au718-1rv1k" id="أيقونة_731hte">
+      <span class="sndian-10l5j-1rv1k" style="color: var(--primary-color); font-size: 35px"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="building-columns" data-icon-prefix="fas">
+    <path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl" style=""><span style="">حجوزات الفنادق</span></h3></div>
+        <div><blockquote class="editor__quote" dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">نوفر لك أفضل خدمات حجوزات الفنادق حول العالم، مع خيارات إقامة تناسب جميع الميزانيات </strong><strong class="editor__text-bold" style="white-space: pre-wrap">والتفضيلات</strong><strong class="editor__text-bold" style="white-space: pre-wrap">. سواء كنت تبحث عن فندق فاخر، شقة فندقية، منتجع سياحي، أو إقامة اقتصادية، نحن نضمن لك أفضل الأسعار وأعلى مستويات الراحة.</strong></blockquote></div>
+      </div>
+      <div class="sndian-1xol8-1rv1k">
+        
+      </div>
+      <ul class="sndian-1c2ps-1rv1k">
+          
+          
+          
+          
+          
+      </ul>
+    </div>
+</section></div><div id="1nfvb"><section class="sndian-e0o06-1nfvb" data-section-name="feature-blocks" style="background: var( --secondary-background-color); color: var(--text-color); padding: 80px">
+    <div class="sndian-14xiu-1nfvb">
+        <div class="sndian-xbmmg-1nfvb">
+            <div class="sndian-1rexn-1nfvb">
+                
+            </div>
+            <div class="sndian-1hnsz-1nfvb">
+                
+            </div>
+        </div>
+      <div gap="var(--space-larger)" small="1" medium="2" large="2" class="sndian-1nucx-1nfvb" data-grid-id="dnwdt6" style="display: grid;">
+        <div class="sndian-vmobd-1nfvb sndian-2iweq-1nfvb" id="item-1_f9jmkx">
+              <div class="sndian-jsd7f-1nfvb">
+                  <div class="sndian-12u0h-1nfvb">
+                      <a class="sndian-au718-1nfvb" id="أيقونة_f83mbt">
+      <span class=""><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="clock" data-icon-prefix="fas">
+    <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
+  </svg></span>
+    </a>
+                  </div>
+                  <div class="sndian-hizam-1nfvb">
+                    <div><h4 dir="rtl" style=""><span style="">دعم 24/7</span></h4></div>
+                    <div><p class="." dir="rtl" style=""><span style="">لمساعدتك في أي تعديل أو استفسار حول الحجز</span></p></div>
+                  </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-1nfvb" id="item-2_fm4l5x">
+              <div class="sndian-jsd7f-1nfvb">
+                <div class="sndian-12u0h-1nfvb">
+                  <a class="sndian-au718-1nfvb" id="أيقونة_huzf5x">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="envelope" data-icon-prefix="fas">
+    <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-1nfvb">
+                  <div><h4 dir="rtl" style=""><span style="">توفير</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">خيارات متعددة تناسب احتياجاتك وميزانيتك</span></p></div>
+                </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-1nfvb" id="item-3_rcpg4z">
+              <div class="sndian-jsd7f-1nfvb">  
+                <div class="sndian-12u0h-1nfvb">
+                  <a class="sndian-au718-1nfvb" id="أيقونة_yydr9l">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="paperclip" data-icon-prefix="fas">
+    <path d="M364.2 83.8c-24.4-24.4-64-24.4-88.4 0l-184 184c-42.1 42.1-42.1 110.3 0 152.4s110.3 42.1 152.4 0l152-152c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-152 152c-64 64-167.6 64-231.6 0s-64-167.6 0-231.6l184-184c46.3-46.3 121.3-46.3 167.6 0s46.3 121.3 0 167.6l-176 176c-28.6 28.6-75 28.6-103.6 0s-28.6-75 0-103.6l144-144c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-144 144c-6.7 6.7-6.7 17.7 0 24.4s17.7 6.7 24.4 0l176-176c24.4-24.4 24.4-64 0-88.4z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-1nfvb">
+                  <div><h4 dir="rtl" style=""><span style="">إلغاء مجاني</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">خيارات إلغاء مجانية وفق سياسات الفنادق</span></p></div>
+                </div>
+              </div>
+        </div>
+        <div class="sndian-vmobd-1nfvb" id="item-4_kef0nh">
+              <div class="sndian-jsd7f-1nfvb">  
+                <div class="sndian-12u0h-1nfvb">
+                  <a class="sndian-au718-1nfvb" id="أيقونة_mcm6pv">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="basket-shopping" data-icon-prefix="fas">
+    <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path>
+  </svg></span>
+    </a>
+                </div>
+                <div class="sndian-hizam-1nfvb">
+                  <div><h4 dir="rtl" style=""><span style="">برنامج الولاء</span></h4></div>
+                  <div><p class="." dir="rtl" style=""><span style="">إمكانية تجميع النقاط والخصومات لعملائنا الدائمين</span></p></div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</section></div><div id="1v12x"><section class="sndian-1c54y-1v12x" data-section-name="feature-solid" style="background: url(&quot;https://sndiansite.com/media/34319/8634/6166f681-86eb-4b7c-b29f-f65f5b26d561/%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%B1..-%D8%A3%D9%81%D8%B6%D9%84-%D8%A5%D8%B7%D9%84%D8%A7%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%AD%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85.jpg&quot;) 53.2258% 71.779% / cover no-repeat; color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-1v12x">
+    <div class="sndian-1so4s-1v12x">
+      <div class="sndian-1popz-1v12x">
+        
+        
+      </div>
+      <div class="sndian-1twl0-1v12x">
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="d9syj"><section class="sndian-1c54y-d9syj" data-section-name="feature-solid" style="background: var(--secondary-color); color: var(--secondary-text-color)">
+  <div class="sndian-1qu59-d9syj">
+    <div class="sndian-1so4s-d9syj">
+      <div class="sndian-1popz-d9syj">
+        
+        <div style="color: var(--text-color);"><h4 dir="rtl" style=""><span style="">استمتع بإقامة مريحة </span><span style="">وخالية </span><span style="">من المتاعب – احجز فندقك معنا الآن!</span></h4><h3 dir="rtl" style=""><br></h3></div>
+      </div>
+      <div class="sndian-1twl0-d9syj">
+        <a type="button" id="زر_isq010_1jm96l" class="sndian-10ves-d9syj" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <button class="sndian-p35fn-d9syj">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">تواصل الان</span>
+      </button>
+    </a>
+      </div>
+    </div>
+  </div>
+</section></div><div id="47wkh"><section class="sndian-og3da-47wkh" data-section-name="footers-minimal" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-1ybrh-47wkh">
+            <div><h4 dir="ltr" style=""><span style="">AlNour</span></h4></div>
+        <ul class="sndian-1ghx6-47wkh">
+            <a type="link" id="رابط" class="sndian-v8zb6-47wkh" rel="noopener noreferrer" href="index.html">
+      <span>
+                <h6>الرئيسية</h6>
+            </span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-47wkh" rel="noopener noreferrer" href="about.htm">
+      <span><h6 dir="rtl" style=""><span style="">من نحن</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-47wkh" rel="noopener noreferrer" href="services.htm">
+      <span><h6 dir="rtl" style=""><span style="">خدماتنا</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-47wkh" rel="noopener noreferrer" href="plans.htm">
+      <span><h6 dir="rtl" style=""><span style="">برامجنا</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-47wkh" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <span>
+                <h6>تواصل معنا</h6>
+            </span>
+    </a>
+        </ul>
+        <div class="sndian-1ccet-47wkh"></div>
+       <div class="sndian-s1zs2-47wkh">
+        <div>
+          جميع الحقوق محفوظة  ©
+        </div>
+        <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="index.html"></a>
+      <span><p class="." dir="rtl" style=""><span style="">صنع بواسطة AlNour</span></p></span>
+    </a>
+      </div>
+    </div>
+</section></div><script>(function(){
+  /* version: 1.7.6 */
+class e extends HTMLElement{constructor(){super(),this.mutationObserver=new MutationObserver((e=>{var t;null===(t=this.onChildrenChanged)||void 0===t||t.call(this,e)}))}connectedCallback(){var e;this.connectObserver(),null===(e=this.onChildrenChanged)||void 0===e||e.call(this)}disconnectedCallback(){this.disconnectObserver()}connectObserver(){this.mutationObserver.observe(this,{childList:!0})}disconnectObserver(){this.mutationObserver.disconnect()}}class t extends HTMLElement{attributeChangedCallback(e,t,i){t!==i&&this.onAttributeChanged(e,t,i)}}t.observedAttributes=[];class i extends e{constructor(){super(),this.controllers=[],this.handleClickOutside=e=>{var t;const i=e.target,n=this.contains(i),s=null===(t=this.controllers)||void 0===t?void 0:t.some((e=>e.contains(i)));n||s||this.collapseMenu()}}connectedCallback(){this.initialize(),this.handleClickOutside=this.handleClickOutside.bind(this)}disconnectedCallback(){this.controllers.length&&this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}onChildrenChanged(){this.initialize()}collapseMenu(){this.ariaExpanded="false",this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}initialize(){var e;if(this.id){if(this.controllers=Array.from(this.ownerDocument.querySelectorAll(`[aria-controls="${this.id}"]`)),!(null===(e=this.controllers)||void 0===e?void 0:e.length))return;this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),null===this.ariaExpanded&&(this.ariaExpanded="false"),this.controllerClickListener=e=>{const t=e.target,i=this.contains(t),n=t.closest(`[aria-controls=${this.id}]`),s="true"===this.ariaExpanded;s?this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0):this.ownerDocument.addEventListener("click",this.handleClickOutside,!0),i&&s&&!n||(this.ariaExpanded=String(!s))},this.controllers.map((e=>{this.controllerClickListener&&e.addEventListener("click",this.controllerClickListener,!0)}))}}}class n extends HTMLElement{}window.customElements.get("sndian-menu")||window.customElements.define("sndian-menu",i),window.customElements.get("sndian-menu-item")||window.customElements.define("sndian-menu-item",n);
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1osqo'] [data-animation] h1,[id='1osqo'] [data-animation] h2,[id='1osqo'] [data-animation] h3,[id='1osqo'] [data-animation] h4, [id='1osqo'] [data-animation] h5, [id='1osqo'] [data-animation] h6, [id='1osqo'] [data-animation] p, [id='1osqo'] [data-animation] button, [id='1osqo'] [data-animation] img, [id='1osqo'] [data-animation] svg[data-icon-name], [id='1osqo'] [data-animation] video, [id='1osqo'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  window.addEventListener("load", function (e) {
+  var menuBTN = document.querySelector(".navbar-supported-menu");
+  var nav = document.querySelector(".navbar-supported");
+  var toggableList = document.querySelector(".navbar-supported-list-routes");
+  menuBTN.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (toggableList.style.display !== "flex") {
+      toggableList.style.display = "flex";
+      nav.classList.add("navbar--show");
+    } else {
+      toggableList.style.display = "none";
+      nav.classList.remove("navbar--show");
+    }
+  });
+});
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='16mwn'] [data-animation] h1,[id='16mwn'] [data-animation] h2,[id='16mwn'] [data-animation] h3,[id='16mwn'] [data-animation] h4, [id='16mwn'] [data-animation] h5, [id='16mwn'] [data-animation] h6, [id='16mwn'] [data-animation] p, [id='16mwn'] [data-animation] button, [id='16mwn'] [data-animation] img, [id='16mwn'] [data-animation] svg[data-icon-name], [id='16mwn'] [data-animation] video, [id='16mwn'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='12ibk'] [data-animation] h1,[id='12ibk'] [data-animation] h2,[id='12ibk'] [data-animation] h3,[id='12ibk'] [data-animation] h4, [id='12ibk'] [data-animation] h5, [id='12ibk'] [data-animation] h6, [id='12ibk'] [data-animation] p, [id='12ibk'] [data-animation] button, [id='12ibk'] [data-animation] img, [id='12ibk'] [data-animation] svg[data-icon-name], [id='12ibk'] [data-animation] video, [id='12ibk'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  /* version: 1.7.6 */
+class t extends HTMLElement{constructor(){super(),this.mutationObserver=new MutationObserver((t=>{var e;null===(e=this.onChildrenChanged)||void 0===e||e.call(this,t)}))}connectedCallback(){var t;this.connectObserver(),null===(t=this.onChildrenChanged)||void 0===t||t.call(this)}disconnectedCallback(){this.disconnectObserver()}connectObserver(){this.mutationObserver.observe(this,{childList:!0})}disconnectObserver(){this.mutationObserver.disconnect()}}class e extends HTMLElement{attributeChangedCallback(t,e,n){e!==n&&this.onAttributeChanged(t,e,n)}}e.observedAttributes=[];class n extends t{constructor(){super(),this.eventMap=new WeakMap,this.eventName="click"}onChildrenChanged(t){null==t||t.forEach((({removedNodes:t})=>{t.length&&t.forEach((t=>{t instanceof HTMLElement&&this.eventMap.has(t)&&(t.removeEventListener(this.eventName,this.eventMap.get(t),!0),this.eventMap.delete(t))}))}))}}const i=function(t){return t.filter((t=>!t.hasAttribute("data-builder")))};class s extends HTMLElement{constructor(){super()}connectedCallback(){this.initialize()}initialize(){var t,e;this.tablist=this.querySelector("sndian-tab-list"),this.tabpanels=this.querySelector("sndian-tab-panels"),this.tablist&&this.tablist.addEventListener("titleClick",(t=>{this.activateTab(t.detail.forAttrib)}));const n=null===(e=null===(t=this.tablist)||void 0===t?void 0:t.firstElementChild)||void 0===e?void 0:e.getAttribute("for");this.activateTab(n)}activateTab(t){var e,n;const s=t?null:0,a=t||"tabpanel-0",r=i(Array.from((null===(e=this.tablist)||void 0===e?void 0:e.children)||[])),l=i(Array.from((null===(n=this.tabpanels)||void 0===n?void 0:n.children)||[]));null==r||r.forEach(((t,e)=>{const n=t.getAttribute("for");t.setAttribute("aria-selected",n===a||s===e?"true":"false")})),null==l||l.forEach(((t,e)=>{const n=t.getAttribute("id");t.setAttribute("aria-selected",n===a||s===e?"true":"false")}))}}class a extends n{constructor(){super(),this.eventName="click",this.onClick=t=>{this.dispatchEvent(new CustomEvent("titleClick",{detail:{forAttrib:t}}))}}onChildrenChanged(t){super.onChildrenChanged(t),i(Array.from(this.children||[])).forEach(((t,e)=>{const n=t.getAttribute("for")||"tabpanel-"+e;t.setAttribute("for",n),t.setAttribute("aria-controls",n);const i=()=>this.onClick(n);this.eventMap.set(t,i),t.addEventListener("click",i,!0),"true"===t.getAttribute("aria-selected")&&this.onClick(n)}))}}class r extends t{constructor(){super()}connectedCallback(){super.connectedCallback()}onChildrenChanged(){i(Array.from(this.children||[])).forEach(((t,e)=>{const n=t.getAttribute("id")||"tabpanel-"+e;t.setAttribute("id",n)}))}}window.customElements.get("sndian-tabs")||window.customElements.define("sndian-tabs",s),window.customElements.get("sndian-tab-list")||window.customElements.define("sndian-tab-list",a),window.customElements.get("sndian-tab-panels")||window.customElements.define("sndian-tab-panels",r);
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1c0ys'] [data-animation] h1,[id='1c0ys'] [data-animation] h2,[id='1c0ys'] [data-animation] h3,[id='1c0ys'] [data-animation] h4, [id='1c0ys'] [data-animation] h5, [id='1c0ys'] [data-animation] h6, [id='1c0ys'] [data-animation] p, [id='1c0ys'] [data-animation] button, [id='1c0ys'] [data-animation] img, [id='1c0ys'] [data-animation] svg[data-icon-name], [id='1c0ys'] [data-animation] video, [id='1c0ys'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='pm69k'] [data-animation] h1,[id='pm69k'] [data-animation] h2,[id='pm69k'] [data-animation] h3,[id='pm69k'] [data-animation] h4, [id='pm69k'] [data-animation] h5, [id='pm69k'] [data-animation] h6, [id='pm69k'] [data-animation] p, [id='pm69k'] [data-animation] button, [id='pm69k'] [data-animation] img, [id='pm69k'] [data-animation] svg[data-icon-name], [id='pm69k'] [data-animation] video, [id='pm69k'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1ah78'] [data-animation] h1,[id='1ah78'] [data-animation] h2,[id='1ah78'] [data-animation] h3,[id='1ah78'] [data-animation] h4, [id='1ah78'] [data-animation] h5, [id='1ah78'] [data-animation] h6, [id='1ah78'] [data-animation] p, [id='1ah78'] [data-animation] button, [id='1ah78'] [data-animation] img, [id='1ah78'] [data-animation] svg[data-icon-name], [id='1ah78'] [data-animation] video, [id='1ah78'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='7zzdn'] [data-animation] h1,[id='7zzdn'] [data-animation] h2,[id='7zzdn'] [data-animation] h3,[id='7zzdn'] [data-animation] h4, [id='7zzdn'] [data-animation] h5, [id='7zzdn'] [data-animation] h6, [id='7zzdn'] [data-animation] p, [id='7zzdn'] [data-animation] button, [id='7zzdn'] [data-animation] img, [id='7zzdn'] [data-animation] svg[data-icon-name], [id='7zzdn'] [data-animation] video, [id='7zzdn'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='17d5w'] [data-animation] h1,[id='17d5w'] [data-animation] h2,[id='17d5w'] [data-animation] h3,[id='17d5w'] [data-animation] h4, [id='17d5w'] [data-animation] h5, [id='17d5w'] [data-animation] h6, [id='17d5w'] [data-animation] p, [id='17d5w'] [data-animation] button, [id='17d5w'] [data-animation] img, [id='17d5w'] [data-animation] svg[data-icon-name], [id='17d5w'] [data-animation] video, [id='17d5w'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  /* version: 1.7.6 */
+class t extends HTMLElement{constructor(){super(),this.mutationObserver=new MutationObserver((t=>{var e;null===(e=this.onChildrenChanged)||void 0===e||e.call(this,t)}))}connectedCallback(){var t;this.connectObserver(),null===(t=this.onChildrenChanged)||void 0===t||t.call(this)}disconnectedCallback(){this.disconnectObserver()}connectObserver(){this.mutationObserver.observe(this,{childList:!0})}disconnectObserver(){this.mutationObserver.disconnect()}}class e extends HTMLElement{attributeChangedCallback(t,e,n){e!==n&&this.onAttributeChanged(t,e,n)}}e.observedAttributes=[];class n extends t{constructor(){super(),this.eventMap=new WeakMap,this.eventName="click"}onChildrenChanged(t){null==t||t.forEach((({removedNodes:t})=>{t.length&&t.forEach((t=>{t instanceof HTMLElement&&this.eventMap.has(t)&&(t.removeEventListener(this.eventName,this.eventMap.get(t),!0),this.eventMap.delete(t))}))}))}}const i=function(t){return t.filter((t=>!t.hasAttribute("data-builder")))};class s extends HTMLElement{constructor(){super()}connectedCallback(){this.initialize()}initialize(){var t,e;this.tablist=this.querySelector("sndian-tab-list"),this.tabpanels=this.querySelector("sndian-tab-panels"),this.tablist&&this.tablist.addEventListener("titleClick",(t=>{this.activateTab(t.detail.forAttrib)}));const n=null===(e=null===(t=this.tablist)||void 0===t?void 0:t.firstElementChild)||void 0===e?void 0:e.getAttribute("for");this.activateTab(n)}activateTab(t){var e,n;const s=t?null:0,a=t||"tabpanel-0",r=i(Array.from((null===(e=this.tablist)||void 0===e?void 0:e.children)||[])),l=i(Array.from((null===(n=this.tabpanels)||void 0===n?void 0:n.children)||[]));null==r||r.forEach(((t,e)=>{const n=t.getAttribute("for");t.setAttribute("aria-selected",n===a||s===e?"true":"false")})),null==l||l.forEach(((t,e)=>{const n=t.getAttribute("id");t.setAttribute("aria-selected",n===a||s===e?"true":"false")}))}}class a extends n{constructor(){super(),this.eventName="click",this.onClick=t=>{this.dispatchEvent(new CustomEvent("titleClick",{detail:{forAttrib:t}}))}}onChildrenChanged(t){super.onChildrenChanged(t),i(Array.from(this.children||[])).forEach(((t,e)=>{const n=t.getAttribute("for")||"tabpanel-"+e;t.setAttribute("for",n),t.setAttribute("aria-controls",n);const i=()=>this.onClick(n);this.eventMap.set(t,i),t.addEventListener("click",i,!0),"true"===t.getAttribute("aria-selected")&&this.onClick(n)}))}}class r extends t{constructor(){super()}connectedCallback(){super.connectedCallback()}onChildrenChanged(){i(Array.from(this.children||[])).forEach(((t,e)=>{const n=t.getAttribute("id")||"tabpanel-"+e;t.setAttribute("id",n)}))}}window.customElements.get("sndian-tabs")||window.customElements.define("sndian-tabs",s),window.customElements.get("sndian-tab-list")||window.customElements.define("sndian-tab-list",a),window.customElements.get("sndian-tab-panels")||window.customElements.define("sndian-tab-panels",r);
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='z5ozk'] [data-animation] h1,[id='z5ozk'] [data-animation] h2,[id='z5ozk'] [data-animation] h3,[id='z5ozk'] [data-animation] h4, [id='z5ozk'] [data-animation] h5, [id='z5ozk'] [data-animation] h6, [id='z5ozk'] [data-animation] p, [id='z5ozk'] [data-animation] button, [id='z5ozk'] [data-animation] img, [id='z5ozk'] [data-animation] svg[data-icon-name], [id='z5ozk'] [data-animation] video, [id='z5ozk'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1lxwz'] [data-animation] h1,[id='1lxwz'] [data-animation] h2,[id='1lxwz'] [data-animation] h3,[id='1lxwz'] [data-animation] h4, [id='1lxwz'] [data-animation] h5, [id='1lxwz'] [data-animation] h6, [id='1lxwz'] [data-animation] p, [id='1lxwz'] [data-animation] button, [id='1lxwz'] [data-animation] img, [id='1lxwz'] [data-animation] svg[data-icon-name], [id='1lxwz'] [data-animation] video, [id='1lxwz'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='56w81'] [data-animation] h1,[id='56w81'] [data-animation] h2,[id='56w81'] [data-animation] h3,[id='56w81'] [data-animation] h4, [id='56w81'] [data-animation] h5, [id='56w81'] [data-animation] h6, [id='56w81'] [data-animation] p, [id='56w81'] [data-animation] button, [id='56w81'] [data-animation] img, [id='56w81'] [data-animation] svg[data-icon-name], [id='56w81'] [data-animation] video, [id='56w81'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='agrj9'] [data-animation] h1,[id='agrj9'] [data-animation] h2,[id='agrj9'] [data-animation] h3,[id='agrj9'] [data-animation] h4, [id='agrj9'] [data-animation] h5, [id='agrj9'] [data-animation] h6, [id='agrj9'] [data-animation] p, [id='agrj9'] [data-animation] button, [id='agrj9'] [data-animation] img, [id='agrj9'] [data-animation] svg[data-icon-name], [id='agrj9'] [data-animation] video, [id='agrj9'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='ptpae'] [data-animation] h1,[id='ptpae'] [data-animation] h2,[id='ptpae'] [data-animation] h3,[id='ptpae'] [data-animation] h4, [id='ptpae'] [data-animation] h5, [id='ptpae'] [data-animation] h6, [id='ptpae'] [data-animation] p, [id='ptpae'] [data-animation] button, [id='ptpae'] [data-animation] img, [id='ptpae'] [data-animation] svg[data-icon-name], [id='ptpae'] [data-animation] video, [id='ptpae'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='3s1qm'] [data-animation] h1,[id='3s1qm'] [data-animation] h2,[id='3s1qm'] [data-animation] h3,[id='3s1qm'] [data-animation] h4, [id='3s1qm'] [data-animation] h5, [id='3s1qm'] [data-animation] h6, [id='3s1qm'] [data-animation] p, [id='3s1qm'] [data-animation] button, [id='3s1qm'] [data-animation] img, [id='3s1qm'] [data-animation] svg[data-icon-name], [id='3s1qm'] [data-animation] video, [id='3s1qm'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='zhzqy'] [data-animation] h1,[id='zhzqy'] [data-animation] h2,[id='zhzqy'] [data-animation] h3,[id='zhzqy'] [data-animation] h4, [id='zhzqy'] [data-animation] h5, [id='zhzqy'] [data-animation] h6, [id='zhzqy'] [data-animation] p, [id='zhzqy'] [data-animation] button, [id='zhzqy'] [data-animation] img, [id='zhzqy'] [data-animation] svg[data-icon-name], [id='zhzqy'] [data-animation] video, [id='zhzqy'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='17ot1'] [data-animation] h1,[id='17ot1'] [data-animation] h2,[id='17ot1'] [data-animation] h3,[id='17ot1'] [data-animation] h4, [id='17ot1'] [data-animation] h5, [id='17ot1'] [data-animation] h6, [id='17ot1'] [data-animation] p, [id='17ot1'] [data-animation] button, [id='17ot1'] [data-animation] img, [id='17ot1'] [data-animation] svg[data-icon-name], [id='17ot1'] [data-animation] video, [id='17ot1'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='uqw87'] [data-animation] h1,[id='uqw87'] [data-animation] h2,[id='uqw87'] [data-animation] h3,[id='uqw87'] [data-animation] h4, [id='uqw87'] [data-animation] h5, [id='uqw87'] [data-animation] h6, [id='uqw87'] [data-animation] p, [id='uqw87'] [data-animation] button, [id='uqw87'] [data-animation] img, [id='uqw87'] [data-animation] svg[data-icon-name], [id='uqw87'] [data-animation] video, [id='uqw87'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1rv1k'] [data-animation] h1,[id='1rv1k'] [data-animation] h2,[id='1rv1k'] [data-animation] h3,[id='1rv1k'] [data-animation] h4, [id='1rv1k'] [data-animation] h5, [id='1rv1k'] [data-animation] h6, [id='1rv1k'] [data-animation] p, [id='1rv1k'] [data-animation] button, [id='1rv1k'] [data-animation] img, [id='1rv1k'] [data-animation] svg[data-icon-name], [id='1rv1k'] [data-animation] video, [id='1rv1k'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1nfvb'] [data-animation] h1,[id='1nfvb'] [data-animation] h2,[id='1nfvb'] [data-animation] h3,[id='1nfvb'] [data-animation] h4, [id='1nfvb'] [data-animation] h5, [id='1nfvb'] [data-animation] h6, [id='1nfvb'] [data-animation] p, [id='1nfvb'] [data-animation] button, [id='1nfvb'] [data-animation] img, [id='1nfvb'] [data-animation] svg[data-icon-name], [id='1nfvb'] [data-animation] video, [id='1nfvb'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1v12x'] [data-animation] h1,[id='1v12x'] [data-animation] h2,[id='1v12x'] [data-animation] h3,[id='1v12x'] [data-animation] h4, [id='1v12x'] [data-animation] h5, [id='1v12x'] [data-animation] h6, [id='1v12x'] [data-animation] p, [id='1v12x'] [data-animation] button, [id='1v12x'] [data-animation] img, [id='1v12x'] [data-animation] svg[data-icon-name], [id='1v12x'] [data-animation] video, [id='1v12x'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='d9syj'] [data-animation] h1,[id='d9syj'] [data-animation] h2,[id='d9syj'] [data-animation] h3,[id='d9syj'] [data-animation] h4, [id='d9syj'] [data-animation] h5, [id='d9syj'] [data-animation] h6, [id='d9syj'] [data-animation] p, [id='d9syj'] [data-animation] button, [id='d9syj'] [data-animation] img, [id='d9syj'] [data-animation] svg[data-icon-name], [id='d9syj'] [data-animation] video, [id='d9syj'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='47wkh'] [data-animation] h1,[id='47wkh'] [data-animation] h2,[id='47wkh'] [data-animation] h3,[id='47wkh'] [data-animation] h4, [id='47wkh'] [data-animation] h5, [id='47wkh'] [data-animation] h6, [id='47wkh'] [data-animation] p, [id='47wkh'] [data-animation] button, [id='47wkh'] [data-animation] img, [id='47wkh'] [data-animation] svg[data-icon-name], [id='47wkh'] [data-animation] video, [id='47wkh'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();</script>
+ <script>
+// Remove Widebot chat functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const chatButton = document.getElementById('kaec-chat-button');
+  if (chatButton) {
+    chatButton.onclick = function(e) {
+      e.preventDefault();
+      window.open('https://wa.me/201555359259', '_blank');
+    };
+  }
+});
+</script>
+
+<div style="position: fixed; bottom: 0px; right: 50px; width: 70px; z-index: 999999;">
+  <img id="kaec-chat-button" 
+       src="https://widebot-webchat.s3.amazonaws.com/shared/widebot.png" 
+       style="position: absolute; bottom: 10px; right: 10px; width: 70px; height: 70px; 
+              cursor: pointer; z-index: 999999999; filter: drop-shadow(gray 0px 0px 1px); 
+              display: block; border-radius: 50%; object-fit: contain;">
+</div>
+ </body></html>

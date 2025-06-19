@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html dir="rtl"><script src="moz-extension://3e243ed7-cfce-4115-b31b-0c4fa3881cea/./content-scripts/passkey_proxy/index.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>من نحن | AlNour Travel</title><link rel="icon" href="https://sndiansite.com/images/favicons/8634/IBATOURS.png"><meta name="description" content="خبرة واسعة في مجال السياحة والسفر"><meta name="image" property="og:image" content="https://sndiansite.com/images/logos/8634/IBATOURS.png"><link rel="stylesheet" href="about_files/Cairo.css"><link rel="stylesheet" href="about_files/NotoSansArabic.css"><link rel="stylesheet" href="about_files/sndian.css"><style>:root {
+  /* colors */
+  --primary-color: #1095c1;
+  --secondary-color: #596b78;
+  --success-color: #5cb85c;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --secondary-background-color: #f8f9fa;
+  --dark-color: rgb(64, 64, 64);
+  --text-color: #212529;
+  --secondary-text-color: #fff;
+  --border-color: #bbb;
+  --link-color: #008000;
+  --muted-color: #73828c;
+  --background-color: #fff;
+  --hover-brightness: 1.2;
+
+  /* spacing */
+  --base-space: 1rem;
+  --space-largest: calc(var(--base-space) * 5);
+  --space-larger: calc(var(--base-space) * 3);
+  --space-large: calc(var(--base-space) * 1.5);
+  --space-medium: var(--base-space);
+  --space-small: calc(var(--base-space) * 0.5);
+  --space-smaller: calc(var(--base-space) * 0.25);
+  --max-content-width: 1320px;
+
+  /* typography */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --base-font-size: 1rem;
+  --typography-spacing: var(--base-space) * 1.5;
+
+  /* borders */
+  --border-radius: 0.3rem;
+  --reduction: 1;
+  --border-width: 1px;
+
+  /* elevation */
+  --elevation-smaller: 0 .125rem .25rem rgba(0,0,0, .075);
+  --elevation-small: 0 .200rem .5rem rgba(0,0,0, .05);
+  --elevation-medium: 0 .5rem 1rem rgba(0,0,0, .15);
+  --elevation-large: 0 1rem 1.5rem rgba(0,0,0, .175);
+  --elevation-larger:  0 1.25rem 2rem rgba(0,0,0, .25);
+  --transition: 0.2s ease-in-out;
+}
+
+h1 {
+  --font-size: calc(var(--base-font-size) * 2.4);
+}
+h2 {
+  --font-size: calc(var(--base-font-size) * 1.8);
+}
+h3 {
+  --font-size: calc(var(--base-font-size) * 1.5);
+}
+h4 {
+  --font-size: calc(var(--base-font-size) * 1.3);
+}
+h5 {
+  --font-size: calc(var(--base-font-size) * 1.1);
+}
+h6 {
+  --font-size: var(--base-font-size);
+}
+
+@media (max-width: 767px) { 
+  h1 {
+    --font-size: calc(var(--base-font-size) * 2);
+  }
+  h2 {
+    --font-size: calc(var(--base-font-size) * 1.6);
+  }
+  h3 {
+    --font-size: calc(var(--base-font-size) * 1.4);
+  }
+  h4 {
+    --font-size: calc(var(--base-font-size) * 1.2);
+  }
+  h5 {
+    --font-size: calc(var(--base-font-size) * 1.1);
+  }
+  h6 {
+    --font-size: var(--base-font-size);
+  }
+}:root {
+  --primary-color: #00497e;
+  --secondary-color: #b8a964;
+}
+</style><style>:root {
+  
+  
+  
+  --background-color: #ffffff !important;
+  
+  }</style><style>
+      :root { --font-family-titles: "Cairo", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>
+      :root { --font-family-content: "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
+      "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; };
+    </style><style>[id="1mi0d"] .sndian-1pgvy-1mi0d{position:relative;display:flex;padding:var(--space-medium) var(--space-larger);width:100%;z-index:99}[id="1mi0d"] .sndian-jhtc8-1mi0d{display:flex;flex-direction:row;gap:var(--space-medium);align-items:center}[id="1mi0d"] #navbar-verical-Button-topen{font-size:1.6rem;display:flex}[id="1mi0d"] #navbar-verical-Button-topen span{display:flex}[id="1mi0d"] .sndian-t1gtv-1mi0d h2{font-size:20px}[id="1mi0d"] .sndian-1l76o-1mi0d{width:100%;display:flex;align-items:center;justify-content:space-between;color:inherit;max-width:var(--max-content-width);margin:auto}[id="1mi0d"] .sndian-rhm43-1mi0d{background-color:var(--primary-color);margin:0;box-shadow:none}[id="1mi0d"] .sndian-1titw-1mi0d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1mi0d"] .sndian-1thv3-1mi0d{display:flex;gap:var(--space-medium)}[id="1mi0d"] .sndian-6vrsw-1mi0d{display:flex;gap:var(--space-medium);justify-content:center;align-items:center;flex-direction:column}[id="1mi0d"] .sndian-c4yah-1mi0d{text-align:center}[id="1mi0d"] .sndian-pkdkz-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] .sndian-zmj2w-1mi0d h3{font-size:26px}[id="1mi0d"] .sndian-3z8tj-1mi0d[aria-active="true"]{color:var(--primary-color)}[id="1mi0d"] .sndian-120yr-1mi0d{display:none}[id="1mi0d"] .sndian-120yr-1mi0d:checked + label #navbar-verical-Button-tclose{display:flex}[id="1mi0d"] .sndian-120yr-1mi0d:checked + label #navbar-verical-Button-topen{display:none}[id="1mi0d"] #navbar-verical-Button-tclose{display:none}[id="1mi0d"] .sndian-1rq2k-1mi0d{display:flex;gap:var(--space-medium);justify-content:space-between}[id="1mi0d"] .sndian-1u88s-1mi0d h3{color:var(--secondary-text-color)}[id="1mi0d"] .sndian-1rq2k-1mi0d .sndian-au718-1mi0d span{color:var(--secondary-text-color)}[id="1mi0d"] .sndian-1rq2k-1mi0d h3{color:var(--secondary-text-color)}[id="1mi0d"] .sndian-1thv3-1mi0d{position:relative;width:100%;flex-direction:column;display:none}[id="1mi0d"] .sndian-fb6fr-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] .sndian-9z22n-1mi0d{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-1_qdki02{display:flex}[id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-1_qdki02{display:none}[id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-2_u9ul2b{display:flex}[id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-2_u9ul2b{display:none}[id="1mi0d"] .sndian-fb6fr-1mi0d h4{font-size:16px}[id="1mi0d"] .sndian-1l76o-1mi0d .sndian-1wn3b-1mi0d{width:120px}[id="1mi0d"] h1,
+[id="1mi0d"] h2,
+[id="1mi0d"] h3,
+[id="1mi0d"] h4,
+[id="1mi0d"] h5,
+[id="1mi0d"] h6,
+[id="1mi0d"] p{margin:0}@media (max-width: 767px){[id="1mi0d"] .sndian-1pgvy-1mi0d{padding:var(--space-medium) var(--space-large)}[id="1mi0d"] .sndian-1thv3-1mi0d{position:relative;height:auto;z-index:1;inset-inline-start:0}[id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-1_qdki02{display:flex;inset-inline-start:0}[id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-1_qdki02{display:none}[id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-2_u9ul2b{display:flex;inset-inline-start:0}[id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-2_u9ul2b{display:none}[id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}[id="1mi0d"] .sndian-1titw-1mi0d{max-width:100%;padding:var(--space-larger) var(--space-large)}[id="1mi0d"] .sndian-rhm43-1mi0d{display:none}}[id="1mi0d"] .sndian-10ves-1mi0d{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1mi0d"] .sndian-p35fn-1mi0d{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1mi0d"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1mi0d"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1mi0d"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1mi0d"] .sndian-10ves-1mi0d{max-width:60vw!important}}[id="1mi0d"] .sndian-1jdfu-1mi0d{width:fit-content;height:fit-content}[id="1mi0d"] .sndian-10l5j-1mi0d{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1mi0d"] .sndian-au718-1mi0d{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1mi0d"] .sndian-v8zb6-1mi0d{width:fit-content;height:fit-content;display:inline-block}{padding:var(--space-medium) var(--space-larger);z-index:99}{flex-direction:row}{font-size:1.6rem}[id="1mi0d"] a{text-decoration:none}{font-size:20px}{color:inherit}{background-color:var(--primary-color);box-shadow:none}{max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}{justify-content:center;align-items:center}{text-align:center}[id="1mi0d"] .sndian-zmj2w-1mi0d{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;inset-inline-start:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}{font-size:26px}{color:var(--primary-color)}[id="1mi0d"] .sndian-1m28q-1mi0d{position:absolute;inset-inline-end:var(--space-larger);top:var(--space-large)}[id="1mi0d"] .sndian-1m28q-1mi0d .sndian-au718-1mi0d span{font-size:2rem;color:var(--secondary-text-color)}{justify-content:space-between}{color:var(--secondary-text-color)}{position:relative;width:100%}{flex-direction:column}{gap:var(--space-medium);flex-wrap:wrap}[id="1mi0d"] [aria-expanded="true"].sndian-zmj2w-1mi0d{top:0%}{display:flex}{display:none}[id="1mi0d"] [aria-expanded="false"].sndian-zmj2w-1mi0d{top:-100%}{font-size:16px}{width:120px}{margin:0}@media (max-width: 767px){{padding:var(--space-medium) var(--space-large)}{position:relative;height:auto;z-index:1}{display:flex;inset-inline-start:0}[id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}{max-width:100%;padding:var(--space-larger) var(--space-large)}{display:none}}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}[id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1mi0d"] [id="1mi0d"] .sndian-pkdkz-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d h3{font-size:26px}[id="1mi0d"] [id="1mi0d"] .sndian-3z8tj-1mi0d[aria-active="true"]{color:var(--primary-color)}[id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] .sndian-9z22n-1mi0d{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1mi0d"] [id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-1_qdki02_n87rwr{display:flex}[id="1mi0d"] [id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-1_qdki02_n87rwr{display:none}[id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d h4{font-size:16px}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-1_qdki02_n87rwr{display:flex;inset-inline-start:0}[id="1mi0d"] [id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-1_qdki02_n87rwr{display:none}[id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}[id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;inset-inline-start:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}[id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{position:absolute;inset-inline-end:var(--space-larger);top:var(--space-large)}[id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d .sndian-au718-1mi0d span{font-size:2rem;color:var(--secondary-text-color)}[id="1mi0d"] [id="1mi0d"] [aria-expanded="true"].sndian-zmj2w-1mi0d{top:0%}[id="1mi0d"] [id="1mi0d"] [aria-expanded="false"].sndian-zmj2w-1mi0d{top:-100%}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-pkdkz-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d h3{font-size:26px}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-3z8tj-1mi0d[aria-active="true"]{color:var(--primary-color)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-9z22n-1mi0d{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d h4{font-size:16px}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;inset-inline-start:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{position:absolute;inset-inline-end:var(--space-larger);top:var(--space-large)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d .sndian-au718-1mi0d span{font-size:2rem;color:var(--secondary-text-color)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [aria-expanded="true"].sndian-zmj2w-1mi0d{top:0%}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [aria-expanded="false"].sndian-zmj2w-1mi0d{top:-100%}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-medium);width:100%;max-width:var(--max-content-width);height:100%;max-height:fit-content;margin:auto;overflow-y:auto}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-pkdkz-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d h3{font-size:26px}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-3z8tj-1mi0d[aria-active="true"]{color:var(--primary-color)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-9z22n-1mi0d{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-fb6fr-1mi0d h4{font-size:16px}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1titw-1mi0d{max-width:100%;padding:var(--space-larger) var(--space-large)}}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-zmj2w-1mi0d{position:fixed;padding:var(--space-largest) var(--space-larger);top:-100%;inset-inline-start:0;background-blend-mode:multiply;background-color:#00000060;background-image:url("https://i.suar.me/gwqXw");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;z-index:9;height:100%;transition:all 0.3s ease}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{position:absolute;inset-inline-end:var(--space-larger);top:var(--space-large)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d .sndian-au718-1mi0d span{font-size:2rem;color:var(--secondary-text-color)}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [aria-expanded="true"].sndian-zmj2w-1mi0d{top:0%}[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [aria-expanded="false"].sndian-zmj2w-1mi0d{top:-100%}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [id="1mi0d"] [id="1mi0d"] .sndian-1m28q-1mi0d{inset-inline-end:var(--space-large)}}[id="1mi0d"] [id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-2_u9ul2b_467t48{display:flex}[id="1mi0d"] [id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-2_u9ul2b_467t48{display:none}@media (max-width: 767px){[id="1mi0d"] [id="1mi0d"] [aria-expanded="true"]#navbar-verical-nested-menu-2_u9ul2b_467t48{display:flex;inset-inline-start:0}[id="1mi0d"] [id="1mi0d"] [aria-expanded="false"]#navbar-verical-nested-menu-2_u9ul2b_467t48{display:none}}@media (max-width: 767px){}@media (max-width: 640px){}[id="1gwp9"] .sndian-5p926-1gwp9{display:flex;justify-content:center;align-items:center;flex-direction:column;min-height:20rem;background-color:rgba(36,36,36,0.6);background-blend-mode:overlay;background-image:url("https://i.suar.me/gwqXw/h");background-position:center center;background-size:cover;background-repeat:no-repeat;padding:var(--space-largest) var(--space-larger)}[id="1gwp9"] .sndian-pzjwb-1gwp9{margin-bottom:0;color:inherit}[id="1gwp9"] .sndian-mo4ct-1gwp9{display:flex;align-items:inherit;flex-direction:inherit;width:100%;color:var(--secondary-text-color);justify-content:inherit;gap:var(--space-medium);max-width:var(--max-content-width)}[id="1gwp9"] h1,
+[id="1gwp9"] h2,
+[id="1gwp9"] h3,
+[id="1gwp9"] h4,
+[id="1gwp9"] h5,
+[id="1gwp9"] h6,
+[id="1gwp9"] p{margin:0}@media (max-width: 767px){[id="1gwp9"] .sndian-5p926-1gwp9{padding:var(--space-larger) var(--space-large)}}[id="hw9q2"] .sndian-45a1j-hw9q2{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger)}[id="hw9q2"] .sndian-xjt2w-hw9q2{width:100%;padding:var(--space-larger);display:flex;justify-content:center;align-items:center;background-image:url("https://i.suar.me/gwqXw/m");background-position:center center;background-size:cover!important;background-repeat:no-repeat;max-width:var(--max-content-width)}[id="hw9q2"] .sndian-1tikk-hw9q2{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;gap:var(--space-medium);max-width:70%;background-color:var(--secondary-text-color);padding:var(--space-larger);min-height:25rem;text-align:center}[id="hw9q2"] .sndian-vgapd-hw9q2{display:flex;align-items:center;justify-content:center;gap:var(--space-small);padding:0;margin:0}[id="hw9q2"] .sndian-au718-hw9q2 span{--base-font-size:1.2rem;display:flex;font-size:var(--base-font-size)}[id="hw9q2"] .sndian-1tikk-hw9q2 h3{text-align:center;color:inherit;margin:0}[id="hw9q2"] .sndian-1tikk-hw9q2 p{text-align:center;margin:0}[id="hw9q2"] .sndian-r6uzm-hw9q2{display:flex;justify-content:center;flex-direction:row;gap:var(--space-medium);flex-wrap:wrap}[id="hw9q2"] h1,
+[id="hw9q2"] h2,
+[id="hw9q2"] h3,
+[id="hw9q2"] h4,
+[id="hw9q2"] h5,
+[id="hw9q2"] h6,
+[id="hw9q2"] p{margin:0}@media (max-width: 767px){[id="hw9q2"] .sndian-45a1j-hw9q2{padding:var(--space-larger) var(--space-large)}[id="hw9q2"] .sndian-1tikk-hw9q2{max-width:100%;padding:var(--space-large)}[id="hw9q2"] .sndian-xjt2w-hw9q2{padding:var(--space-large)}}[id="hw9q2"] .sndian-1jdfu-hw9q2{width:fit-content;height:fit-content}[id="hw9q2"] .sndian-10l5j-hw9q2{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="hw9q2"] .sndian-au718-hw9q2{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="hw9q2"] .sndian-10ves-hw9q2{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="hw9q2"] .sndian-p35fn-hw9q2{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="hw9q2"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="hw9q2"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="hw9q2"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="hw9q2"] .sndian-10ves-hw9q2{max-width:60vw!important}}[id="1hcx3"] .sndian-1oth1-1hcx3{display:flex;justify-content:center;padding:var(--space-largest) var(--space-larger);flex-direction:column;align-items:center}[id="1hcx3"] .sndian-l0a47-1hcx3{display:flex;justify-content:center;width:100%;flex-direction:column;align-items:center;gap:var(--space-larger);max-width:var(--max-content-width)}[id="1hcx3"] .sndian-1niud-1hcx3{display:flex;height:100%;flex-direction:column;gap:var(--space-medium)}[id="1hcx3"] sndian-grid{width:100%}[id="1hcx3"] .sndian-1niud-1hcx3 h3{font-size:20px}[id="1hcx3"] h1,
+[id="1hcx3"] h2,
+[id="1hcx3"] h3,
+[id="1hcx3"] h4,
+[id="1hcx3"] h5,
+[id="1hcx3"] h6,
+[id="1hcx3"] p{margin:0}@media (max-width: 767px){[id="1hcx3"] .sndian-1oth1-1hcx3{padding:var(--space-larger) var(--space-large)}[id="1hcx3"] sndian-grid{gap:var(--space-large)}}[id="1hcx3"] .sndian-1nucx-1hcx3{display:grid;width:100%;align-items:center}[id="1hcx3"] .sndian-1niud-1hcx3{}@media (min-width: 0px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(1,1fr)}}@media (min-width: 768px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(2,1fr)}}@media (min-width: 1024px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(3,1fr)}}[id="1hcx3"] .sndian-10l5j-1hcx3{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1hcx3"] .sndian-au718-1hcx3{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}@media (min-width: 0px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="dxc6zt"]{grid-template-columns:repeat(3,minmax(0,1fr))}}[data-grid-id="dxc6zt"]{gap:var(--space-larger)}[id="1t9jx"] .sndian-1iohf-1t9jx{display:flex;justify-content:center;flex-direction:column;gap:var(--space-larger);align-items:center;padding:var(--space-largest) var(--space-larger)}[id="1t9jx"] .sndian-1jokn-1t9jx{display:flex;justify-content:center;flex-wrap:wrap;width:100%;max-width:var(--max-content-width)}[id="1t9jx"] .sndian-mvkwf-1t9jx{display:flex;flex-direction:column;gap:var(--space-medium);align-items:center}[id="1t9jx"] .sndian-aec17-1t9jx{display:flex;flex-direction:column;gap:var(--space-large);align-items:center;justify-content:center}[id="1t9jx"] .sndian-ys50i-1t9jx{display:flex;flex-direction:column;gap:var(--space-medium);justify-content:center}[id="1t9jx"] .sndian-3ydaz-1t9jx{display:flex;flex-direction:row;gap:var(--space-medium);flex-wrap:wrap}[id="1t9jx"] .sndian-1pmlk-1t9jx::part(arrows){bottom:0;top:unset;display:flex;justify-content:center;gap:var(--space-medium)}[id="1t9jx"] .sndian-1pmlk-1t9jx{width:100%}[id="1t9jx"] .sndian-1pmlk-1t9jx::part(slider){padding:0;padding-bottom:var(--space-largest)}[id="1t9jx"] .sndian-1pmlk-1t9jx::part(slides){align-items:stretch}[id="1t9jx"] .sndian-1pmlk-1t9jx::part(next){font-size:1.4rem;background-color:var(--primary-color)}[id="1t9jx"] .sndian-1pmlk-1t9jx::part(prev){font-size:1.4rem;background-color:var(--primary-color)}[id="1t9jx"] .sndian-1pv1g-1t9jx{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1t9jx"] .sndian-yrzu8-1t9jx{display:flex;gap:var(--space-medium);flex-direction:row;flex-wrap:wrap}[id="1t9jx"] .sndian-fqdpq-1t9jx{margin:0}[id="1t9jx"] .sndian-m1i89-1t9jx{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1t9jx"] .sndian-1srag-1t9jx{display:flex;align-items:flex-start;flex-wrap:wrap;width:100%;gap:var(--space-medium)}[id="1t9jx"] h1,
+[id="1t9jx"] h2,
+[id="1t9jx"] h3,
+[id="1t9jx"] h4,
+[id="1t9jx"] h5,
+[id="1t9jx"] h6,
+[id="1t9jx"] p{margin:0}@media (max-width: 767px){[id="1t9jx"] .sndian-1iohf-1t9jx{padding:var(--space-larger) var(--space-large)}[id="1t9jx"] .sndian-1jokn-1t9jx{flex-direction:column}}[id="1t9jx"] .sndian-hjrnx-1t9jx{background-color:var(--primary-color);border-radius:var(--border-radius);min-height:200px;width:100%;color:var(--secondary-text-color);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:40px;font-weight:bold}[id="1t9jx"] .sndian-10ves-1t9jx{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="1t9jx"] .sndian-p35fn-1t9jx{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="1t9jx"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="1t9jx"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="1t9jx"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="1t9jx"] .sndian-10ves-1t9jx{max-width:60vw!important}}[id="1t9jx"] .sndian-1jdfu-1t9jx{width:fit-content;height:fit-content}[id="1t9jx"] .sndian-10l5j-1t9jx{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1t9jx"] .sndian-au718-1t9jx{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1t9jx"] .sndian-1ccet-1t9jx{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}{gap:var(--space-larger);padding:var(--space-largest) var(--space-larger)}{max-width:var(--max-content-width)}{gap:var(--space-large);align-items:center}[id="1t9jx"] [data-name="builder-line"].sndian-1ccet-1t9jx{border-bottom:1px solid var(--border-color);margin:0}{bottom:0;top:unset;justify-content:center}{padding:0;padding-bottom:var(--space-largest)}{align-items:stretch}{font-size:1.4rem;background-color:var(--primary-color)}[id="1t9jx"] .sndian-1b9qc-1t9jx{background-color:var(--secondary-background-color);padding:var(--space-large);color:var(--text-color);display:flex;flex-direction:column;gap:var(--space-medium);border-radius:var(--border-radius)}{flex-direction:row}[id="1t9jx"] .sndian-1b9qc-1t9jx .sndian-au718-1t9jx span{font-size:4rem;display:flex;color:var(--primary-color)}[id="1t9jx"] .sndian-xae94-1t9jx{display:flex;justify-content:space-between;align-items:center;gap:var(--space-large)}[id="1t9jx"] .sndian-xae94-1t9jx h4{font-size:22px;white-space:nowrap}{margin:0}[id="1t9jx"] .sndian-1ff4n-1t9jx{display:flex;flex-direction:row;gap:var(--space-medium);flex-wrap:wrap}{flex-direction:column}[id="1t9jx"] .sndian-1d80r-1t9jx{display:flex;flex-direction:row;gap:var(--space-medium)}[id="1t9jx"] .sndian-ym5fd-1t9jx{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1t9jx"] .sndian-ym5fd-1t9jx h3{font-size:22px}{display:flex;align-items:flex-start;flex-wrap:wrap;width:100%;gap:var(--space-medium)}[id="1t9jx"] h1,
+[id="1t9jx"] h2,
+[id="1t9jx"] h3,
+[id="1t9jx"] h4,
+[id="1t9jx"] h5,
+[id="1t9jx"] h6{margin:0}@media (max-width: 767px){{padding:var(--space-larger) var(--space-large)}{flex-direction:column}}[id="1a9g9"] .sndian-fb08n-1a9g9{display:flex;justify-content:center;min-height:30rem;padding:var(--space-largest) var(--space-larger)}[id="1a9g9"] .sndian-1x5rw-1a9g9{display:flex;align-items:stretch;flex-wrap:wrap;width:100%;max-width:var(--max-content-width)}[id="1a9g9"] .sndian-88ecc-1a9g9 > .sndian-1wn3b-1a9g9{height:100%}[id="1a9g9"] .sndian-1jp57-1a9g9{display:flex;align-items:stretch;flex:1}[id="1a9g9"] .sndian-1j09z-1a9g9 h2{font-size:24px}[id="1a9g9"] .sndian-32q6f-1a9g9{width:100%;height:100%;object-fit:cover;aspect-ratio:2/1.5}[id="1a9g9"] .sndian-1ioat-1a9g9{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="1a9g9"] .sndian-1ioat-1a9g9 span{--base-font-size:2rem;font-size:var(--base-font-size);color:var(--primary-color);display:flex}[id="1a9g9"] .sndian-19g3m-1a9g9{flex-direction:column;align-items:flex-start;gap:var(--space-large);justify-content:center}[id="1a9g9"] .sndian-1gszs-1a9g9{width:100%;display:flex;flex-direction:column;gap:var(--space-medium)}[id="1a9g9"] .sndian-1gszs-1a9g9 h1{margin:0}[id="1a9g9"] .sndian-9xlx3-1a9g9{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-medium);padding:0;margin:0}[id="1a9g9"] .sndian-1j09z-1a9g9{display:flex;flex-direction:column;gap:var(--space-medium)}[id="1a9g9"] .sndian-1j09z-1a9g9 h5{margin:0}[id="1a9g9"] .sndian-1j09z-1a9g9 p{margin:0}[id="1a9g9"] h1,
+[id="1a9g9"] h2,
+[id="1a9g9"] h3,
+[id="1a9g9"] h4,
+[id="1a9g9"] h5,
+[id="1a9g9"] h6,
+[id="1a9g9"] p{margin:0}@media (max-width: 767px){[id="1a9g9"] .sndian-fb08n-1a9g9{padding:var(--space-larger) var(--space-large)}[id="1a9g9"] .sndian-1j09z-1a9g9{flex:1}}[id="1a9g9"] .sndian-1nucx-1a9g9{display:grid;width:100%;align-items:center}[id="1a9g9"] .sndian-dn767-1a9g9{display:flex;width:100%;height:100%;border-radius:inherit;mask-size:contain;mask-position:center center;mask-repeat:no-repeat}[id="1a9g9"] .sndian-1wn3b-1a9g9{text-decoration:none;width:100%;height:fit-content;display:block;border-radius:var(--border-radius);max-height:100%;min-width:20px}@media (max-width: 640px){[id="1a9g9"] .sndian-dn767-1a9g9{width:100%!important;max-height:400px;height:auto}}[id="1a9g9"] .sndian-1niud-1a9g9{}[id="1a9g9"] .sndian-10l5j-1a9g9{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="1a9g9"] .sndian-au718-1a9g9{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="1a9g9"] .sndian-1jdfu-1a9g9{width:fit-content;height:fit-content}[id="1a9g9"]{}@media (min-width: 0px){[data-grid-id="nveqjc"]{grid-template-columns:repeat(1,minmax(0,1fr))}}@media (min-width: 768px){[data-grid-id="nveqjc"]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){[data-grid-id="nveqjc"]{grid-template-columns:repeat(2,minmax(0,1fr))}}[data-grid-id="nveqjc"]{gap:var(--space-larger)}[id="ww3ap"] .sndian-1q0wa-ww3ap{display:flex;justify-content:center;flex-direction:row;padding:var(--space-largest) var(--space-larger)}[id="ww3ap"] .sndian-vathh-ww3ap{display:flex;justify-content:center;flex-direction:inherit;flex-wrap:wrap;gap:var(--space-large);max-width:var(--max-content-width)}[id="ww3ap"] .sndian-txj1b-ww3ap{display:flex;flex-direction:inherit;flex:100%;justify-content:center;align-items:center;flex-wrap:wrap;text-align:center;gap:var(--space-medium)}[id="ww3ap"] .sndian-1d1gc-ww3ap{display:flex;flex-direction:column;gap:var(--space-medium)}[id="ww3ap"] .sndian-txj1b-ww3ap button{gap:var(--space-large);display:flex;align-items:center;justify-content:center;flex-direction:inherit}[id="ww3ap"] .sndian-qkeqd-ww3ap{display:flex;gap:var(--space-medium);flex-wrap:wrap}[id="ww3ap"] h1,
+[id="ww3ap"] h2,
+[id="ww3ap"] h3,
+[id="ww3ap"] h4,
+[id="ww3ap"] h5,
+[id="ww3ap"] h6,
+[id="ww3ap"] p{margin:0}@media (max-width: 767px){[id="ww3ap"] .sndian-1q0wa-ww3ap{padding:var(--space-larger) var(--space-large)}[id="ww3ap"] .sndian-txj1b-ww3ap{gap:var(--space-large)}}[id="ww3ap"] .sndian-10ves-ww3ap{text-decoration:none;width:fit-content;height:fit-content;display:inline-block;border-radius:var(--border-radius)}[id="ww3ap"] .sndian-p35fn-ww3ap{display:flex;align-items:center;width:100%;justify-content:center;margin:0;border-radius:inherit}[id="ww3ap"] button[data-button-type='secondary']{--background-color:var(--secondary-color);--color:var(--secondary-text-color);--border-color:var(--secondary-color);margin:0}[id="ww3ap"] button[data-button-type='outlined']{--background-color:transparent;--color:var(--text-color);--border-color:var(--text-color);margin:0}[id="ww3ap"] button[data-button-type='textual']{--background-color:transparent;--color:var(--text-color);--border-color:transparent;box-shadow:none;margin:0}@media (max-width: 640px){[id="ww3ap"] .sndian-10ves-ww3ap{max-width:60vw!important}}[id="ww3ap"] .sndian-1rsnc-ww3ap{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-medium)}[id="ww3ap"] .sndian-3u8p4-ww3ap{width:fit-content;height:fit-content}[id="ww3ap"] .sndian-10l5j-ww3ap{border-radius:inherit;font-size:25px;color:var(--text-color);display:flex}[id="ww3ap"] .sndian-au718-ww3ap{text-decoration:none;width:fit-content;height:fit-content;display:inline-block}[id="ww3ap"]{}[id="8u7lh"] .sndian-og3da-8u7lh{display:flex;justify-content:center;padding:var(--space-larger);background-color:var(--primary-color);color:var(--secondary-text-color)}[id="8u7lh"] .sndian-v8zb6-8u7lh{text-decoration:none}[id="8u7lh"] .sndian-1ybrh-8u7lh{display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;color:inherit;gap:var(--space-medium);max-width:var(--max-content-width)}[id="8u7lh"] .sndian-s1zs2-8u7lh{align-items:center;gap:var(--space-medium)}[id="8u7lh"] .sndian-1ybrh-8u7lh .sndian-1ccet-8u7lh{margin:var(--space-medium) 0 var(--space-medium) 0;width:100%;border-bottom-color:var(--border-color)}[id="8u7lh"] .sndian-s1zs2-8u7lh{display:flex;gap:var(--space-smallest)}[id="8u7lh"] .sndian-1ghx6-8u7lh{display:flex;align-items:center;justify-content:center;gap:var(--space-medium);margin:0;flex-wrap:wrap;padding:0;color:inherit}[id="8u7lh"] .sndian-16dw4-8u7lh{display:flex;flex-direction:column;gap:var(--space-medium)}[id="8u7lh"] h1,
+[id="8u7lh"] h2,
+[id="8u7lh"] h3,
+[id="8u7lh"] h4,
+[id="8u7lh"] h5,
+[id="8u7lh"] h6,
+[id="8u7lh"] p{margin:0}@media (max-width: 767px){[id="8u7lh"] .sndian-og3da-8u7lh{padding:var(--space-large)}}[id="8u7lh"] .sndian-1ccet-8u7lh{margin-block-start:20px;margin-block-end:20px;border-bottom:1px solid #666;width:100%}[id="8u7lh"] .sndian-v8zb6-8u7lh{width:fit-content;height:fit-content;display:inline-block}</style><style id="hb-stylesheet"></style><link rel="stylesheet" type="text/css" href="about_files/botchat.css" media="all" id="botchat-css"></head><body><div id="1mi0d"><section class="sndian-1pgvy-1mi0d" data-section-name="navbar-verical" style="background: var(--primary-color); color: var(--secondary-text-color)">
+    <div class="sndian-1l76o-1mi0d">
+        <div class="navbar-verical-wrapper">
+            <div class="sndian-t1gtv-1mi0d">
+              <a type="link" id="رابط" class="sndian-v8zb6-1mi0d" rel="noopener noreferrer" href="index.html">
+      <span><h2><span>AlNour</span></h2></span>
+    </a>
+            </div> 
+        </div>  
+        <div class="sndian-jhtc8-1mi0d">
+          <!-- <a type="button" id="زر" class="sndian-10ves-1mi0d" rel="noopener noreferrer" href="https://www.AlNour-tours.com/about2">
+      <button class="sndian-rhm43-1mi0d">
+        <span style="padding-inline-end:5px;padding-inline-start:5px">EN</span>
+      </button>
+    </a> -->
+          <div class="navbar-verical-Button" aria-controls="navbar-verical-menu_57oa0k" data-original-aria-controls="navbar-verical-menu">
+                <a class="sndian-au718-1mi0d" id="navbar-verical-Button-topen">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="bars" data-icon-prefix="fas">
+    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+  </svg></span>
+    </a>
+          </div>
+        </div>
+        <sndian-menu id="navbar-verical-menu_57oa0k" class="sndian-zmj2w-1mi0d" aria-expanded="false" data-original-id="navbar-verical-menu_57oa0k" style="padding: 16px; background: url(&quot;https://sndiansite.com/media/34319/8634/6f25a2ee-0629-442f-ac70-2326050c715b/Untitled%20design%20(4).png&quot;) center center / cover no-repeat">
+          
+          <div class="sndian-1titw-1mi0d">
+              <div class="sndian-1m28q-1mi0d" aria-controls="navbar-verical-menu_57oa0k" data-original-aria-controls="navbar-verical-menu_57oa0k">
+                    <a class="sndian-au718-1mi0d" id="أيقونة">
+      <span class="fa"><svg class="svg-inline" viewBox="0 0 384 512" data-icon-name="xmark" data-icon-prefix="fas">
+    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path>
+  </svg></span>
+    </a>
+              </div>
+              <div class="sndian-pkdkz-1mi0d">
+                 <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="index.html" aria-current="page">
+      <span>
+                        <h3>الرئيسية</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="about.htm" aria-current="page">
+      <span>
+                        <h3>من نحن</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="services.htm" aria-current="page">
+      <span>
+                        <h3>خدماتنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="plans.htm" aria-current="page">
+      <span>
+                        <h3>برامجنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+               
+                <sndian-menu-item id="قائمة" class="sndian-6vrsw-epwno">
+                  <a type="link" id="رابط" class="sndian-1u88s-epwno" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank"  aria-current="page">
+      <span>
+                        <h3>تواصل معنا</h3>
+                    </span>
+    </a>
+                </sndian-menu-item>
+              </div>
+          </div>
+        </sndian-menu>
+    </div>
+</section></div><div id="1gwp9"><section class="sndian-5p926-1gwp9" data-section-name="hero-aligned" style="background: url(&quot;https://sndiansite.com/media/34319/8634/66fdc0c0-6b23-48a0-af09-6e27c28a031c/54.png&quot;) 51.6216% 80.0578% / cover no-repeat">
+  <div class="sndian-mo4ct-1gwp9">
+    <div style="color: var(--secondary-text-color);"><h1 dir="ltr" style=""><span style="">AlNour Travel</span></h1></div>
+  </div>
+</section></div><div id="hw9q2"><section class="sndian-45a1j-hw9q2" data-section-name="feature-middle" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div class="sndian-xjt2w-hw9q2" style="background: url(&quot;https://sndiansite.com/media/34319/8634/d4702709-2a76-4880-8dbf-8ac0857726af/55.png&quot;) center center / cover no-repeat; color: var(--secondary-text-color)">
+        <div class="sndian-1tikk-hw9q2" style="background: var( --secondary-background-color); color: var(--text-color)">
+            <ul class="sndian-vgapd-hw9q2">
+                
+                
+                
+                
+                
+            </ul>
+            <div><h1 dir="rtl" style=""><span style="">نبذه </span><span style="">عن شركتنا</span></h1></div>
+            <div><h5 style=""><br></h5><h5 style=""><span style="">شركة 
+رائدة في تنظيم الرحلات السياحية محليًا ودوليًا، نوفر لعملائنا تجربة سفر 
+سلسة، آمنة، ومليئة بالمغامرات، نسعى إلى تحويل أحلام السفر إلى واقع من 
+خلال تقديم أفضل البرامج السياحية التي تناسب جميع الأذواق والميزانيات. 
+AlNour أكثر من مجرد شركة سياحية – نحن شريكك في المغامرة! نسعى جاهدين لتقديم
+ أفضل التجارب من خلال برامج متكاملة، وخدمة راقية تلبي جميع احتياجات 
+عملائنا.</span></h5></div>
+            <div class="sndian-r6uzm-hw9q2">
+                
+            </div>
+        </div>
+    </div>
+</section></div><div id="1hcx3"><section class="sndian-1oth1-1hcx3" data-section-name="feature-grid" style="background: var(--primary-color); color: var(--secondary-text-color)">
+  <div class="sndian-l0a47-1hcx3">
+    <div><h1 dir="rtl"><strong class="editor__text-bold" style="white-space: pre-wrap">لماذا نحن ؟</strong></h1></div>
+    <div gap="var(--space-larger)" small="1" medium="2" large="3" class="sndian-1nucx-1hcx3" data-grid-id="dxc6zt" style="display: grid;">
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="arrow-up-right-dots" data-icon-prefix="fas">
+    <path d="M160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h50.7L9.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L256 109.3V160c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H160zM576 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM448 208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM400 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm128 0a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM272 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM144 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM576 336a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm-48-80a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><span>خبرة واسعة</span></h3></div>
+        
+      </div>
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="house" data-icon-prefix="fas">
+    <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><span>وجهات متنوعة</span></h3></div>
+        
+      </div>
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="arrows-rotate" data-icon-prefix="fas">
+    <path d="M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8c62.5-62.5 163.8-62.5 226.3 0L386.3 160H352c-17.7 0-32 14.3-32 32s14.3 32 32 32H463.5c0 0 0 0 0 0h.4c17.7 0 32-14.3 32-32V80c0-17.7-14.3-32-32-32s-32 14.3-32 32v35.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5zM39 289.3c-5 1.5-9.8 4.2-13.7 8.2c-4 4-6.7 8.8-8.1 14c-.3 1.2-.6 2.5-.8 3.8c-.3 1.7-.4 3.4-.4 5.1V432c0 17.7 14.3 32 32 32s32-14.3 32-32V396.9l17.6 17.5 0 0c87.5 87.4 229.3 87.4 316.7 0c24.4-24.4 42.1-53.1 52.9-83.7c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.5 62.5-163.8 62.5-226.3 0l-.1-.1L125.6 352H160c17.7 0 32-14.3 32-32s-14.3-32-32-32H48.4c-1.6 0-3.2 .1-4.8 .3s-3.1 .5-4.6 1z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><span>خدمات متكاملة</span></h3></div>
+        
+      </div>
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 384 512" data-icon-name="award" data-icon-prefix="fas">
+    <path d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><span>مصداقية وثقة</span></h3></div>
+        
+      </div>
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="ear-listen" data-icon-prefix="fas">
+    <path d="M398.3 3.4c-15.8-7.9-35-1.5-42.9 14.3c-7.9 15.8-1.5 34.9 14.2 42.9l.4 .2c.4 .2 1.1 .6 2.1 1.2c2 1.2 5 3 8.7 5.6c7.5 5.2 17.6 13.2 27.7 24.2C428.5 113.4 448 146 448 192c0 17.7 14.3 32 32 32s32-14.3 32-32c0-66-28.5-113.4-56.5-143.7C441.6 33.2 427.7 22.2 417.3 15c-5.3-3.7-9.7-6.4-13-8.3c-1.6-1-3-1.7-4-2.2c-.5-.3-.9-.5-1.2-.7l-.4-.2-.2-.1-.1 0 0 0c0 0 0 0-14.3 28.6L398.3 3.4zM128.7 227.5c6.2-56 53.7-99.5 111.3-99.5c61.9 0 112 50.1 112 112c0 29.3-11.2 55.9-29.6 75.9c-17 18.4-34.4 45.1-34.4 78V400c0 26.5-21.5 48-48 48c-17.7 0-32 14.3-32 32s14.3 32 32 32c61.9 0 112-50.1 112-112v-6.1c0-9.8 5.4-21.7 17.4-34.7C398.3 327.9 416 286 416 240c0-97.2-78.8-176-176-176C149.4 64 74.8 132.5 65.1 220.5c-1.9 17.6 10.7 33.4 28.3 35.3s33.4-10.7 35.3-28.3zM32 512a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM192 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0zM208 240c0-17.7 14.3-32 32-32s32 14.3 32 32c0 13.3 10.7 24 24 24s24-10.7 24-24c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 13.3 10.7 24 24 24s24-10.7 24-24z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><span>استشارات مجانية</span></h3></div>
+        
+      </div>
+      <div class="sndian-1niud-1hcx3">
+        <a class="sndian-au718-1hcx3" id="أيقونة">
+      <span class="sndian-10l5j-1hcx3" style="color: var(--secondary-color); font-size: 30px"><svg class="svg-inline" viewBox="0 0 576 512" data-icon-name="battery-full" data-icon-prefix="fas">
+    <path d="M464 160c8.8 0 16 7.2 16 16V336c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16H464zM80 96C35.8 96 0 131.8 0 176V336c0 44.2 35.8 80 80 80H464c44.2 0 80-35.8 80-80V320c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32V176c0-44.2-35.8-80-80-80H80zm368 96H96V320H448V192z"></path>
+  </svg></span>
+    </a><div><h3 dir="rtl"><strong class="editor__text-bold" style="white-space: pre-wrap">خدمة عملاء 24/7</strong></h3></div>
+        
+      </div>
+    </div>
+  </div>
+</section></div><div id="1t9jx"><section class="sndian-1iohf-1t9jx" data-section-name="testimonial-cards-slider" style="background: var(--secondary-background-color); color: var(--secondary-text-color)">
+    <div class="testimonial-cards-slider-heading">
+       <div><h1 dir="rtl" style=""><span style="">رؤيتنا</span></h1></div>
+    </div>
+    <div class="sndian-1jokn-1t9jx">
+      <div class="sndian-1b9qc-1t9jx sndian-1pmlk-1t9jx">
+                    <div class="sndian-1d80r-1t9jx">
+                      <a class="sndian-au718-1t9jx" id="أيقونة">
+      <span class=""><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="quote-left" data-icon-prefix="fas">
+    <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"></path>
+  </svg></span>
+    </a>
+                    </div>
+                    <div class="sndian-ym5fd-1t9jx">
+                      <div><h3 dir="rtl" style=""><span style="">نهدف إلى أن نجعل كل رحلة مع AlNour تجربة لا تُنسى، مليئة بالسعادة والاكتشاف!</span></h3></div>
+                      <div><p class="." dir="rtl" style=""><strong class="editor__text-bold" style="white-space: pre-wrap">نؤمن بأن كل رحلة هي قصة فريدة تستحق أن تُكتب بأجمل الذكريات. لهذا، نحرص على تقديم أفضل الخدمات السياحية والتجارب المميزة التي تضمن لك الراحة، المغامرة، والاستمتاع بكل لحظة.</strong></p></div>
+                    </div>
+                    <div class="sndian-1ccet-1t9jx"></div>
+                    <div class="sndian-xae94-1t9jx">
+                      <div class="sndian-1ff4n-1t9jx">
+                        
+                      </div>
+                    
+                    </div>
+                </div>
+    </div>
+</section></div><div id="1a9g9"><section class="sndian-fb08n-1a9g9" data-section-name="hero-odd" style="background: var( --secondary-background-color); color: var(--text-color)">
+    <div gap="var(--space-larger)" small="1" medium="2" large="2" class="sndian-1x5rw-1a9g9" data-grid-id="nveqjc" style="display: grid;">
+        <div class="sndian-88ecc-1a9g9">
+          <div><h1><span>أهدافنا المستقبلية</span></h1><p class="."><br></p></div><a class="sndian-1wn3b-1a9g9" id="Image">
+      <img class="sndian-32q6f-1a9g9" src="about_files/%D9%81%D8%B1%D9%86%D8%B3%D8%A7%20iba%20tours%20(41).png" alt="صورة القسم" loading="lazy" style="mask-image: none; object-position: 15.7382% 49.0948%">
+      <div></div>
+    </a>
+        </div>
+        <div class="sndian-1jp57-1a9g9 sndian-19g3m-1a9g9" style="align-items: flex-end">
+            <div class="sndian-1ioat-1a9g9">
+                
+            </div>
+            <div class="sndian-1gszs-1a9g9">
+                
+            </div>
+            <ul class="sndian-9xlx3-1a9g9">
+                <div class="sndian-1j09z-1a9g9">
+                    <div><p class="." style=""><br></p><p class="." style=""><br></p><h4 style=""><span style="">التوسع في الوجهات السياحية</span></h4></div>
+                    <div><p class="." style=""><span style="">لا نتوقف عند تقديم الخدمات السياحية التقليدية، بل نطمح دائمًا إلى تطوير وتوسيع آفاقنا لنكون الخيار الأول لعشاق السفر حول العالم.</span></p><p class="." style=""><br></p><p class="." style=""><br></p></div>
+                </div>
+                <div class="sndian-1j09z-1a9g9">
+                    <div><h4 style=""><span style="">مستقبل سياحي أكثر تميزًا!</span></h4></div>
+                    <div><p class="."><span>نسعي لأن نصبح الشركة 
+السياحية الرائدة في المنطقة العربية، مقدّمين تجارب سفر استثنائية تعكس 
+ثقافتنا وتراثنا الغني، مع أعلى معايير الجودة والابتكار.</span></p></div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</section></div><div id="ww3ap"><section class="sndian-1q0wa-ww3ap" data-section-name="cta-line" style="background: var( --secondary-background-color); color: var(--text-color)">
+  <div class="sndian-vathh-ww3ap">
+    <div class="sndian-txj1b-ww3ap">
+      <div class="sndian-1d1gc-ww3ap">
+        <div>
+          <h2>لا تتردد فى التواصل معنا</h2>
+        </div>
+      </div>
+      <div class="sndian-qkeqd-ww3ap">
+        <div class="sndian-1rsnc-ww3ap">
+      <a class="sndian-au718-ww3ap" id="أيقونة" href="https://www.facebook.com/profile.php?id=61575545656535">
+      <span class="sndian-10l5j-ww3ap"><svg class="svg-inline" viewBox="0 0 512 512" data-icon-name="facebook" data-icon-prefix="fab">
+    <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"></path>
+  </svg></span>
+    </a>
+      <a class="sndian-au718-ww3ap" id="أيقونة" href="https://www.instagram.com/nour.travel2020/?fbclid=IwY2xjawLAzUVleHRuA2FlbQIxMABicmlkETFFUUdjOUVnclNzSTRTaFh4AR6_d6RDKXpnrtmU7CD0ruXSsykJfpVeZQz4jvLYHPCXpT6272a6Dv_Xjwe7HA_aem_f2YTWudiZZafZDbIpdjv4w">
+      <span class="sndian-10l5j-ww3ap"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="instagram" data-icon-prefix="fab">
+    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+  </svg></span>
+    </a>
+      <!-- <a class="sndian-au718-ww3ap" id="أيقونة" href="https://www.tiktok.com/@ibatours">
+      <span class="sndian-10l5j-ww3ap"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="tiktok" data-icon-prefix="fab">
+    <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
+  </svg></span>
+    </a> -->
+      <a class="sndian-au718-ww3ap" id="أيقونة" href="https://wa.me/+201555359259">
+      <span class="sndian-10l5j-ww3ap"><svg class="svg-inline" viewBox="0 0 448 512" data-icon-name="whatsapp" data-icon-prefix="fab">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+  </svg></span>
+    </a><a class="sndian-au718-ww3ap" id="أيقونة" href="mailto:nourtravel.eg@gmail.com" >
+      <span class="sndian-10l5j-ww3ap"><svg class="svg-inline" viewBox="0 0 640 512" data-icon-name="envelopes-bulk" data-icon-prefix="fas">
+    <path d="M128 0C110.3 0 96 14.3 96 32V224h96V192c0-35.3 28.7-64 64-64H480V32c0-17.7-14.3-32-32-32H128zM256 160c-17.7 0-32 14.3-32 32v32h96c35.3 0 64 28.7 64 64V416H576c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32H256zm240 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H496c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zM64 256c-17.7 0-32 14.3-32 32v13L187.1 415.9c1.4 1 3.1 1.6 4.9 1.6s3.5-.6 4.9-1.6L352 301V288c0-17.7-14.3-32-32-32H64zm288 84.8L216 441.6c-6.9 5.1-15.3 7.9-24 7.9s-17-2.8-24-7.9L32 340.8V480c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V340.8z"></path>
+  </svg></span>
+    </a>
+    </div>
+      </div>
+    </div>
+  </div>
+</section></div><div id="8u7lh"><section class="sndian-og3da-8u7lh" data-section-name="footers-minimal">
+    <div class="sndian-1ybrh-8u7lh">
+            <div><h4 dir="ltr" style=""><span style="">AlNour</span></h4></div>
+        <ul class="sndian-1ghx6-8u7lh">
+            <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="index.html">
+      <span>
+                <h6>الرئيسية</h6>
+            </span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="about.htm">
+      <span>
+                <h6>من نحن</h6>
+            </span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="services.htm">
+      <span><h6 dir="rtl" style=""><span style="">خدماتنا</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="plans.htm">
+      <span><h6 dir="rtl" style=""><span style="">برامجنا</span></h6></span>
+    </a>
+            <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="https://wa.me/201555359259" 
+   target="_blank">
+      <span>
+                <h6>تواصل معنا</h6>
+            </span>
+    </a>
+        </ul>
+        <div class="sndian-1ccet-8u7lh"></div>
+       <div class="sndian-s1zs2-8u7lh">
+        <div>
+          جميع الحقوق محفوظة  ©
+        </div>
+        <a type="link" id="رابط" class="sndian-v8zb6-8u7lh" rel="noopener noreferrer" href="index.html">
+      <span><p class="." dir="rtl" style=""><span style="">صنع بواسطة AlNour</span></p></span>
+    </a>
+      </div>
+    </div>
+</section></div><script>(function(){
+  /* version: 1.7.6 */
+class e extends HTMLElement{constructor(){super(),this.mutationObserver=new MutationObserver((e=>{var t;null===(t=this.onChildrenChanged)||void 0===t||t.call(this,e)}))}connectedCallback(){var e;this.connectObserver(),null===(e=this.onChildrenChanged)||void 0===e||e.call(this)}disconnectedCallback(){this.disconnectObserver()}connectObserver(){this.mutationObserver.observe(this,{childList:!0})}disconnectObserver(){this.mutationObserver.disconnect()}}class t extends HTMLElement{attributeChangedCallback(e,t,i){t!==i&&this.onAttributeChanged(e,t,i)}}t.observedAttributes=[];class i extends e{constructor(){super(),this.controllers=[],this.handleClickOutside=e=>{var t;const i=e.target,n=this.contains(i),s=null===(t=this.controllers)||void 0===t?void 0:t.some((e=>e.contains(i)));n||s||this.collapseMenu()}}connectedCallback(){this.initialize(),this.handleClickOutside=this.handleClickOutside.bind(this)}disconnectedCallback(){this.controllers.length&&this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}onChildrenChanged(){this.initialize()}collapseMenu(){this.ariaExpanded="false",this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0)}initialize(){var e;if(this.id){if(this.controllers=Array.from(this.ownerDocument.querySelectorAll(`[aria-controls="${this.id}"]`)),!(null===(e=this.controllers)||void 0===e?void 0:e.length))return;this.controllers.map((e=>{this.controllerClickListener&&e.removeEventListener("click",this.controllerClickListener,!0)})),null===this.ariaExpanded&&(this.ariaExpanded="false"),this.controllerClickListener=e=>{const t=e.target,i=this.contains(t),n=t.closest(`[aria-controls=${this.id}]`),s="true"===this.ariaExpanded;s?this.ownerDocument.removeEventListener("click",this.handleClickOutside,!0):this.ownerDocument.addEventListener("click",this.handleClickOutside,!0),i&&s&&!n||(this.ariaExpanded=String(!s))},this.controllers.map((e=>{this.controllerClickListener&&e.addEventListener("click",this.controllerClickListener,!0)}))}}}class n extends HTMLElement{}window.customElements.get("sndian-menu")||window.customElements.define("sndian-menu",i),window.customElements.get("sndian-menu-item")||window.customElements.define("sndian-menu-item",n);
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1mi0d'] [data-animation] h1,[id='1mi0d'] [data-animation] h2,[id='1mi0d'] [data-animation] h3,[id='1mi0d'] [data-animation] h4, [id='1mi0d'] [data-animation] h5, [id='1mi0d'] [data-animation] h6, [id='1mi0d'] [data-animation] p, [id='1mi0d'] [data-animation] button, [id='1mi0d'] [data-animation] img, [id='1mi0d'] [data-animation] svg[data-icon-name], [id='1mi0d'] [data-animation] video, [id='1mi0d'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1gwp9'] [data-animation] h1,[id='1gwp9'] [data-animation] h2,[id='1gwp9'] [data-animation] h3,[id='1gwp9'] [data-animation] h4, [id='1gwp9'] [data-animation] h5, [id='1gwp9'] [data-animation] h6, [id='1gwp9'] [data-animation] p, [id='1gwp9'] [data-animation] button, [id='1gwp9'] [data-animation] img, [id='1gwp9'] [data-animation] svg[data-icon-name], [id='1gwp9'] [data-animation] video, [id='1gwp9'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='hw9q2'] [data-animation] h1,[id='hw9q2'] [data-animation] h2,[id='hw9q2'] [data-animation] h3,[id='hw9q2'] [data-animation] h4, [id='hw9q2'] [data-animation] h5, [id='hw9q2'] [data-animation] h6, [id='hw9q2'] [data-animation] p, [id='hw9q2'] [data-animation] button, [id='hw9q2'] [data-animation] img, [id='hw9q2'] [data-animation] svg[data-icon-name], [id='hw9q2'] [data-animation] video, [id='hw9q2'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1hcx3'] [data-animation] h1,[id='1hcx3'] [data-animation] h2,[id='1hcx3'] [data-animation] h3,[id='1hcx3'] [data-animation] h4, [id='1hcx3'] [data-animation] h5, [id='1hcx3'] [data-animation] h6, [id='1hcx3'] [data-animation] p, [id='1hcx3'] [data-animation] button, [id='1hcx3'] [data-animation] img, [id='1hcx3'] [data-animation] svg[data-icon-name], [id='1hcx3'] [data-animation] video, [id='1hcx3'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1t9jx'] [data-animation] h1,[id='1t9jx'] [data-animation] h2,[id='1t9jx'] [data-animation] h3,[id='1t9jx'] [data-animation] h4, [id='1t9jx'] [data-animation] h5, [id='1t9jx'] [data-animation] h6, [id='1t9jx'] [data-animation] p, [id='1t9jx'] [data-animation] button, [id='1t9jx'] [data-animation] img, [id='1t9jx'] [data-animation] svg[data-icon-name], [id='1t9jx'] [data-animation] video, [id='1t9jx'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='1a9g9'] [data-animation] h1,[id='1a9g9'] [data-animation] h2,[id='1a9g9'] [data-animation] h3,[id='1a9g9'] [data-animation] h4, [id='1a9g9'] [data-animation] h5, [id='1a9g9'] [data-animation] h6, [id='1a9g9'] [data-animation] p, [id='1a9g9'] [data-animation] button, [id='1a9g9'] [data-animation] img, [id='1a9g9'] [data-animation] svg[data-icon-name], [id='1a9g9'] [data-animation] video, [id='1a9g9'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='ww3ap'] [data-animation] h1,[id='ww3ap'] [data-animation] h2,[id='ww3ap'] [data-animation] h3,[id='ww3ap'] [data-animation] h4, [id='ww3ap'] [data-animation] h5, [id='ww3ap'] [data-animation] h6, [id='ww3ap'] [data-animation] p, [id='ww3ap'] [data-animation] button, [id='ww3ap'] [data-animation] img, [id='ww3ap'] [data-animation] svg[data-icon-name], [id='ww3ap'] [data-animation] video, [id='ww3ap'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();
+(function(){
+  
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.dataset.inview = "true";
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "0px" }
+  );
+  setTimeout(() => {
+    const animatables = document.querySelectorAll(
+      "[id='8u7lh'] [data-animation] h1,[id='8u7lh'] [data-animation] h2,[id='8u7lh'] [data-animation] h3,[id='8u7lh'] [data-animation] h4, [id='8u7lh'] [data-animation] h5, [id='8u7lh'] [data-animation] h6, [id='8u7lh'] [data-animation] p, [id='8u7lh'] [data-animation] button, [id='8u7lh'] [data-animation] img, [id='8u7lh'] [data-animation] svg[data-icon-name], [id='8u7lh'] [data-animation] video, [id='8u7lh'] [data-animation] iframe"
+    );
+    animatables.forEach((el) => {
+      if (navigator?.webdriver) {
+        el.dataset.inview = "true";
+      } else {
+        observer.observe(el);
+      }
+    });
+  }, 0);
+});
+
+})();</script> 
+<script>
+// Remove Widebot chat functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const chatButton = document.getElementById('kaec-chat-button');
+  if (chatButton) {
+    chatButton.onclick = function(e) {
+      e.preventDefault();
+      window.open('https://wa.me/201555359259', '_blank');
+    };
+  }
+});
+</script>
+
+<div style="position: fixed; bottom: 0px; right: 50px; width: 70px; z-index: 999999;">
+  <img id="kaec-chat-button" 
+       src="https://widebot-webchat.s3.amazonaws.com/shared/widebot.png" 
+       style="position: absolute; bottom: 10px; right: 10px; width: 70px; height: 70px; 
+              cursor: pointer; z-index: 999999999; filter: drop-shadow(gray 0px 0px 1px); 
+              display: block; border-radius: 50%; object-fit: contain;">
+</div>
+</body></html>
